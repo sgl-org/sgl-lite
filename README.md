@@ -14,28 +14,6 @@
 | [![build status](https://github.com/sgl-org/sgl/actions/workflows/ubuntu-mips-gcc.yml/badge.svg?branch=main)](https://github.com/sgl-org/sgl/actions/workflows/ubuntu-mips-gcc.yml?query=branch%3Amain) | [![build status](https://github.com/sgl-org/sgl/actions/workflows/ubuntu-mips-gcc.yml/badge.svg?branch=devel)](https://github.com/sgl-org/sgl/actions/workflows/ubuntu-mips-gcc.yml?query=branch%3Adevel) | Cross build MIPS default on Ubuntu GCC |
 | [![build status](https://github.com/sgl-org/sgl/actions/workflows/ubuntu-mips64-gcc.yml/badge.svg?branch=main)](https://github.com/sgl-org/sgl/actions/workflows/ubuntu-mips64-gcc.yml?query=branch%3Amain) | [![build status](https://github.com/sgl-org/sgl/actions/workflows/ubuntu-mips64-gcc.yml/badge.svg?branch=devel)](https://github.com/sgl-org/sgl/actions/workflows/ubuntu-mips64-gcc.yml?query=branch%3Adevel) | Cross build MIPS64 default on Ubuntu GCC |
 
-## shotcut
-<table>
-  <tr>
-    <td><img src="docs/gif/button.gif" width="250" alt="Button"></td>
-    <td><img src="docs/gif/checkbox.gif" width="250" alt="Checkbox"></td>
-    <td><img src="docs/gif/label.gif" width="250" alt="Label"></td>
-  </tr>
-</table>
-<table>
-  <tr>
-    <td><img src="docs/gif/switch.gif" width="250" alt="Switch"></td>
-    <td><img src="docs/gif/msgbox.gif" width="250" alt="Msgbox"></td>
-    <td><img src="docs/gif/keyboard.gif" width="250" alt="Keyboard"></td>
-  </tr>
-</table>
-<table>
-  <tr>
-    <td><img src="docs/gif/textbox.gif" width="250" alt="Textbox"></td>
-    <td><img src="docs/gif/arcbar.gif" width="250" alt="Arcbar"></td>
-    <td><img src="docs/gif/slider.gif" width="250" alt="Slider"></td>
-  </tr>
-</table>
 
 ### Minimum hardware requirements
 | Flash Size | Ram Size |
