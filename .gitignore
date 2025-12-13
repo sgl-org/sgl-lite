@@ -23,13 +23,11 @@
 *.lo
 
 # Shared objects (inc. Windows DLLs)
-*.dll
 *.so
 *.so.*
 *.dylib
 
 # Executables
-*.exe
 *.out
 *.app
 *.i*86
@@ -42,14 +40,10 @@
 *.idb
 *.pdb
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# demo files
+demo
+stm32_demo
+tools
 
-# debug information files
-*.dwo
+# lite-manager files
+lite-manager
