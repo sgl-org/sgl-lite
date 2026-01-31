@@ -1,0 +1,3932 @@
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 1
+
+
+   1              		.file	"sgl_widget.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.cfi_sections	.debug_frame
+   5              		.file 0 "C:/Users/lsw/Desktop/sgl-lite/demo" "../source/sgl_widget.c"
+   6              		.section	.text$sgl_rectangle_construct_cb,"x"
+   7              		.p2align 4
+   9              		.seh_proc	sgl_rectangle_construct_cb
+  10              	sgl_rectangle_construct_cb:
+  11              	.LVL0:
+  12              	.LFB93:
+  13              		.file 1 "../source/sgl_widget.c"
+   1:../source/sgl_widget.c **** /* source: sgl_widget.c
+   2:../source/sgl_widget.c ****  * Copyright (c) 2026-2028, Lishanwen
+   3:../source/sgl_widget.c ****  *
+   4:../source/sgl_widget.c ****  * Licensed under the Apache License, Version 2.0 (the "License");
+   5:../source/sgl_widget.c ****  * you may not use this file except in compliance with the License.
+   6:../source/sgl_widget.c ****  * You may obtain a copy of the License at
+   7:../source/sgl_widget.c ****  *
+   8:../source/sgl_widget.c ****  *     http://www.apache.org/licenses/LICENSE-2.0
+   9:../source/sgl_widget.c ****  *
+  10:../source/sgl_widget.c ****  * Unless required by applicable law or agreed to in writing, software
+  11:../source/sgl_widget.c ****  * distributed under the License is distributed on an "AS IS" BASIS,
+  12:../source/sgl_widget.c ****  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  13:../source/sgl_widget.c ****  * See the License for the specific language governing permissions and
+  14:../source/sgl_widget.c ****  * limitations under the License.
+  15:../source/sgl_widget.c ****  */
+  16:../source/sgl_widget.c **** 
+  17:../source/sgl_widget.c **** #include "sgl_widget.h"
+  18:../source/sgl_widget.c **** #include "sgl_mm.h"
+  19:../source/sgl_widget.c **** 
+  20:../source/sgl_widget.c **** /**
+  21:../source/sgl_widget.c ****  * @brief rectangle construct callback
+  22:../source/sgl_widget.c ****  * @param  surf: surface
+  23:../source/sgl_widget.c ****  * @param  obj: object
+  24:../source/sgl_widget.c ****  * @param  evt: event parameter
+  25:../source/sgl_widget.c ****  * @retval none
+  26:../source/sgl_widget.c ****  */
+  27:../source/sgl_widget.c **** static void sgl_rectangle_construct_cb(sgl_surf_t *surf, sgl_obj_t* obj, sgl_area_t *area)
+  28:../source/sgl_widget.c **** {
+  14              		.loc 1 28 1 view -0
+  15              		.cfi_startproc
+  16              		.loc 1 28 1 is_stmt 0 view .LVU1
+  17              		.seh_endprologue
+  29:../source/sgl_widget.c ****     sgl_rectangle_t *rect = (sgl_rectangle_t*)obj;
+  18              		.loc 1 29 5 is_stmt 1 view .LVU2
+  28:../source/sgl_widget.c ****     sgl_rectangle_t *rect = (sgl_rectangle_t*)obj;
+  19              		.loc 1 28 1 is_stmt 0 view .LVU3
+  20 0000 4889D0   		movq	%rdx, %rax
+  21              	.LVL1:
+  30:../source/sgl_widget.c ****     sgl_draw_rect(surf, area, &obj->coords, &rect->desc);
+  22              		.loc 1 30 5 is_stmt 1 view .LVU4
+  28:../source/sgl_widget.c ****     sgl_rectangle_t *rect = (sgl_rectangle_t*)obj;
+  23              		.loc 1 28 1 is_stmt 0 view .LVU5
+  24 0003 4C89C2   		movq	%r8, %rdx
+  25              	.LVL2:
+  26              		.loc 1 30 5 view .LVU6
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 2
+
+
+  27 0006 4C8D4830 		leaq	48(%rax), %r9
+  28 000a 4989C0   		movq	%rax, %r8
+  29              	.LVL3:
+  31:../source/sgl_widget.c **** }
+  30              		.loc 1 31 1 view .LVU7
+  30:../source/sgl_widget.c ****     sgl_draw_rect(surf, area, &obj->coords, &rect->desc);
+  31              		.loc 1 30 5 view .LVU8
+  32 000d E9000000 		jmp	sgl_draw_rect
+  32      00
+  33              	.LVL4:
+  30:../source/sgl_widget.c ****     sgl_draw_rect(surf, area, &obj->coords, &rect->desc);
+  34              		.loc 1 30 5 view .LVU9
+  35              		.cfi_endproc
+  36              	.LFE93:
+  37              		.seh_endproc
+  38 0012 90909090 		.section .rdata,"dr"
+  38      90909090 
+  38      90909090 
+  38      9090
+  39              	.LC1:
+  40 0000 2E2E2F73 		.ascii "../source/sgl_widget.c\0"
+  40      6F757263 
+  40      652F7367 
+  40      6C5F7769 
+  40      64676574 
+  41              		.section	.text$sgl_label_construct_cb,"x"
+  42              		.p2align 4
+  44              		.seh_proc	sgl_label_construct_cb
+  45              	sgl_label_construct_cb:
+  46              	.LVL5:
+  47              	.LFB95:
+  32:../source/sgl_widget.c **** 
+  33:../source/sgl_widget.c **** 
+  34:../source/sgl_widget.c **** /**
+  35:../source/sgl_widget.c ****  * @brief  create a rectangle
+  36:../source/sgl_widget.c ****  * @param  parent: parent object
+  37:../source/sgl_widget.c ****  * @retval rectangle object
+  38:../source/sgl_widget.c ****  */
+  39:../source/sgl_widget.c **** sgl_obj_t* sgl_rect_create(sgl_obj_t* parent)
+  40:../source/sgl_widget.c **** {
+  41:../source/sgl_widget.c ****     sgl_rectangle_t *rect = sgl_malloc(sizeof(sgl_rectangle_t));
+  42:../source/sgl_widget.c ****     if(rect == NULL) {
+  43:../source/sgl_widget.c ****         SGL_LOG_ERROR("sgl_rect_create: malloc failed");
+  44:../source/sgl_widget.c ****         return NULL;
+  45:../source/sgl_widget.c ****     }
+  46:../source/sgl_widget.c **** 
+  47:../source/sgl_widget.c ****     /* set object all member to zero */
+  48:../source/sgl_widget.c ****     memset(rect, 0, sizeof(sgl_rectangle_t));
+  49:../source/sgl_widget.c **** 
+  50:../source/sgl_widget.c ****     sgl_obj_t *obj = &rect->obj;
+  51:../source/sgl_widget.c ****     sgl_obj_init(&rect->obj, parent);
+  52:../source/sgl_widget.c **** 
+  53:../source/sgl_widget.c ****     obj->construct_fn = sgl_rectangle_construct_cb;
+  54:../source/sgl_widget.c **** 
+  55:../source/sgl_widget.c ****     rect->desc.alpha = SGL_THEME_ALPHA;
+  56:../source/sgl_widget.c ****     rect->desc.color = SGL_THEME_COLOR;
+  57:../source/sgl_widget.c ****     rect->desc.border = SGL_THEME_BORDER_WIDTH;
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 3
+
+
+  58:../source/sgl_widget.c ****     rect->desc.border_color = SGL_THEME_BORDER_COLOR;
+  59:../source/sgl_widget.c ****     rect->desc.pixmap = NULL;
+  60:../source/sgl_widget.c **** 
+  61:../source/sgl_widget.c ****     return obj;
+  62:../source/sgl_widget.c **** }
+  63:../source/sgl_widget.c **** 
+  64:../source/sgl_widget.c **** 
+  65:../source/sgl_widget.c **** /**
+  66:../source/sgl_widget.c ****  * @brief construct the label object
+  67:../source/sgl_widget.c ****  * @param surf pointer to the surface
+  68:../source/sgl_widget.c ****  * @param obj pointer to the label object
+  69:../source/sgl_widget.c ****  * @param evt pointer to the event
+  70:../source/sgl_widget.c ****  * @return none
+  71:../source/sgl_widget.c ****  */
+  72:../source/sgl_widget.c **** static void sgl_label_construct_cb(sgl_surf_t *surf, sgl_obj_t* obj, sgl_area_t *area)
+  73:../source/sgl_widget.c **** {
+  48              		.loc 1 73 1 is_stmt 1 view -0
+  49              		.cfi_startproc
+  50              		.loc 1 73 1 is_stmt 0 view .LVU11
+  51 0000 57       		pushq	%rdi
+  52              		.seh_pushreg	%rdi
+  53              		.cfi_def_cfa_offset 16
+  54              		.cfi_offset 5, -16
+  55 0001 56       		pushq	%rsi
+  56              		.seh_pushreg	%rsi
+  57              		.cfi_def_cfa_offset 24
+  58              		.cfi_offset 4, -24
+  59 0002 53       		pushq	%rbx
+  60              		.seh_pushreg	%rbx
+  61              		.cfi_def_cfa_offset 32
+  62              		.cfi_offset 3, -32
+  63 0003 4883EC40 		subq	$64, %rsp
+  64              		.seh_stackalloc	64
+  65              		.cfi_def_cfa_offset 96
+  66              		.seh_endprologue
+  74:../source/sgl_widget.c ****     sgl_label_t *label = (sgl_label_t*)obj;
+  67              		.loc 1 74 5 is_stmt 1 view .LVU12
+  68              	.LVL6:
+  75:../source/sgl_widget.c ****     sgl_pos_t align_pos;
+  69              		.loc 1 75 5 view .LVU13
+  76:../source/sgl_widget.c **** 
+  77:../source/sgl_widget.c ****     SGL_ASSERT(label->font != NULL);
+  70              		.loc 1 77 5 view .LVU14
+  71              		.loc 1 77 5 view .LVU15
+  72 0007 48837A38 		cmpq	$0, 56(%rdx)
+  72      00
+  73:../source/sgl_widget.c ****     sgl_label_t *label = (sgl_label_t*)obj;
+  73              		.loc 1 73 1 is_stmt 0 view .LVU16
+  74 000c 4889CE   		movq	%rcx, %rsi
+  75 000f 4889D3   		movq	%rdx, %rbx
+  76 0012 4C89C7   		movq	%r8, %rdi
+  77              		.loc 1 77 5 view .LVU17
+  78 0015 0F84D500 		je	.L10
+  78      0000
+  79              	.LVL7:
+  80              	.L4:
+  81              		.loc 1 77 5 is_stmt 1 discriminator 3 view .LVU18
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 4
+
+
+  78:../source/sgl_widget.c **** 
+  79:../source/sgl_widget.c ****     if (label->bg_flag) {
+  82              		.loc 1 79 5 view .LVU19
+  83              		.loc 1 79 9 is_stmt 0 view .LVU20
+  84 001b 0FB64345 		movzbl	69(%rbx), %eax
+  85              		.loc 1 79 8 view .LVU21
+  86 001f A810     		testb	$16, %al
+  87 0021 7431     		je	.L5
+  80:../source/sgl_widget.c ****         if (obj->radius > 0) {
+  88              		.loc 1 80 9 is_stmt 1 view .LVU22
+  89              		.loc 1 80 16 is_stmt 0 view .LVU23
+  90 0023 440FB64B 		movzbl	42(%rbx), %r9d
+  90      2A
+  81:../source/sgl_widget.c ****             sgl_draw_fill_round_rect(surf, area, &obj->coords, obj->radius, label->bg_color, label-
+  91              		.loc 1 81 13 view .LVU24
+  92 0028 0FB64344 		movzbl	68(%rbx), %eax
+  80:../source/sgl_widget.c ****         if (obj->radius > 0) {
+  93              		.loc 1 80 12 view .LVU25
+  94 002c 4584C9   		testb	%r9b, %r9b
+  95 002f 0F849300 		je	.L6
+  95      0000
+  96              		.loc 1 81 13 is_stmt 1 view .LVU26
+  97 0035 89442428 		movl	%eax, 40(%rsp)
+  98 0039 0FB74342 		movzwl	66(%rbx), %eax
+  99 003d 4989D8   		movq	%rbx, %r8
+ 100 0040 4889FA   		movq	%rdi, %rdx
+ 101 0043 4889F1   		movq	%rsi, %rcx
+ 102 0046 66894424 		movw	%ax, 32(%rsp)
+ 102      20
+ 103 004b E8000000 		call	sgl_draw_fill_round_rect
+ 103      00
+ 104              	.LVL8:
+ 105 0050 0FB64345 		movzbl	69(%rbx), %eax
+ 106              	.L5:
+  82:../source/sgl_widget.c ****         }
+  83:../source/sgl_widget.c ****         else {
+  84:../source/sgl_widget.c ****             sgl_draw_fill_rect(surf, area, &obj->coords, label->bg_color, label->alpha);
+  85:../source/sgl_widget.c ****         }
+  86:../source/sgl_widget.c ****     }
+  87:../source/sgl_widget.c **** 
+  88:../source/sgl_widget.c ****     align_pos = sgl_get_text_pos(&obj->coords, label->font, label->text, 0, (sgl_align_type_t)label
+ 107              		.loc 1 88 5 view .LVU27
+ 108              		.loc 1 88 17 is_stmt 0 view .LVU28
+ 109 0054 83E00F   		andl	$15, %eax
+ 110 0057 488B5338 		movq	56(%rbx), %rdx
+ 111 005b 4531C9   		xorl	%r9d, %r9d
+ 112 005e 4889D9   		movq	%rbx, %rcx
+ 113 0061 89442420 		movl	%eax, 32(%rsp)
+ 114 0065 4C8B4330 		movq	48(%rbx), %r8
+ 115 0069 E8000000 		call	sgl_get_text_pos
+ 115      00
+ 116              	.LVL9:
+  89:../source/sgl_widget.c **** 
+  90:../source/sgl_widget.c ****     sgl_draw_string(surf, area, align_pos.x + label->offset_x, align_pos.y + label->offset_y, label
+ 117              		.loc 1 90 5 is_stmt 1 view .LVU29
+ 118              		.loc 1 90 52 is_stmt 0 view .LVU30
+ 119 006e 66440FBE 		movsbw	70(%rbx), %r8w
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 5
+
+
+ 119      4346
+ 120              		.loc 1 90 5 view .LVU31
+ 121 0074 4889F1   		movq	%rsi, %rcx
+ 122              	.LVL10:
+ 123              		.loc 1 90 73 view .LVU32
+ 124 0077 89C2     		movl	%eax, %edx
+ 125              		.loc 1 90 83 view .LVU33
+ 126 0079 66440FBE 		movsbw	71(%rbx), %r9w
+ 126      4B47
+ 127              		.loc 1 90 73 view .LVU34
+ 128 007f C1FA10   		sarl	$16, %edx
+ 129              		.loc 1 90 45 view .LVU35
+ 130 0082 4101C0   		addl	%eax, %r8d
+ 131              		.loc 1 90 5 view .LVU36
+ 132 0085 488B4338 		movq	56(%rbx), %rax
+ 133              	.LVL11:
+ 134              		.loc 1 90 76 view .LVU37
+ 135 0089 4101D1   		addl	%edx, %r9d
+ 136              		.loc 1 90 5 view .LVU38
+ 137 008c 450FBFC0 		movswl	%r8w, %r8d
+ 138 0090 4889FA   		movq	%rdi, %rdx
+ 139 0093 450FBFC9 		movswl	%r9w, %r9d
+ 140 0097 48894424 		movq	%rax, 56(%rsp)
+ 140      38
+ 141 009c 0FB64344 		movzbl	68(%rbx), %eax
+ 142 00a0 89442430 		movl	%eax, 48(%rsp)
+ 143 00a4 0FB74340 		movzwl	64(%rbx), %eax
+ 144 00a8 66894424 		movw	%ax, 40(%rsp)
+ 144      28
+ 145 00ad 488B4330 		movq	48(%rbx), %rax
+ 146 00b1 48894424 		movq	%rax, 32(%rsp)
+ 146      20
+ 147 00b6 E8000000 		call	sgl_draw_string
+ 147      00
+ 148 00bb 90       		nop
+ 149              	.LVL12:
+  91:../source/sgl_widget.c **** }
+ 150              		.loc 1 91 1 view .LVU39
+ 151 00bc 4883C440 		addq	$64, %rsp
+ 152              		.cfi_remember_state
+ 153              		.cfi_def_cfa_offset 32
+ 154 00c0 5B       		popq	%rbx
+ 155              		.cfi_restore 3
+ 156              		.cfi_def_cfa_offset 24
+ 157              	.LVL13:
+ 158              		.loc 1 91 1 view .LVU40
+ 159 00c1 5E       		popq	%rsi
+ 160              		.cfi_restore 4
+ 161              		.cfi_def_cfa_offset 16
+ 162              	.LVL14:
+ 163              		.loc 1 91 1 view .LVU41
+ 164 00c2 5F       		popq	%rdi
+ 165              		.cfi_restore 5
+ 166              		.cfi_def_cfa_offset 8
+ 167              	.LVL15:
+ 168              		.loc 1 91 1 view .LVU42
+ 169 00c3 C3       		ret
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 6
+
+
+ 170              	.LVL16:
+ 171              		.p2align 4,,10
+ 172 00c4 0F1F4000 		.p2align 3
+ 173              	.L6:
+ 174              		.cfi_restore_state
+  84:../source/sgl_widget.c ****         }
+ 175              		.loc 1 84 13 is_stmt 1 view .LVU43
+ 176 00c8 89442420 		movl	%eax, 32(%rsp)
+ 177 00cc 440FB74B 		movzwl	66(%rbx), %r9d
+ 177      42
+ 178 00d1 4989D8   		movq	%rbx, %r8
+ 179 00d4 4889FA   		movq	%rdi, %rdx
+ 180 00d7 4889F1   		movq	%rsi, %rcx
+ 181 00da E8000000 		call	sgl_draw_fill_rect
+ 181      00
+ 182              	.LVL17:
+ 183 00df 0FB64345 		movzbl	69(%rbx), %eax
+ 184 00e3 E96CFFFF 		jmp	.L5
+ 184      FF
+ 185              	.LVL18:
+ 186 00e8 0F1F8400 		.p2align 4,,10
+ 186      00000000 
+ 187              		.p2align 3
+ 188              	.L10:
+  77:../source/sgl_widget.c **** 
+ 189              		.loc 1 77 5 discriminator 1 view .LVU44
+ 190 00f0 488D1500 		leaq	__FUNCTION__.0(%rip), %rdx
+ 190      000000
+ 191              	.LVL19:
+  77:../source/sgl_widget.c **** 
+ 192              		.loc 1 77 5 is_stmt 0 discriminator 1 view .LVU45
+ 193 00f7 41B84D00 		movl	$77, %r8d
+ 193      0000
+ 194 00fd 488D0D00 		leaq	.LC1(%rip), %rcx
+ 194      000000
+ 195              	.LVL20:
+  77:../source/sgl_widget.c **** 
+ 196              		.loc 1 77 5 discriminator 1 view .LVU46
+ 197 0104 E8000000 		call	sgl_assert_handler
+ 197      00
+ 198              	.LVL21:
+ 199 0109 E90DFFFF 		jmp	.L4
+ 199      FF
+ 200              		.cfi_endproc
+ 201              	.LFE95:
+ 202              		.seh_endproc
+ 203 010e 9090     		.section .rdata,"dr"
+ 204 0017 00       		.align 8
+ 205              	.LC2:
+ 206 0018 73676C5F 		.ascii "sgl_rect_create: malloc failed\0"
+ 206      72656374 
+ 206      5F637265 
+ 206      6174653A 
+ 206      206D616C 
+ 207              	.LC3:
+ 208 0037 5B455252 		.ascii "[ERROR] \0"
+ 208      4F525D20 
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 7
+
+
+ 208      00
+ 209              		.data
+ 210              		.align 2
+ 211              	.LC0:
+ 212 0000 FF       		.byte	255
+ 213 0001 FF       		.byte	255
+ 214 0002 00000000 		.section	.text$sgl_rect_create,"x"
+ 214      00000000 
+ 214      00000000 
+ 214      0000
+ 215              		.p2align 4
+ 216              		.globl	sgl_rect_create
+ 218              		.seh_proc	sgl_rect_create
+ 219              	sgl_rect_create:
+ 220              	.LVL22:
+ 221              	.LFB94:
+  40:../source/sgl_widget.c ****     sgl_rectangle_t *rect = sgl_malloc(sizeof(sgl_rectangle_t));
+ 222              		.loc 1 40 1 is_stmt 1 view -0
+ 223              		.cfi_startproc
+  40:../source/sgl_widget.c ****     sgl_rectangle_t *rect = sgl_malloc(sizeof(sgl_rectangle_t));
+ 224              		.loc 1 40 1 is_stmt 0 view .LVU48
+ 225 0000 56       		pushq	%rsi
+ 226              		.seh_pushreg	%rsi
+ 227              		.cfi_def_cfa_offset 16
+ 228              		.cfi_offset 4, -16
+ 229 0001 53       		pushq	%rbx
+ 230              		.seh_pushreg	%rbx
+ 231              		.cfi_def_cfa_offset 24
+ 232              		.cfi_offset 3, -24
+ 233 0002 4883EC28 		subq	$40, %rsp
+ 234              		.seh_stackalloc	40
+ 235              		.cfi_def_cfa_offset 64
+ 236              		.seh_endprologue
+  41:../source/sgl_widget.c ****     if(rect == NULL) {
+ 237              		.loc 1 41 5 is_stmt 1 view .LVU49
+  40:../source/sgl_widget.c ****     sgl_rectangle_t *rect = sgl_malloc(sizeof(sgl_rectangle_t));
+ 238              		.loc 1 40 1 is_stmt 0 view .LVU50
+ 239 0006 4889CE   		movq	%rcx, %rsi
+  41:../source/sgl_widget.c ****     if(rect == NULL) {
+ 240              		.loc 1 41 29 view .LVU51
+ 241 0009 B9400000 		movl	$64, %ecx
+ 241      00
+ 242              	.LVL23:
+  41:../source/sgl_widget.c ****     if(rect == NULL) {
+ 243              		.loc 1 41 29 view .LVU52
+ 244 000e E8000000 		call	sgl_malloc
+ 244      00
+ 245              	.LVL24:
+  42:../source/sgl_widget.c ****         SGL_LOG_ERROR("sgl_rect_create: malloc failed");
+ 246              		.loc 1 42 7 view .LVU53
+ 247 0013 4885C0   		testq	%rax, %rax
+  41:../source/sgl_widget.c ****     if(rect == NULL) {
+ 248              		.loc 1 41 29 view .LVU54
+ 249 0016 4889C3   		movq	%rax, %rbx
+ 250              	.LVL25:
+  42:../source/sgl_widget.c ****         SGL_LOG_ERROR("sgl_rect_create: malloc failed");
+ 251              		.loc 1 42 5 is_stmt 1 view .LVU55
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 8
+
+
+  42:../source/sgl_widget.c ****         SGL_LOG_ERROR("sgl_rect_create: malloc failed");
+ 252              		.loc 1 42 7 is_stmt 0 view .LVU56
+ 253 0019 744D     		je	.L14
+  48:../source/sgl_widget.c **** 
+ 254              		.loc 1 48 5 is_stmt 1 view .LVU57
+ 255 001b 41B84000 		movl	$64, %r8d
+ 255      0000
+ 256 0021 31D2     		xorl	%edx, %edx
+ 257 0023 4889C1   		movq	%rax, %rcx
+ 258 0026 E8000000 		call	memset
+ 258      00
+ 259              	.LVL26:
+  50:../source/sgl_widget.c ****     sgl_obj_init(&rect->obj, parent);
+ 260              		.loc 1 50 5 view .LVU58
+  51:../source/sgl_widget.c **** 
+ 261              		.loc 1 51 5 view .LVU59
+ 262 002b 4889F2   		movq	%rsi, %rdx
+ 263 002e 4889D9   		movq	%rbx, %rcx
+ 264 0031 E8000000 		call	sgl_obj_init
+ 264      00
+ 265              	.LVL27:
+  53:../source/sgl_widget.c **** 
+ 266              		.loc 1 53 5 view .LVU60
+  53:../source/sgl_widget.c **** 
+ 267              		.loc 1 53 23 is_stmt 0 view .LVU61
+ 268 0036 488D0500 		leaq	sgl_rectangle_construct_cb(%rip), %rax
+ 268      000000
+  55:../source/sgl_widget.c ****     rect->desc.color = SGL_THEME_COLOR;
+ 269              		.loc 1 55 22 view .LVU62
+ 270 003d C74334FF 		movl	$767, 52(%rbx)
+ 270      020000
+  53:../source/sgl_widget.c **** 
+ 271              		.loc 1 53 23 view .LVU63
+ 272 0044 48894308 		movq	%rax, 8(%rbx)
+  55:../source/sgl_widget.c ****     rect->desc.color = SGL_THEME_COLOR;
+ 273              		.loc 1 55 5 is_stmt 1 view .LVU64
+  56:../source/sgl_widget.c ****     rect->desc.border = SGL_THEME_BORDER_WIDTH;
+ 274              		.loc 1 56 5 view .LVU65
+  56:../source/sgl_widget.c ****     rect->desc.border = SGL_THEME_BORDER_WIDTH;
+ 275              		.loc 1 56 22 is_stmt 0 view .LVU66
+ 276 0048 0FB70500 		movzwl	.LC0(%rip), %eax
+ 276      000000
+  59:../source/sgl_widget.c **** 
+ 277              		.loc 1 59 23 view .LVU67
+ 278 004f 48C74338 		movq	$0, 56(%rbx)
+ 278      00000000 
+  56:../source/sgl_widget.c ****     rect->desc.border = SGL_THEME_BORDER_WIDTH;
+ 279              		.loc 1 56 22 view .LVU68
+ 280 0057 66894330 		movw	%ax, 48(%rbx)
+  57:../source/sgl_widget.c ****     rect->desc.border_color = SGL_THEME_BORDER_COLOR;
+ 281              		.loc 1 57 5 is_stmt 1 view .LVU69
+  58:../source/sgl_widget.c ****     rect->desc.pixmap = NULL;
+ 282              		.loc 1 58 5 view .LVU70
+  59:../source/sgl_widget.c **** 
+ 283              		.loc 1 59 5 view .LVU71
+  61:../source/sgl_widget.c **** }
+ 284              		.loc 1 61 5 view .LVU72
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 9
+
+
+ 285              	.LVL28:
+ 286              	.L11:
+  62:../source/sgl_widget.c **** 
+ 287              		.loc 1 62 1 is_stmt 0 view .LVU73
+ 288 005b 4889D8   		movq	%rbx, %rax
+ 289 005e 4883C428 		addq	$40, %rsp
+ 290              		.cfi_remember_state
+ 291              		.cfi_def_cfa_offset 24
+ 292 0062 5B       		popq	%rbx
+ 293              		.cfi_restore 3
+ 294              		.cfi_def_cfa_offset 16
+ 295              	.LVL29:
+  62:../source/sgl_widget.c **** 
+ 296              		.loc 1 62 1 view .LVU74
+ 297 0063 5E       		popq	%rsi
+ 298              		.cfi_restore 4
+ 299              		.cfi_def_cfa_offset 8
+ 300              	.LVL30:
+  62:../source/sgl_widget.c **** 
+ 301              		.loc 1 62 1 view .LVU75
+ 302 0064 C3       		ret
+ 303              	.LVL31:
+ 304              		.p2align 4,,10
+ 305 0065 0F1F00   		.p2align 3
+ 306              	.L14:
+ 307              		.cfi_restore_state
+  43:../source/sgl_widget.c ****         return NULL;
+ 308              		.loc 1 43 9 is_stmt 1 view .LVU76
+ 309 0068 488D1518 		leaq	.LC2(%rip), %rdx
+ 309      000000
+ 310 006f 488D0D37 		leaq	.LC3(%rip), %rcx
+ 310      000000
+ 311 0076 E8000000 		call	sgl_log
+ 311      00
+ 312              	.LVL32:
+  44:../source/sgl_widget.c ****     }
+ 313              		.loc 1 44 9 view .LVU77
+  44:../source/sgl_widget.c ****     }
+ 314              		.loc 1 44 16 is_stmt 0 view .LVU78
+ 315 007b EBDE     		jmp	.L11
+ 316              		.cfi_endproc
+ 317              	.LFE94:
+ 318              		.seh_endproc
+ 319 007d 909090   		.section .rdata,"dr"
+ 320              		.align 8
+ 321              	.LC4:
+ 322 0040 73676C5F 		.ascii "sgl_label_create: malloc failed\0"
+ 322      6C616265 
+ 322      6C5F6372 
+ 322      65617465 
+ 322      3A206D61 
+ 323              	.LC5:
+ 324 0060 00       		.ascii "\0"
+ 325 0061 00000000 		.section	.text$sgl_label_create,"x"
+ 325      00000000 
+ 325      00000000 
+ 325      000000
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 10
+
+
+ 326              		.p2align 4
+ 327              		.globl	sgl_label_create
+ 329              		.seh_proc	sgl_label_create
+ 330              	sgl_label_create:
+ 331              	.LVL33:
+ 332              	.LFB96:
+  92:../source/sgl_widget.c **** 
+  93:../source/sgl_widget.c **** 
+  94:../source/sgl_widget.c **** /**
+  95:../source/sgl_widget.c ****  * @brief create a label object
+  96:../source/sgl_widget.c ****  * @param parent parent of the label
+  97:../source/sgl_widget.c ****  * @return pointer to the label object
+  98:../source/sgl_widget.c ****  */
+  99:../source/sgl_widget.c **** sgl_obj_t* sgl_label_create(sgl_obj_t* parent)
+ 100:../source/sgl_widget.c **** {
+ 333              		.loc 1 100 1 is_stmt 1 view -0
+ 334              		.cfi_startproc
+ 335              		.loc 1 100 1 is_stmt 0 view .LVU80
+ 336 0000 56       		pushq	%rsi
+ 337              		.seh_pushreg	%rsi
+ 338              		.cfi_def_cfa_offset 16
+ 339              		.cfi_offset 4, -16
+ 340 0001 53       		pushq	%rbx
+ 341              		.seh_pushreg	%rbx
+ 342              		.cfi_def_cfa_offset 24
+ 343              		.cfi_offset 3, -24
+ 344 0002 4883EC28 		subq	$40, %rsp
+ 345              		.seh_stackalloc	40
+ 346              		.cfi_def_cfa_offset 64
+ 347              		.seh_endprologue
+ 101:../source/sgl_widget.c ****     sgl_label_t *label = sgl_malloc(sizeof(sgl_label_t));
+ 348              		.loc 1 101 5 is_stmt 1 view .LVU81
+ 100:../source/sgl_widget.c ****     sgl_label_t *label = sgl_malloc(sizeof(sgl_label_t));
+ 349              		.loc 1 100 1 is_stmt 0 view .LVU82
+ 350 0006 4889CE   		movq	%rcx, %rsi
+ 351              		.loc 1 101 26 view .LVU83
+ 352 0009 B9480000 		movl	$72, %ecx
+ 352      00
+ 353              	.LVL34:
+ 354              		.loc 1 101 26 view .LVU84
+ 355 000e E8000000 		call	sgl_malloc
+ 355      00
+ 356              	.LVL35:
+ 102:../source/sgl_widget.c ****     if(label == NULL) {
+ 357              		.loc 1 102 7 view .LVU85
+ 358 0013 4885C0   		testq	%rax, %rax
+ 101:../source/sgl_widget.c ****     sgl_label_t *label = sgl_malloc(sizeof(sgl_label_t));
+ 359              		.loc 1 101 26 view .LVU86
+ 360 0016 4889C3   		movq	%rax, %rbx
+ 361              	.LVL36:
+ 362              		.loc 1 102 5 is_stmt 1 view .LVU87
+ 363              		.loc 1 102 7 is_stmt 0 view .LVU88
+ 364 0019 7455     		je	.L18
+ 103:../source/sgl_widget.c ****         SGL_LOG_ERROR("sgl_label_create: malloc failed");
+ 104:../source/sgl_widget.c ****         return NULL;
+ 105:../source/sgl_widget.c ****     }
+ 106:../source/sgl_widget.c **** 
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 11
+
+
+ 107:../source/sgl_widget.c ****     /* set object all member to zero */
+ 108:../source/sgl_widget.c ****     memset(label, 0, sizeof(sgl_label_t));
+ 365              		.loc 1 108 5 is_stmt 1 view .LVU89
+ 366 001b 41B84800 		movl	$72, %r8d
+ 366      0000
+ 367 0021 31D2     		xorl	%edx, %edx
+ 368 0023 4889C1   		movq	%rax, %rcx
+ 369 0026 E8000000 		call	memset
+ 369      00
+ 370              	.LVL37:
+ 109:../source/sgl_widget.c **** 
+ 110:../source/sgl_widget.c ****     sgl_obj_t *obj = &label->obj;
+ 371              		.loc 1 110 5 view .LVU90
+ 111:../source/sgl_widget.c ****     sgl_obj_init(&label->obj, parent);
+ 372              		.loc 1 111 5 view .LVU91
+ 373 002b 4889F2   		movq	%rsi, %rdx
+ 374 002e 4889D9   		movq	%rbx, %rcx
+ 375 0031 E8000000 		call	sgl_obj_init
+ 375      00
+ 376              	.LVL38:
+ 112:../source/sgl_widget.c ****     obj->construct_fn = sgl_label_construct_cb;
+ 377              		.loc 1 112 5 view .LVU92
+ 378              		.loc 1 112 23 is_stmt 0 view .LVU93
+ 379 0036 488D0500 		leaq	sgl_label_construct_cb(%rip), %rax
+ 379      000000
+ 380 003d 48894308 		movq	%rax, 8(%rbx)
+ 113:../source/sgl_widget.c **** 
+ 114:../source/sgl_widget.c ****     label->alpha = SGL_ALPHA_MAX;
+ 381              		.loc 1 114 5 is_stmt 1 view .LVU94
+ 115:../source/sgl_widget.c ****     label->bg_flag = 0;
+ 382              		.loc 1 115 5 view .LVU95
+ 114:../source/sgl_widget.c ****     label->bg_flag = 0;
+ 383              		.loc 1 114 18 is_stmt 0 view .LVU96
+ 384 0041 0FB74344 		movzwl	68(%rbx), %eax
+ 385 0045 662500EF 		andw	$-4352, %ax
+ 386 0049 0CFF     		orb	$-1, %al
+ 387 004b 66894344 		movw	%ax, 68(%rbx)
+ 116:../source/sgl_widget.c ****     label->color = SGL_THEME_TEXT_COLOR;
+ 388              		.loc 1 116 5 is_stmt 1 view .LVU97
+ 389              		.loc 1 116 18 is_stmt 0 view .LVU98
+ 390 004f 31C0     		xorl	%eax, %eax
+ 391 0051 66894340 		movw	%ax, 64(%rbx)
+ 117:../source/sgl_widget.c ****     label->text = "";
+ 392              		.loc 1 117 5 is_stmt 1 view .LVU99
+ 393              		.loc 1 117 17 is_stmt 0 view .LVU100
+ 394 0055 488D0560 		leaq	.LC5(%rip), %rax
+ 394      000000
+ 395 005c 48894330 		movq	%rax, 48(%rbx)
+ 118:../source/sgl_widget.c **** 
+ 119:../source/sgl_widget.c ****     return obj;
+ 396              		.loc 1 119 5 is_stmt 1 view .LVU101
+ 397              	.LVL39:
+ 398              	.L15:
+ 120:../source/sgl_widget.c **** }
+ 399              		.loc 1 120 1 is_stmt 0 view .LVU102
+ 400 0060 4889D8   		movq	%rbx, %rax
+ 401 0063 4883C428 		addq	$40, %rsp
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 12
+
+
+ 402              		.cfi_remember_state
+ 403              		.cfi_def_cfa_offset 24
+ 404 0067 5B       		popq	%rbx
+ 405              		.cfi_restore 3
+ 406              		.cfi_def_cfa_offset 16
+ 407              	.LVL40:
+ 408              		.loc 1 120 1 view .LVU103
+ 409 0068 5E       		popq	%rsi
+ 410              		.cfi_restore 4
+ 411              		.cfi_def_cfa_offset 8
+ 412              	.LVL41:
+ 413              		.loc 1 120 1 view .LVU104
+ 414 0069 C3       		ret
+ 415              	.LVL42:
+ 416 006a 660F1F44 		.p2align 4,,10
+ 416      0000
+ 417              		.p2align 3
+ 418              	.L18:
+ 419              		.cfi_restore_state
+ 103:../source/sgl_widget.c ****         return NULL;
+ 420              		.loc 1 103 9 is_stmt 1 view .LVU105
+ 421 0070 488D1540 		leaq	.LC4(%rip), %rdx
+ 421      000000
+ 422 0077 488D0D37 		leaq	.LC3(%rip), %rcx
+ 422      000000
+ 423 007e E8000000 		call	sgl_log
+ 423      00
+ 424              	.LVL43:
+ 104:../source/sgl_widget.c ****     }
+ 425              		.loc 1 104 9 view .LVU106
+ 104:../source/sgl_widget.c ****     }
+ 426              		.loc 1 104 16 is_stmt 0 view .LVU107
+ 427 0083 EBDB     		jmp	.L15
+ 428              		.cfi_endproc
+ 429              	.LFE96:
+ 430              		.seh_endproc
+ 431 0085 90909090 		.section	.rdata$__FUNCTION__.0,"dr"
+ 431      90909090 
+ 431      909090
+ 432              		.align 16
+ 433              	__FUNCTION__.0:
+ 434 0000 73676C5F 		.ascii "sgl_label_construct_cb\0"
+ 434      6C616265 
+ 434      6C5F636F 
+ 434      6E737472 
+ 434      7563745F 
+ 435 0017 00000000 		.text
+ 435      00000000 
+ 435      00
+ 436              	.Letext0:
+ 437              		.file 2 "C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint-gcc.h"
+ 438              		.file 3 "C:/mingw64/x86_64-w64-mingw32/include/corecrt.h"
+ 439              		.file 4 "../source/sgl_core.h"
+ 440              		.file 5 "../source/sgl_draw.h"
+ 441              		.file 6 "../source/sgl_widget.h"
+ 442              		.file 7 "C:/mingw64/x86_64-w64-mingw32/include/string.h"
+ 443              		.file 8 "../source/sgl_mm.h"
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 13
+
+
+ 444              		.section	.debug_info,"dr"
+ 445              	.Ldebug_info0:
+ 446 0000 D90F0000 		.long	0xfd9
+ 447 0004 0500     		.word	0x5
+ 448 0006 01       		.byte	0x1
+ 449 0007 08       		.byte	0x8
+ 450 0008 00000000 		.secrel32	.Ldebug_abbrev0
+ 451 000c 1C       		.uleb128 0x1c
+ 452 000d 474E5520 		.ascii "GNU C99 13.2.0 -mtune=core2 -march=nocona -g -O2 -std=c99 -ffunction-sections -fdata-secti
+ 452      43393920 
+ 452      31332E32 
+ 452      2E30202D 
+ 452      6D74756E 
+ 453 007a 0C       		.byte	0xc
+ 454 007b 00000000 		.secrel32	.LASF0
+ 455 007f 17000000 		.secrel32	.LASF1
+ 456 0083 0C000000 		.secrel32	.LLRL15
+ 457 0087 00000000 		.quad	0
+ 457      00000000 
+ 458 008f 00000000 		.secrel32	.Ldebug_line0
+ 459 0093 08       		.uleb128 0x8
+ 460 0094 696E7438 		.ascii "int8_t\0"
+ 460      5F7400
+ 461 009b 02       		.byte	0x2
+ 462 009c 22       		.byte	0x22
+ 463 009d 17       		.byte	0x17
+ 464 009e A7000000 		.long	0xa7
+ 465 00a2 07       		.uleb128 0x7
+ 466 00a3 93000000 		.long	0x93
+ 467 00a7 09       		.uleb128 0x9
+ 468 00a8 01       		.byte	0x1
+ 469 00a9 06       		.byte	0x6
+ 470 00aa 7369676E 		.ascii "signed char\0"
+ 470      65642063 
+ 470      68617200 
+ 471 00b6 08       		.uleb128 0x8
+ 472 00b7 696E7431 		.ascii "int16_t\0"
+ 472      365F7400 
+ 473 00bf 02       		.byte	0x2
+ 474 00c0 25       		.byte	0x25
+ 475 00c1 18       		.byte	0x18
+ 476 00c2 CB000000 		.long	0xcb
+ 477 00c6 07       		.uleb128 0x7
+ 478 00c7 B6000000 		.long	0xb6
+ 479 00cb 09       		.uleb128 0x9
+ 480 00cc 02       		.byte	0x2
+ 481 00cd 05       		.byte	0x5
+ 482 00ce 73686F72 		.ascii "short int\0"
+ 482      7420696E 
+ 482      7400
+ 483 00d8 09       		.uleb128 0x9
+ 484 00d9 04       		.byte	0x4
+ 485 00da 05       		.byte	0x5
+ 486 00db 696E7400 		.ascii "int\0"
+ 487 00df 09       		.uleb128 0x9
+ 488 00e0 08       		.byte	0x8
+ 489 00e1 05       		.byte	0x5
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 14
+
+
+ 490 00e2 6C6F6E67 		.ascii "long long int\0"
+ 490      206C6F6E 
+ 490      6720696E 
+ 490      7400
+ 491 00f0 08       		.uleb128 0x8
+ 492 00f1 75696E74 		.ascii "uint8_t\0"
+ 492      385F7400 
+ 493 00f9 02       		.byte	0x2
+ 494 00fa 2E       		.byte	0x2e
+ 495 00fb 18       		.byte	0x18
+ 496 00fc 05010000 		.long	0x105
+ 497 0100 07       		.uleb128 0x7
+ 498 0101 F0000000 		.long	0xf0
+ 499 0105 09       		.uleb128 0x9
+ 500 0106 01       		.byte	0x1
+ 501 0107 08       		.byte	0x8
+ 502 0108 756E7369 		.ascii "unsigned char\0"
+ 502      676E6564 
+ 502      20636861 
+ 502      7200
+ 503 0116 08       		.uleb128 0x8
+ 504 0117 75696E74 		.ascii "uint16_t\0"
+ 504      31365F74 
+ 504      00
+ 505 0120 02       		.byte	0x2
+ 506 0121 31       		.byte	0x31
+ 507 0122 19       		.byte	0x19
+ 508 0123 2C010000 		.long	0x12c
+ 509 0127 07       		.uleb128 0x7
+ 510 0128 16010000 		.long	0x116
+ 511 012c 09       		.uleb128 0x9
+ 512 012d 02       		.byte	0x2
+ 513 012e 07       		.byte	0x7
+ 514 012f 73686F72 		.ascii "short unsigned int\0"
+ 514      7420756E 
+ 514      7369676E 
+ 514      65642069 
+ 514      6E7400
+ 515 0142 08       		.uleb128 0x8
+ 516 0143 75696E74 		.ascii "uint32_t\0"
+ 516      33325F74 
+ 516      00
+ 517 014c 02       		.byte	0x2
+ 518 014d 34       		.byte	0x34
+ 519 014e 19       		.byte	0x19
+ 520 014f 58010000 		.long	0x158
+ 521 0153 07       		.uleb128 0x7
+ 522 0154 42010000 		.long	0x142
+ 523 0158 09       		.uleb128 0x9
+ 524 0159 04       		.byte	0x4
+ 525 015a 07       		.byte	0x7
+ 526 015b 756E7369 		.ascii "unsigned int\0"
+ 526      676E6564 
+ 526      20696E74 
+ 526      00
+ 527 0168 09       		.uleb128 0x9
+ 528 0169 08       		.byte	0x8
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 15
+
+
+ 529 016a 07       		.byte	0x7
+ 530 016b 6C6F6E67 		.ascii "long long unsigned int\0"
+ 530      206C6F6E 
+ 530      6720756E 
+ 530      7369676E 
+ 530      65642069 
+ 531 0182 09       		.uleb128 0x9
+ 532 0183 01       		.byte	0x1
+ 533 0184 06       		.byte	0x6
+ 534 0185 63686172 		.ascii "char\0"
+ 534      00
+ 535 018a 07       		.uleb128 0x7
+ 536 018b 82010000 		.long	0x182
+ 537 018f 08       		.uleb128 0x8
+ 538 0190 73697A65 		.ascii "size_t\0"
+ 538      5F7400
+ 539 0197 03       		.byte	0x3
+ 540 0198 23       		.byte	0x23
+ 541 0199 2C       		.byte	0x2c
+ 542 019a 68010000 		.long	0x168
+ 543 019e 07       		.uleb128 0x7
+ 544 019f 8F010000 		.long	0x18f
+ 545 01a3 09       		.uleb128 0x9
+ 546 01a4 04       		.byte	0x4
+ 547 01a5 05       		.byte	0x5
+ 548 01a6 6C6F6E67 		.ascii "long int\0"
+ 548      20696E74 
+ 548      00
+ 549 01af 1D       		.uleb128 0x1d
+ 550 01b0 02       		.byte	0x2
+ 551 01b1 04       		.byte	0x4
+ 552 01b2 E2       		.byte	0xe2
+ 553 01b3 05       		.byte	0x5
+ 554 01b4 E0010000 		.long	0x1e0
+ 555 01b8 11       		.uleb128 0x11
+ 556 01b9 626C7565 		.ascii "blue\0"
+ 556      00
+ 557 01be E3       		.byte	0xe3
+ 558 01bf 16010000 		.long	0x116
+ 559 01c3 05       		.byte	0x5
+ 560 01c4 00       		.byte	0
+ 561 01c5 11       		.uleb128 0x11
+ 562 01c6 67726565 		.ascii "green\0"
+ 562      6E00
+ 563 01cc E4       		.byte	0xe4
+ 564 01cd 16010000 		.long	0x116
+ 565 01d1 06       		.byte	0x6
+ 566 01d2 05       		.byte	0x5
+ 567 01d3 11       		.uleb128 0x11
+ 568 01d4 72656400 		.ascii "red\0"
+ 569 01d8 E5       		.byte	0xe5
+ 570 01d9 16010000 		.long	0x116
+ 571 01dd 05       		.byte	0x5
+ 572 01de 0B       		.byte	0xb
+ 573 01df 00       		.byte	0
+ 574 01e0 1E       		.uleb128 0x1e
+ 575 01e1 02       		.byte	0x2
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 16
+
+
+ 576 01e2 04       		.byte	0x4
+ 577 01e3 E1       		.byte	0xe1
+ 578 01e4 09       		.byte	0x9
+ 579 01e5 00020000 		.long	0x200
+ 580 01e9 14       		.uleb128 0x14
+ 581 01ea 636800   		.ascii "ch\0"
+ 582 01ed E6       		.byte	0xe6
+ 583 01ee 07       		.byte	0x7
+ 584 01ef AF010000 		.long	0x1af
+ 585 01f3 14       		.uleb128 0x14
+ 586 01f4 66756C6C 		.ascii "full\0"
+ 586      00
+ 587 01f9 E7       		.byte	0xe7
+ 588 01fa 0E       		.byte	0xe
+ 589 01fb 16010000 		.long	0x116
+ 590 01ff 00       		.byte	0
+ 591 0200 08       		.uleb128 0x8
+ 592 0201 73676C5F 		.ascii "sgl_color16_t\0"
+ 592      636F6C6F 
+ 592      7231365F 
+ 592      7400
+ 593 020f 04       		.byte	0x4
+ 594 0210 E8       		.byte	0xe8
+ 595 0211 03       		.byte	0x3
+ 596 0212 E0010000 		.long	0x1e0
+ 597 0216 1F       		.uleb128 0x1f
+ 598 0217 73676C5F 		.ascii "sgl_align_type\0"
+ 598      616C6967 
+ 598      6E5F7479 
+ 598      706500
+ 599 0226 07       		.byte	0x7
+ 600 0227 04       		.byte	0x4
+ 601 0228 58010000 		.long	0x158
+ 602 022c 04       		.byte	0x4
+ 603 022d EC01     		.word	0x1ec
+ 604 022f 0E       		.byte	0xe
+ 605 0230 85030000 		.long	0x385
+ 606 0234 04       		.uleb128 0x4
+ 607 0235 53474C5F 		.ascii "SGL_ALIGN_CENTER\0"
+ 607      414C4947 
+ 607      4E5F4345 
+ 607      4E544552 
+ 607      00
+ 608 0246 00       		.byte	0
+ 609 0247 04       		.uleb128 0x4
+ 610 0248 53474C5F 		.ascii "SGL_ALIGN_TOP_MID\0"
+ 610      414C4947 
+ 610      4E5F544F 
+ 610      505F4D49 
+ 610      4400
+ 611 025a 01       		.byte	0x1
+ 612 025b 04       		.uleb128 0x4
+ 613 025c 53474C5F 		.ascii "SGL_ALIGN_TOP_LEFT\0"
+ 613      414C4947 
+ 613      4E5F544F 
+ 613      505F4C45 
+ 613      465400
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 17
+
+
+ 614 026f 02       		.byte	0x2
+ 615 0270 04       		.uleb128 0x4
+ 616 0271 53474C5F 		.ascii "SGL_ALIGN_TOP_RIGHT\0"
+ 616      414C4947 
+ 616      4E5F544F 
+ 616      505F5249 
+ 616      47485400 
+ 617 0285 03       		.byte	0x3
+ 618 0286 04       		.uleb128 0x4
+ 619 0287 53474C5F 		.ascii "SGL_ALIGN_BOT_MID\0"
+ 619      414C4947 
+ 619      4E5F424F 
+ 619      545F4D49 
+ 619      4400
+ 620 0299 04       		.byte	0x4
+ 621 029a 04       		.uleb128 0x4
+ 622 029b 53474C5F 		.ascii "SGL_ALIGN_BOT_LEFT\0"
+ 622      414C4947 
+ 622      4E5F424F 
+ 622      545F4C45 
+ 622      465400
+ 623 02ae 05       		.byte	0x5
+ 624 02af 04       		.uleb128 0x4
+ 625 02b0 53474C5F 		.ascii "SGL_ALIGN_BOT_RIGHT\0"
+ 625      414C4947 
+ 625      4E5F424F 
+ 625      545F5249 
+ 625      47485400 
+ 626 02c4 06       		.byte	0x6
+ 627 02c5 04       		.uleb128 0x4
+ 628 02c6 53474C5F 		.ascii "SGL_ALIGN_LEFT_MID\0"
+ 628      414C4947 
+ 628      4E5F4C45 
+ 628      46545F4D 
+ 628      494400
+ 629 02d9 07       		.byte	0x7
+ 630 02da 04       		.uleb128 0x4
+ 631 02db 53474C5F 		.ascii "SGL_ALIGN_RIGHT_MID\0"
+ 631      414C4947 
+ 631      4E5F5249 
+ 631      4748545F 
+ 631      4D494400 
+ 632 02ef 08       		.byte	0x8
+ 633 02f0 04       		.uleb128 0x4
+ 634 02f1 53474C5F 		.ascii "SGL_ALIGN_VERT_LEFT\0"
+ 634      414C4947 
+ 634      4E5F5645 
+ 634      52545F4C 
+ 634      45465400 
+ 635 0305 09       		.byte	0x9
+ 636 0306 04       		.uleb128 0x4
+ 637 0307 53474C5F 		.ascii "SGL_ALIGN_VERT_RIGHT\0"
+ 637      414C4947 
+ 637      4E5F5645 
+ 637      52545F52 
+ 637      49474854 
+ 638 031c 0A       		.byte	0xa
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 18
+
+
+ 639 031d 04       		.uleb128 0x4
+ 640 031e 53474C5F 		.ascii "SGL_ALIGN_VERT_MID\0"
+ 640      414C4947 
+ 640      4E5F5645 
+ 640      52545F4D 
+ 640      494400
+ 641 0331 0B       		.byte	0xb
+ 642 0332 04       		.uleb128 0x4
+ 643 0333 53474C5F 		.ascii "SGL_ALIGN_HORIZ_TOP\0"
+ 643      414C4947 
+ 643      4E5F484F 
+ 643      52495A5F 
+ 643      544F5000 
+ 644 0347 0C       		.byte	0xc
+ 645 0348 04       		.uleb128 0x4
+ 646 0349 53474C5F 		.ascii "SGL_ALIGN_HORIZ_BOT\0"
+ 646      414C4947 
+ 646      4E5F484F 
+ 646      52495A5F 
+ 646      424F5400 
+ 647 035d 0D       		.byte	0xd
+ 648 035e 04       		.uleb128 0x4
+ 649 035f 53474C5F 		.ascii "SGL_ALIGN_HORIZ_MID\0"
+ 649      414C4947 
+ 649      4E5F484F 
+ 649      52495A5F 
+ 649      4D494400 
+ 650 0373 0E       		.byte	0xe
+ 651 0374 04       		.uleb128 0x4
+ 652 0375 53474C5F 		.ascii "SGL_ALIGN_NUM\0"
+ 652      414C4947 
+ 652      4E5F4E55 
+ 652      4D00
+ 653 0383 0F       		.byte	0xf
+ 654 0384 00       		.byte	0
+ 655 0385 0B       		.uleb128 0xb
+ 656 0386 73676C5F 		.ascii "sgl_align_type_t\0"
+ 656      616C6967 
+ 656      6E5F7479 
+ 656      70655F74 
+ 656      00
+ 657 0397 FE01     		.word	0x1fe
+ 658 0399 16020000 		.long	0x216
+ 659 039d 0C       		.uleb128 0xc
+ 660 039e 73676C5F 		.ascii "sgl_pos\0"
+ 660      706F7300 
+ 661 03a6 04       		.byte	0x4
+ 662 03a7 1602     		.word	0x216
+ 663 03a9 C4030000 		.long	0x3c4
+ 664 03ad 02       		.uleb128 0x2
+ 665 03ae 7800     		.ascii "x\0"
+ 666 03b0 1702     		.word	0x217
+ 667 03b2 0D       		.byte	0xd
+ 668 03b3 B6000000 		.long	0xb6
+ 669 03b7 00       		.byte	0
+ 670 03b8 02       		.uleb128 0x2
+ 671 03b9 7900     		.ascii "y\0"
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 19
+
+
+ 672 03bb 1802     		.word	0x218
+ 673 03bd 0D       		.byte	0xd
+ 674 03be B6000000 		.long	0xb6
+ 675 03c2 02       		.byte	0x2
+ 676 03c3 00       		.byte	0
+ 677 03c4 0B       		.uleb128 0xb
+ 678 03c5 73676C5F 		.ascii "sgl_pos_t\0"
+ 678      706F735F 
+ 678      7400
+ 679 03cf 1902     		.word	0x219
+ 680 03d1 9D030000 		.long	0x39d
+ 681 03d5 0C       		.uleb128 0xc
+ 682 03d6 73676C5F 		.ascii "sgl_area\0"
+ 682      61726561 
+ 682      00
+ 683 03df 08       		.byte	0x8
+ 684 03e0 3202     		.word	0x232
+ 685 03e2 17040000 		.long	0x417
+ 686 03e6 02       		.uleb128 0x2
+ 687 03e7 783100   		.ascii "x1\0"
+ 688 03ea 3302     		.word	0x233
+ 689 03ec 0D       		.byte	0xd
+ 690 03ed B6000000 		.long	0xb6
+ 691 03f1 00       		.byte	0
+ 692 03f2 02       		.uleb128 0x2
+ 693 03f3 793100   		.ascii "y1\0"
+ 694 03f6 3402     		.word	0x234
+ 695 03f8 0D       		.byte	0xd
+ 696 03f9 B6000000 		.long	0xb6
+ 697 03fd 02       		.byte	0x2
+ 698 03fe 02       		.uleb128 0x2
+ 699 03ff 783200   		.ascii "x2\0"
+ 700 0402 3502     		.word	0x235
+ 701 0404 0D       		.byte	0xd
+ 702 0405 B6000000 		.long	0xb6
+ 703 0409 04       		.byte	0x4
+ 704 040a 02       		.uleb128 0x2
+ 705 040b 793200   		.ascii "y2\0"
+ 706 040e 3602     		.word	0x236
+ 707 0410 0D       		.byte	0xd
+ 708 0411 B6000000 		.long	0xb6
+ 709 0415 06       		.byte	0x6
+ 710 0416 00       		.byte	0
+ 711 0417 0B       		.uleb128 0xb
+ 712 0418 73676C5F 		.ascii "sgl_area_t\0"
+ 712      61726561 
+ 712      5F7400
+ 713 0423 3702     		.word	0x237
+ 714 0425 D5030000 		.long	0x3d5
+ 715 0429 0C       		.uleb128 0xc
+ 716 042a 73676C5F 		.ascii "sgl_surf\0"
+ 716      73757266 
+ 716      00
+ 717 0433 20       		.byte	0x20
+ 718 0434 4802     		.word	0x248
+ 719 0436 AE040000 		.long	0x4ae
+ 720 043a 02       		.uleb128 0x2
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 20
+
+
+ 721 043b 783100   		.ascii "x1\0"
+ 722 043e 4902     		.word	0x249
+ 723 0440 12       		.byte	0x12
+ 724 0441 B6000000 		.long	0xb6
+ 725 0445 00       		.byte	0
+ 726 0446 02       		.uleb128 0x2
+ 727 0447 793100   		.ascii "y1\0"
+ 728 044a 4A02     		.word	0x24a
+ 729 044c 12       		.byte	0x12
+ 730 044d B6000000 		.long	0xb6
+ 731 0451 02       		.byte	0x2
+ 732 0452 02       		.uleb128 0x2
+ 733 0453 783200   		.ascii "x2\0"
+ 734 0456 4B02     		.word	0x24b
+ 735 0458 12       		.byte	0x12
+ 736 0459 B6000000 		.long	0xb6
+ 737 045d 04       		.byte	0x4
+ 738 045e 02       		.uleb128 0x2
+ 739 045f 793200   		.ascii "y2\0"
+ 740 0462 4C02     		.word	0x24c
+ 741 0464 12       		.byte	0x12
+ 742 0465 B6000000 		.long	0xb6
+ 743 0469 06       		.byte	0x6
+ 744 046a 02       		.uleb128 0x2
+ 745 046b 62756666 		.ascii "buffer\0"
+ 745      657200
+ 746 0472 4D02     		.word	0x24d
+ 747 0474 12       		.byte	0x12
+ 748 0475 AE040000 		.long	0x4ae
+ 749 0479 08       		.byte	0x8
+ 750 047a 02       		.uleb128 0x2
+ 751 047b 73697A65 		.ascii "size\0"
+ 751      00
+ 752 0480 4E02     		.word	0x24e
+ 753 0482 12       		.byte	0x12
+ 754 0483 42010000 		.long	0x142
+ 755 0487 10       		.byte	0x10
+ 756 0488 02       		.uleb128 0x2
+ 757 0489 7700     		.ascii "w\0"
+ 758 048b 4F02     		.word	0x24f
+ 759 048d 12       		.byte	0x12
+ 760 048e 16010000 		.long	0x116
+ 761 0492 14       		.byte	0x14
+ 762 0493 02       		.uleb128 0x2
+ 763 0494 6800     		.ascii "h\0"
+ 764 0496 5002     		.word	0x250
+ 765 0498 12       		.byte	0x12
+ 766 0499 16010000 		.long	0x116
+ 767 049d 16       		.byte	0x16
+ 768 049e 02       		.uleb128 0x2
+ 769 049f 64697274 		.ascii "dirty\0"
+ 769      7900
+ 770 04a5 5102     		.word	0x251
+ 771 04a7 13       		.byte	0x13
+ 772 04a8 B3040000 		.long	0x4b3
+ 773 04ac 18       		.byte	0x18
+ 774 04ad 00       		.byte	0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 21
+
+
+ 775 04ae 05       		.uleb128 0x5
+ 776 04af 00020000 		.long	0x200
+ 777 04b3 05       		.uleb128 0x5
+ 778 04b4 17040000 		.long	0x417
+ 779 04b8 0B       		.uleb128 0xb
+ 780 04b9 73676C5F 		.ascii "sgl_surf_t\0"
+ 780      73757266 
+ 780      5F7400
+ 781 04c4 5202     		.word	0x252
+ 782 04c6 29040000 		.long	0x429
+ 783 04ca 20       		.uleb128 0x20
+ 784 04cb 08       		.byte	0x8
+ 785 04cc 04       		.byte	0x4
+ 786 04cd 6402     		.word	0x264
+ 787 04cf 05       		.byte	0x5
+ 788 04d0 EF040000 		.long	0x4ef
+ 789 04d4 15       		.uleb128 0x15
+ 790 04d5 64617461 		.ascii "data\0"
+ 790      00
+ 791 04da 6502     		.word	0x265
+ 792 04dc 18       		.byte	0x18
+ 793 04dd EF040000 		.long	0x4ef
+ 794 04e1 15       		.uleb128 0x15
+ 795 04e2 61646472 		.ascii "addr\0"
+ 795      00
+ 796 04e7 6602     		.word	0x266
+ 797 04e9 17       		.byte	0x17
+ 798 04ea 9E010000 		.long	0x19e
+ 799 04ee 00       		.byte	0
+ 800 04ef 05       		.uleb128 0x5
+ 801 04f0 00010000 		.long	0x100
+ 802 04f4 0C       		.uleb128 0xc
+ 803 04f5 73676C5F 		.ascii "sgl_pixmap\0"
+ 803      7069786D 
+ 803      617000
+ 804 0500 10       		.byte	0x10
+ 805 0501 6002     		.word	0x260
+ 806 0503 47050000 		.long	0x547
+ 807 0507 12       		.uleb128 0x12
+ 808 0508 77696474 		.ascii "width\0"
+ 808      6800
+ 809 050e 6102     		.word	0x261
+ 810 0510 42010000 		.long	0x142
+ 811 0514 0D       		.byte	0xd
+ 812 0515 00       		.byte	0
+ 813 0516 12       		.uleb128 0x12
+ 814 0517 68656967 		.ascii "height\0"
+ 814      687400
+ 815 051e 6202     		.word	0x262
+ 816 0520 42010000 		.long	0x142
+ 817 0524 0D       		.byte	0xd
+ 818 0525 0D       		.byte	0xd
+ 819 0526 12       		.uleb128 0x12
+ 820 0527 666F726D 		.ascii "format\0"
+ 820      617400
+ 821 052e 6302     		.word	0x263
+ 822 0530 42010000 		.long	0x142
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 22
+
+
+ 823 0534 06       		.byte	0x6
+ 824 0535 1A       		.byte	0x1a
+ 825 0536 02       		.uleb128 0x2
+ 826 0537 6269746D 		.ascii "bitmap\0"
+ 826      617000
+ 827 053e 6702     		.word	0x267
+ 828 0540 07       		.byte	0x7
+ 829 0541 CA040000 		.long	0x4ca
+ 830 0545 08       		.byte	0x8
+ 831 0546 00       		.byte	0
+ 832 0547 0B       		.uleb128 0xb
+ 833 0548 73676C5F 		.ascii "sgl_pixmap_t\0"
+ 833      7069786D 
+ 833      61705F74 
+ 833      00
+ 834 0555 6802     		.word	0x268
+ 835 0557 F4040000 		.long	0x4f4
+ 836 055b 07       		.uleb128 0x7
+ 837 055c 47050000 		.long	0x547
+ 838 0560 0C       		.uleb128 0xc
+ 839 0561 73676C5F 		.ascii "sgl_font_table\0"
+ 839      666F6E74 
+ 839      5F746162 
+ 839      6C6500
+ 840 0570 08       		.byte	0x8
+ 841 0571 8302     		.word	0x283
+ 842 0573 D9050000 		.long	0x5d9
+ 843 0577 02       		.uleb128 0x2
+ 844 0578 6269746D 		.ascii "bitmap_index\0"
+ 844      61705F69 
+ 844      6E646578 
+ 844      00
+ 845 0585 8502     		.word	0x285
+ 846 0587 14       		.byte	0x14
+ 847 0588 27010000 		.long	0x127
+ 848 058c 00       		.byte	0
+ 849 058d 02       		.uleb128 0x2
+ 850 058e 6164765F 		.ascii "adv_w\0"
+ 850      7700
+ 851 0594 8602     		.word	0x286
+ 852 0596 14       		.byte	0x14
+ 853 0597 27010000 		.long	0x127
+ 854 059b 02       		.byte	0x2
+ 855 059c 02       		.uleb128 0x2
+ 856 059d 626F785F 		.ascii "box_h\0"
+ 856      6800
+ 857 05a3 8702     		.word	0x287
+ 858 05a5 14       		.byte	0x14
+ 859 05a6 00010000 		.long	0x100
+ 860 05aa 04       		.byte	0x4
+ 861 05ab 02       		.uleb128 0x2
+ 862 05ac 626F785F 		.ascii "box_w\0"
+ 862      7700
+ 863 05b2 8802     		.word	0x288
+ 864 05b4 14       		.byte	0x14
+ 865 05b5 00010000 		.long	0x100
+ 866 05b9 05       		.byte	0x5
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 23
+
+
+ 867 05ba 02       		.uleb128 0x2
+ 868 05bb 6F66735F 		.ascii "ofs_x\0"
+ 868      7800
+ 869 05c1 8902     		.word	0x289
+ 870 05c3 14       		.byte	0x14
+ 871 05c4 A2000000 		.long	0xa2
+ 872 05c8 06       		.byte	0x6
+ 873 05c9 02       		.uleb128 0x2
+ 874 05ca 6F66735F 		.ascii "ofs_y\0"
+ 874      7900
+ 875 05d0 8A02     		.word	0x28a
+ 876 05d2 14       		.byte	0x14
+ 877 05d3 A2000000 		.long	0xa2
+ 878 05d7 07       		.byte	0x7
+ 879 05d8 00       		.byte	0
+ 880 05d9 0B       		.uleb128 0xb
+ 881 05da 73676C5F 		.ascii "sgl_font_table_t\0"
+ 881      666F6E74 
+ 881      5F746162 
+ 881      6C655F74 
+ 881      00
+ 882 05eb 9302     		.word	0x293
+ 883 05ed 60050000 		.long	0x560
+ 884 05f1 07       		.uleb128 0x7
+ 885 05f2 D9050000 		.long	0x5d9
+ 886 05f6 0C       		.uleb128 0xc
+ 887 05f7 73676C5F 		.ascii "sgl_font_unicode\0"
+ 887      666F6E74 
+ 887      5F756E69 
+ 887      636F6465 
+ 887      00
+ 888 0608 18       		.byte	0x18
+ 889 0609 9D02     		.word	0x29d
+ 890 060b 4F060000 		.long	0x64f
+ 891 060f 02       		.uleb128 0x2
+ 892 0610 6F666673 		.ascii "offset\0"
+ 892      657400
+ 893 0617 9E02     		.word	0x29e
+ 894 0619 14       		.byte	0x14
+ 895 061a 53010000 		.long	0x153
+ 896 061e 00       		.byte	0
+ 897 061f 02       		.uleb128 0x2
+ 898 0620 6C656E00 		.ascii "len\0"
+ 899 0624 9F02     		.word	0x29f
+ 900 0626 14       		.byte	0x14
+ 901 0627 53010000 		.long	0x153
+ 902 062b 04       		.byte	0x4
+ 903 062c 02       		.uleb128 0x2
+ 904 062d 6C697374 		.ascii "list\0"
+ 904      00
+ 905 0632 A002     		.word	0x2a0
+ 906 0634 15       		.byte	0x15
+ 907 0635 4F060000 		.long	0x64f
+ 908 0639 08       		.byte	0x8
+ 909 063a 02       		.uleb128 0x2
+ 910 063b 7461625F 		.ascii "tab_offset\0"
+ 910      6F666673 
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 24
+
+
+ 910      657400
+ 911 0646 A102     		.word	0x2a1
+ 912 0648 14       		.byte	0x14
+ 913 0649 53010000 		.long	0x153
+ 914 064d 10       		.byte	0x10
+ 915 064e 00       		.byte	0
+ 916 064f 05       		.uleb128 0x5
+ 917 0650 53010000 		.long	0x153
+ 918 0654 0B       		.uleb128 0xb
+ 919 0655 73676C5F 		.ascii "sgl_font_unicode_t\0"
+ 919      666F6E74 
+ 919      5F756E69 
+ 919      636F6465 
+ 919      5F7400
+ 920 0668 A202     		.word	0x2a2
+ 921 066a F6050000 		.long	0x5f6
+ 922 066e 07       		.uleb128 0x7
+ 923 066f 54060000 		.long	0x654
+ 924 0673 0C       		.uleb128 0xc
+ 925 0674 73676C5F 		.ascii "sgl_font\0"
+ 925      666F6E74 
+ 925      00
+ 926 067d 28       		.byte	0x28
+ 927 067e B302     		.word	0x2b3
+ 928 0680 2A070000 		.long	0x72a
+ 929 0684 02       		.uleb128 0x2
+ 930 0685 6269746D 		.ascii "bitmap\0"
+ 930      617000
+ 931 068c B402     		.word	0x2b4
+ 932 068e 15       		.byte	0x15
+ 933 068f EF040000 		.long	0x4ef
+ 934 0693 00       		.byte	0
+ 935 0694 02       		.uleb128 0x2
+ 936 0695 7461626C 		.ascii "table\0"
+ 936      6500
+ 937 069b B502     		.word	0x2b5
+ 938 069d 1E       		.byte	0x1e
+ 939 069e 2A070000 		.long	0x72a
+ 940 06a2 08       		.byte	0x8
+ 941 06a3 02       		.uleb128 0x2
+ 942 06a4 666F6E74 		.ascii "font_table_size\0"
+ 942      5F746162 
+ 942      6C655F73 
+ 942      697A6500 
+ 943 06b4 B602     		.word	0x2b6
+ 944 06b6 15       		.byte	0x15
+ 945 06b7 27010000 		.long	0x127
+ 946 06bb 10       		.byte	0x10
+ 947 06bc 02       		.uleb128 0x2
+ 948 06bd 666F6E74 		.ascii "font_height\0"
+ 948      5F686569 
+ 948      67687400 
+ 949 06c9 B702     		.word	0x2b7
+ 950 06cb 15       		.byte	0x15
+ 951 06cc 27010000 		.long	0x127
+ 952 06d0 12       		.byte	0x12
+ 953 06d1 02       		.uleb128 0x2
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 25
+
+
+ 954 06d2 756E6963 		.ascii "unicode\0"
+ 954      6F646500 
+ 955 06da B802     		.word	0x2b8
+ 956 06dc 1F       		.byte	0x1f
+ 957 06dd 2F070000 		.long	0x72f
+ 958 06e1 18       		.byte	0x18
+ 959 06e2 02       		.uleb128 0x2
+ 960 06e3 756E6963 		.ascii "unicode_num\0"
+ 960      6F64655F 
+ 960      6E756D00 
+ 961 06ef B902     		.word	0x2b9
+ 962 06f1 15       		.byte	0x15
+ 963 06f2 53010000 		.long	0x153
+ 964 06f6 20       		.byte	0x20
+ 965 06f7 02       		.uleb128 0x2
+ 966 06f8 62617365 		.ascii "base_line\0"
+ 966      5F6C696E 
+ 966      6500
+ 967 0702 BA02     		.word	0x2ba
+ 968 0704 15       		.byte	0x15
+ 969 0705 C6000000 		.long	0xc6
+ 970 0709 24       		.byte	0x24
+ 971 070a 02       		.uleb128 0x2
+ 972 070b 62707000 		.ascii "bpp\0"
+ 973 070f BB02     		.word	0x2bb
+ 974 0711 15       		.byte	0x15
+ 975 0712 00010000 		.long	0x100
+ 976 0716 26       		.byte	0x26
+ 977 0717 02       		.uleb128 0x2
+ 978 0718 636F6D70 		.ascii "compress\0"
+ 978      72657373 
+ 978      00
+ 979 0721 BC02     		.word	0x2bc
+ 980 0723 15       		.byte	0x15
+ 981 0724 00010000 		.long	0x100
+ 982 0728 27       		.byte	0x27
+ 983 0729 00       		.byte	0
+ 984 072a 05       		.uleb128 0x5
+ 985 072b F1050000 		.long	0x5f1
+ 986 072f 05       		.uleb128 0x5
+ 987 0730 6E060000 		.long	0x66e
+ 988 0734 0B       		.uleb128 0xb
+ 989 0735 73676C5F 		.ascii "sgl_font_t\0"
+ 989      666F6E74 
+ 989      5F7400
+ 990 0740 BD02     		.word	0x2bd
+ 991 0742 73060000 		.long	0x673
+ 992 0746 07       		.uleb128 0x7
+ 993 0747 34070000 		.long	0x734
+ 994 074b 0C       		.uleb128 0xc
+ 995 074c 73676C5F 		.ascii "sgl_obj\0"
+ 995      6F626A00 
+ 996 0754 30       		.byte	0x30
+ 997 0755 C002     		.word	0x2c0
+ 998 0757 36080000 		.long	0x836
+ 999 075b 02       		.uleb128 0x2
+ 1000 075c 636F6F72 		.ascii "coords\0"
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 26
+
+
+ 1000      647300
+ 1001 0763 C102     		.word	0x2c1
+ 1002 0765 15       		.byte	0x15
+ 1003 0766 17040000 		.long	0x417
+ 1004 076a 00       		.byte	0
+ 1005 076b 02       		.uleb128 0x2
+ 1006 076c 636F6E73 		.ascii "construct_fn\0"
+ 1006      74727563 
+ 1006      745F666E 
+ 1006      00
+ 1007 0779 C202     		.word	0x2c2
+ 1008 077b 17       		.byte	0x17
+ 1009 077c 55080000 		.long	0x855
+ 1010 0780 08       		.byte	0x8
+ 1011 0781 21       		.uleb128 0x21
+ 1012 0782 00000000 		.secrel32	.LASF2
+ 1013 0786 04       		.byte	0x4
+ 1014 0787 C302     		.word	0x2c3
+ 1015 0789 16       		.byte	0x16
+ 1016 078a 50080000 		.long	0x850
+ 1017 078e 10       		.byte	0x10
+ 1018 078f 02       		.uleb128 0x2
+ 1019 0790 6368696C 		.ascii "child\0"
+ 1019      6400
+ 1020 0796 C402     		.word	0x2c4
+ 1021 0798 16       		.byte	0x16
+ 1022 0799 50080000 		.long	0x850
+ 1023 079d 18       		.byte	0x18
+ 1024 079e 02       		.uleb128 0x2
+ 1025 079f 7369626C 		.ascii "sibling\0"
+ 1025      696E6700 
+ 1026 07a7 C502     		.word	0x2c5
+ 1027 07a9 16       		.byte	0x16
+ 1028 07aa 50080000 		.long	0x850
+ 1029 07ae 20       		.byte	0x20
+ 1030 07af 0E       		.uleb128 0xe
+ 1031 07b0 64657374 		.ascii "destroyed\0"
+ 1031      726F7965 
+ 1031      6400
+ 1032 07ba C602     		.word	0x2c6
+ 1033 07bc F0000000 		.long	0xf0
+ 1034 07c0 01       		.byte	0x1
+ 1035 07c1 4001     		.word	0x140
+ 1036 07c3 0E       		.uleb128 0xe
+ 1037 07c4 64697274 		.ascii "dirty\0"
+ 1037      7900
+ 1038 07ca C702     		.word	0x2c7
+ 1039 07cc F0000000 		.long	0xf0
+ 1040 07d0 01       		.byte	0x1
+ 1041 07d1 4101     		.word	0x141
+ 1042 07d3 0E       		.uleb128 0xe
+ 1043 07d4 68696465 		.ascii "hide\0"
+ 1043      00
+ 1044 07d9 C802     		.word	0x2c8
+ 1045 07db F0000000 		.long	0xf0
+ 1046 07df 01       		.byte	0x1
+ 1047 07e0 4201     		.word	0x142
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 27
+
+
+ 1048 07e2 0E       		.uleb128 0xe
+ 1049 07e3 6E656564 		.ascii "needinit\0"
+ 1049      696E6974 
+ 1049      00
+ 1050 07ec C902     		.word	0x2c9
+ 1051 07ee F0000000 		.long	0xf0
+ 1052 07f2 01       		.byte	0x1
+ 1053 07f3 4301     		.word	0x143
+ 1054 07f5 0E       		.uleb128 0xe
+ 1055 07f6 70616765 		.ascii "page\0"
+ 1055      00
+ 1056 07fb CA02     		.word	0x2ca
+ 1057 07fd F0000000 		.long	0xf0
+ 1058 0801 01       		.byte	0x1
+ 1059 0802 4401     		.word	0x144
+ 1060 0804 0E       		.uleb128 0xe
+ 1061 0805 6C61796F 		.ascii "layout\0"
+ 1061      757400
+ 1062 080c CB02     		.word	0x2cb
+ 1063 080e F0000000 		.long	0xf0
+ 1064 0812 02       		.byte	0x2
+ 1065 0813 4501     		.word	0x145
+ 1066 0815 02       		.uleb128 0x2
+ 1067 0816 626F7264 		.ascii "border\0"
+ 1067      657200
+ 1068 081d CC02     		.word	0x2cc
+ 1069 081f 15       		.byte	0x15
+ 1070 0820 F0000000 		.long	0xf0
+ 1071 0824 29       		.byte	0x29
+ 1072 0825 02       		.uleb128 0x2
+ 1073 0826 72616469 		.ascii "radius\0"
+ 1073      757300
+ 1074 082d CD02     		.word	0x2cd
+ 1075 082f 15       		.byte	0x15
+ 1076 0830 F0000000 		.long	0xf0
+ 1077 0834 2A       		.byte	0x2a
+ 1078 0835 00       		.byte	0
+ 1079 0836 22       		.uleb128 0x22
+ 1080 0837 4B080000 		.long	0x84b
+ 1081 083b 01       		.uleb128 0x1
+ 1082 083c 4B080000 		.long	0x84b
+ 1083 0840 01       		.uleb128 0x1
+ 1084 0841 50080000 		.long	0x850
+ 1085 0845 01       		.uleb128 0x1
+ 1086 0846 B3040000 		.long	0x4b3
+ 1087 084a 00       		.byte	0
+ 1088 084b 05       		.uleb128 0x5
+ 1089 084c B8040000 		.long	0x4b8
+ 1090 0850 05       		.uleb128 0x5
+ 1091 0851 4B070000 		.long	0x74b
+ 1092 0855 05       		.uleb128 0x5
+ 1093 0856 36080000 		.long	0x836
+ 1094 085a 0B       		.uleb128 0xb
+ 1095 085b 73676C5F 		.ascii "sgl_obj_t\0"
+ 1095      6F626A5F 
+ 1095      7400
+ 1096 0865 CE02     		.word	0x2ce
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 28
+
+
+ 1097 0867 4B070000 		.long	0x74b
+ 1098 086b 05       		.uleb128 0x5
+ 1099 086c 5A080000 		.long	0x85a
+ 1100 0870 05       		.uleb128 0x5
+ 1101 0871 5B050000 		.long	0x55b
+ 1102 0875 23       		.uleb128 0x23
+ 1103 0876 08       		.byte	0x8
+ 1104 0877 05       		.uleb128 0x5
+ 1105 0878 8A010000 		.long	0x18a
+ 1106 087c 24       		.uleb128 0x24
+ 1107 087d 07000000 		.secrel32	.LASF3
+ 1108 0881 10       		.byte	0x10
+ 1109 0882 05       		.byte	0x5
+ 1110 0883 28       		.byte	0x28
+ 1111 0884 10       		.byte	0x10
+ 1112 0885 EE080000 		.long	0x8ee
+ 1113 0889 06       		.uleb128 0x6
+ 1114 088a 636F6C6F 		.ascii "color\0"
+ 1114      7200
+ 1115 0890 05       		.byte	0x5
+ 1116 0891 29       		.byte	0x29
+ 1117 0892 1D       		.byte	0x1d
+ 1118 0893 00020000 		.long	0x200
+ 1119 0897 00       		.byte	0
+ 1120 0898 06       		.uleb128 0x6
+ 1121 0899 72616469 		.ascii "radius\0"
+ 1121      757300
+ 1122 08a0 05       		.byte	0x5
+ 1123 08a1 2A       		.byte	0x2a
+ 1124 08a2 1D       		.byte	0x1d
+ 1125 08a3 B6000000 		.long	0xb6
+ 1126 08a7 02       		.byte	0x2
+ 1127 08a8 06       		.uleb128 0x6
+ 1128 08a9 616C7068 		.ascii "alpha\0"
+ 1128      6100
+ 1129 08af 05       		.byte	0x5
+ 1130 08b0 2B       		.byte	0x2b
+ 1131 08b1 1D       		.byte	0x1d
+ 1132 08b2 F0000000 		.long	0xf0
+ 1133 08b6 04       		.byte	0x4
+ 1134 08b7 06       		.uleb128 0x6
+ 1135 08b8 626F7264 		.ascii "border\0"
+ 1135      657200
+ 1136 08bf 05       		.byte	0x5
+ 1137 08c0 2C       		.byte	0x2c
+ 1138 08c1 1D       		.byte	0x1d
+ 1139 08c2 F0000000 		.long	0xf0
+ 1140 08c6 05       		.byte	0x5
+ 1141 08c7 06       		.uleb128 0x6
+ 1142 08c8 626F7264 		.ascii "border_color\0"
+ 1142      65725F63 
+ 1142      6F6C6F72 
+ 1142      00
+ 1143 08d5 05       		.byte	0x5
+ 1144 08d6 2D       		.byte	0x2d
+ 1145 08d7 1D       		.byte	0x1d
+ 1146 08d8 00020000 		.long	0x200
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 29
+
+
+ 1147 08dc 06       		.byte	0x6
+ 1148 08dd 06       		.uleb128 0x6
+ 1149 08de 7069786D 		.ascii "pixmap\0"
+ 1149      617000
+ 1150 08e5 05       		.byte	0x5
+ 1151 08e6 2E       		.byte	0x2e
+ 1152 08e7 1E       		.byte	0x1e
+ 1153 08e8 70080000 		.long	0x870
+ 1154 08ec 08       		.byte	0x8
+ 1155 08ed 00       		.byte	0
+ 1156 08ee 08       		.uleb128 0x8
+ 1157 08ef 73676C5F 		.ascii "sgl_draw_rect_t\0"
+ 1157      64726177 
+ 1157      5F726563 
+ 1157      745F7400 
+ 1158 08ff 05       		.byte	0x5
+ 1159 0900 2F       		.byte	0x2f
+ 1160 0901 03       		.byte	0x3
+ 1161 0902 7C080000 		.long	0x87c
+ 1162 0906 16       		.uleb128 0x16
+ 1163 0907 73676C5F 		.ascii "sgl_rectangle\0"
+ 1163      72656374 
+ 1163      616E676C 
+ 1163      6500
+ 1164 0915 40       		.byte	0x40
+ 1165 0916 27       		.byte	0x27
+ 1166 0917 37090000 		.long	0x937
+ 1167 091b 06       		.uleb128 0x6
+ 1168 091c 6F626A00 		.ascii "obj\0"
+ 1169 0920 06       		.byte	0x6
+ 1170 0921 28       		.byte	0x28
+ 1171 0922 15       		.byte	0x15
+ 1172 0923 5A080000 		.long	0x85a
+ 1173 0927 00       		.byte	0
+ 1174 0928 06       		.uleb128 0x6
+ 1175 0929 64657363 		.ascii "desc\0"
+ 1175      00
+ 1176 092e 06       		.byte	0x6
+ 1177 092f 29       		.byte	0x29
+ 1178 0930 15       		.byte	0x15
+ 1179 0931 EE080000 		.long	0x8ee
+ 1180 0935 30       		.byte	0x30
+ 1181 0936 00       		.byte	0
+ 1182 0937 08       		.uleb128 0x8
+ 1183 0938 73676C5F 		.ascii "sgl_rectangle_t\0"
+ 1183      72656374 
+ 1183      616E676C 
+ 1183      655F7400 
+ 1184 0948 06       		.byte	0x6
+ 1185 0949 2A       		.byte	0x2a
+ 1186 094a 02       		.byte	0x2
+ 1187 094b 06090000 		.long	0x906
+ 1188 094f 16       		.uleb128 0x16
+ 1189 0950 73676C5F 		.ascii "sgl_label\0"
+ 1189      6C616265 
+ 1189      6C00
+ 1190 095a 48       		.byte	0x48
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 30
+
+
+ 1191 095b 8A       		.byte	0x8a
+ 1192 095c FE090000 		.long	0x9fe
+ 1193 0960 06       		.uleb128 0x6
+ 1194 0961 6F626A00 		.ascii "obj\0"
+ 1195 0965 06       		.byte	0x6
+ 1196 0966 8B       		.byte	0x8b
+ 1197 0967 16       		.byte	0x16
+ 1198 0968 5A080000 		.long	0x85a
+ 1199 096c 00       		.byte	0
+ 1200 096d 06       		.uleb128 0x6
+ 1201 096e 74657874 		.ascii "text\0"
+ 1201      00
+ 1202 0973 06       		.byte	0x6
+ 1203 0974 8C       		.byte	0x8c
+ 1204 0975 17       		.byte	0x17
+ 1205 0976 77080000 		.long	0x877
+ 1206 097a 30       		.byte	0x30
+ 1207 097b 06       		.uleb128 0x6
+ 1208 097c 666F6E74 		.ascii "font\0"
+ 1208      00
+ 1209 0981 06       		.byte	0x6
+ 1210 0982 8D       		.byte	0x8d
+ 1211 0983 17       		.byte	0x17
+ 1212 0984 FE090000 		.long	0x9fe
+ 1213 0988 38       		.byte	0x38
+ 1214 0989 06       		.uleb128 0x6
+ 1215 098a 636F6C6F 		.ascii "color\0"
+ 1215      7200
+ 1216 0990 06       		.byte	0x6
+ 1217 0991 8E       		.byte	0x8e
+ 1218 0992 16       		.byte	0x16
+ 1219 0993 00020000 		.long	0x200
+ 1220 0997 40       		.byte	0x40
+ 1221 0998 06       		.uleb128 0x6
+ 1222 0999 62675F63 		.ascii "bg_color\0"
+ 1222      6F6C6F72 
+ 1222      00
+ 1223 09a2 06       		.byte	0x6
+ 1224 09a3 8F       		.byte	0x8f
+ 1225 09a4 16       		.byte	0x16
+ 1226 09a5 00020000 		.long	0x200
+ 1227 09a9 42       		.byte	0x42
+ 1228 09aa 06       		.uleb128 0x6
+ 1229 09ab 616C7068 		.ascii "alpha\0"
+ 1229      6100
+ 1230 09b1 06       		.byte	0x6
+ 1231 09b2 90       		.byte	0x90
+ 1232 09b3 16       		.byte	0x16
+ 1233 09b4 F0000000 		.long	0xf0
+ 1234 09b8 44       		.byte	0x44
+ 1235 09b9 17       		.uleb128 0x17
+ 1236 09ba 616C6967 		.ascii "align\0"
+ 1236      6E00
+ 1237 09c0 91       		.byte	0x91
+ 1238 09c1 F0000000 		.long	0xf0
+ 1239 09c5 04       		.byte	0x4
+ 1240 09c6 2802     		.word	0x228
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 31
+
+
+ 1241 09c8 17       		.uleb128 0x17
+ 1242 09c9 62675F66 		.ascii "bg_flag\0"
+ 1242      6C616700 
+ 1243 09d1 92       		.byte	0x92
+ 1244 09d2 F0000000 		.long	0xf0
+ 1245 09d6 01       		.byte	0x1
+ 1246 09d7 2C02     		.word	0x22c
+ 1247 09d9 06       		.uleb128 0x6
+ 1248 09da 6F666673 		.ascii "offset_x\0"
+ 1248      65745F78 
+ 1248      00
+ 1249 09e3 06       		.byte	0x6
+ 1250 09e4 93       		.byte	0x93
+ 1251 09e5 16       		.byte	0x16
+ 1252 09e6 93000000 		.long	0x93
+ 1253 09ea 46       		.byte	0x46
+ 1254 09eb 06       		.uleb128 0x6
+ 1255 09ec 6F666673 		.ascii "offset_y\0"
+ 1255      65745F79 
+ 1255      00
+ 1256 09f5 06       		.byte	0x6
+ 1257 09f6 94       		.byte	0x94
+ 1258 09f7 16       		.byte	0x16
+ 1259 09f8 93000000 		.long	0x93
+ 1260 09fc 47       		.byte	0x47
+ 1261 09fd 00       		.byte	0
+ 1262 09fe 05       		.uleb128 0x5
+ 1263 09ff 46070000 		.long	0x746
+ 1264 0a03 08       		.uleb128 0x8
+ 1265 0a04 73676C5F 		.ascii "sgl_label_t\0"
+ 1265      6C616265 
+ 1265      6C5F7400 
+ 1266 0a10 06       		.byte	0x6
+ 1267 0a11 95       		.byte	0x95
+ 1268 0a12 02       		.byte	0x2
+ 1269 0a13 4F090000 		.long	0x94f
+ 1270 0a17 10       		.uleb128 0x10
+ 1271 0a18 73676C5F 		.ascii "sgl_draw_string\0"
+ 1271      64726177 
+ 1271      5F737472 
+ 1271      696E6700 
+ 1272 0a28 05       		.byte	0x5
+ 1273 0a29 9B01     		.word	0x19b
+ 1274 0a2b 580A0000 		.long	0xa58
+ 1275 0a2f 01       		.uleb128 0x1
+ 1276 0a30 4B080000 		.long	0x84b
+ 1277 0a34 01       		.uleb128 0x1
+ 1278 0a35 B3040000 		.long	0x4b3
+ 1279 0a39 01       		.uleb128 0x1
+ 1280 0a3a B6000000 		.long	0xb6
+ 1281 0a3e 01       		.uleb128 0x1
+ 1282 0a3f B6000000 		.long	0xb6
+ 1283 0a43 01       		.uleb128 0x1
+ 1284 0a44 77080000 		.long	0x877
+ 1285 0a48 01       		.uleb128 0x1
+ 1286 0a49 00020000 		.long	0x200
+ 1287 0a4d 01       		.uleb128 0x1
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 32
+
+
+ 1288 0a4e F0000000 		.long	0xf0
+ 1289 0a52 01       		.uleb128 0x1
+ 1290 0a53 FE090000 		.long	0x9fe
+ 1291 0a57 00       		.byte	0
+ 1292 0a58 18       		.uleb128 0x18
+ 1293 0a59 73676C5F 		.ascii "sgl_get_text_pos\0"
+ 1293      6765745F 
+ 1293      74657874 
+ 1293      5F706F73 
+ 1293      00
+ 1294 0a6a E308     		.word	0x8e3
+ 1295 0a6c 0B       		.byte	0xb
+ 1296 0a6d C4030000 		.long	0x3c4
+ 1297 0a71 8F0A0000 		.long	0xa8f
+ 1298 0a75 01       		.uleb128 0x1
+ 1299 0a76 B3040000 		.long	0x4b3
+ 1300 0a7a 01       		.uleb128 0x1
+ 1301 0a7b FE090000 		.long	0x9fe
+ 1302 0a7f 01       		.uleb128 0x1
+ 1303 0a80 77080000 		.long	0x877
+ 1304 0a84 01       		.uleb128 0x1
+ 1305 0a85 B6000000 		.long	0xb6
+ 1306 0a89 01       		.uleb128 0x1
+ 1307 0a8a 85030000 		.long	0x385
+ 1308 0a8e 00       		.byte	0
+ 1309 0a8f 25       		.uleb128 0x25
+ 1310 0a90 73676C5F 		.ascii "sgl_draw_fill_rect\0"
+ 1310      64726177 
+ 1310      5F66696C 
+ 1310      6C5F7265 
+ 1310      637400
+ 1311 0aa3 05       		.byte	0x5
+ 1312 0aa4 E8       		.byte	0xe8
+ 1313 0aa5 06       		.byte	0x6
+ 1314 0aa6 C40A0000 		.long	0xac4
+ 1315 0aaa 01       		.uleb128 0x1
+ 1316 0aab 4B080000 		.long	0x84b
+ 1317 0aaf 01       		.uleb128 0x1
+ 1318 0ab0 B3040000 		.long	0x4b3
+ 1319 0ab4 01       		.uleb128 0x1
+ 1320 0ab5 B3040000 		.long	0x4b3
+ 1321 0ab9 01       		.uleb128 0x1
+ 1322 0aba 00020000 		.long	0x200
+ 1323 0abe 01       		.uleb128 0x1
+ 1324 0abf F0000000 		.long	0xf0
+ 1325 0ac3 00       		.byte	0
+ 1326 0ac4 10       		.uleb128 0x10
+ 1327 0ac5 73676C5F 		.ascii "sgl_draw_fill_round_rect\0"
+ 1327      64726177 
+ 1327      5F66696C 
+ 1327      6C5F726F 
+ 1327      756E645F 
+ 1328 0ade 05       		.byte	0x5
+ 1329 0adf 0F01     		.word	0x10f
+ 1330 0ae1 040B0000 		.long	0xb04
+ 1331 0ae5 01       		.uleb128 0x1
+ 1332 0ae6 4B080000 		.long	0x84b
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 33
+
+
+ 1333 0aea 01       		.uleb128 0x1
+ 1334 0aeb B3040000 		.long	0x4b3
+ 1335 0aef 01       		.uleb128 0x1
+ 1336 0af0 B3040000 		.long	0x4b3
+ 1337 0af4 01       		.uleb128 0x1
+ 1338 0af5 B6000000 		.long	0xb6
+ 1339 0af9 01       		.uleb128 0x1
+ 1340 0afa 00020000 		.long	0x200
+ 1341 0afe 01       		.uleb128 0x1
+ 1342 0aff F0000000 		.long	0xf0
+ 1343 0b03 00       		.byte	0
+ 1344 0b04 10       		.uleb128 0x10
+ 1345 0b05 73676C5F 		.ascii "sgl_assert_handler\0"
+ 1345      61737365 
+ 1345      72745F68 
+ 1345      616E646C 
+ 1345      657200
+ 1346 0b18 04       		.byte	0x4
+ 1347 0b19 3303     		.word	0x333
+ 1348 0b1b 2F0B0000 		.long	0xb2f
+ 1349 0b1f 01       		.uleb128 0x1
+ 1350 0b20 77080000 		.long	0x877
+ 1351 0b24 01       		.uleb128 0x1
+ 1352 0b25 77080000 		.long	0x877
+ 1353 0b29 01       		.uleb128 0x1
+ 1354 0b2a D8000000 		.long	0xd8
+ 1355 0b2e 00       		.byte	0
+ 1356 0b2f 26       		.uleb128 0x26
+ 1357 0b30 07000000 		.secrel32	.LASF3
+ 1358 0b34 05       		.byte	0x5
+ 1359 0b35 3601     		.word	0x136
+ 1360 0b37 06       		.byte	0x6
+ 1361 0b38 510B0000 		.long	0xb51
+ 1362 0b3c 01       		.uleb128 0x1
+ 1363 0b3d 4B080000 		.long	0x84b
+ 1364 0b41 01       		.uleb128 0x1
+ 1365 0b42 B3040000 		.long	0x4b3
+ 1366 0b46 01       		.uleb128 0x1
+ 1367 0b47 B3040000 		.long	0x4b3
+ 1368 0b4b 01       		.uleb128 0x1
+ 1369 0b4c 510B0000 		.long	0xb51
+ 1370 0b50 00       		.byte	0
+ 1371 0b51 05       		.uleb128 0x5
+ 1372 0b52 EE080000 		.long	0x8ee
+ 1373 0b56 18       		.uleb128 0x18
+ 1374 0b57 73676C5F 		.ascii "sgl_obj_init\0"
+ 1374      6F626A5F 
+ 1374      696E6974 
+ 1374      00
+ 1375 0b64 9A08     		.word	0x89a
+ 1376 0b66 05       		.byte	0x5
+ 1377 0b67 D8000000 		.long	0xd8
+ 1378 0b6b 7A0B0000 		.long	0xb7a
+ 1379 0b6f 01       		.uleb128 0x1
+ 1380 0b70 6B080000 		.long	0x86b
+ 1381 0b74 01       		.uleb128 0x1
+ 1382 0b75 6B080000 		.long	0x86b
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 34
+
+
+ 1383 0b79 00       		.byte	0
+ 1384 0b7a 19       		.uleb128 0x19
+ 1385 0b7b 6D656D73 		.ascii "memset\0"
+ 1385      657400
+ 1386 0b82 07       		.byte	0x7
+ 1387 0b83 35       		.byte	0x35
+ 1388 0b84 12       		.byte	0x12
+ 1389 0b85 75080000 		.long	0x875
+ 1390 0b89 9D0B0000 		.long	0xb9d
+ 1391 0b8d 01       		.uleb128 0x1
+ 1392 0b8e 75080000 		.long	0x875
+ 1393 0b92 01       		.uleb128 0x1
+ 1394 0b93 D8000000 		.long	0xd8
+ 1395 0b97 01       		.uleb128 0x1
+ 1396 0b98 8F010000 		.long	0x18f
+ 1397 0b9c 00       		.byte	0
+ 1398 0b9d 10       		.uleb128 0x10
+ 1399 0b9e 73676C5F 		.ascii "sgl_log\0"
+ 1399      6C6F6700 
+ 1400 0ba6 04       		.byte	0x4
+ 1401 0ba7 2703     		.word	0x327
+ 1402 0ba9 B90B0000 		.long	0xbb9
+ 1403 0bad 01       		.uleb128 0x1
+ 1404 0bae 77080000 		.long	0x877
+ 1405 0bb2 01       		.uleb128 0x1
+ 1406 0bb3 77080000 		.long	0x877
+ 1407 0bb7 27       		.uleb128 0x27
+ 1408 0bb8 00       		.byte	0
+ 1409 0bb9 19       		.uleb128 0x19
+ 1410 0bba 73676C5F 		.ascii "sgl_malloc\0"
+ 1410      6D616C6C 
+ 1410      6F6300
+ 1411 0bc5 08       		.byte	0x8
+ 1412 0bc6 44       		.byte	0x44
+ 1413 0bc7 07       		.byte	0x7
+ 1414 0bc8 75080000 		.long	0x875
+ 1415 0bcc D60B0000 		.long	0xbd6
+ 1416 0bd0 01       		.uleb128 0x1
+ 1417 0bd1 8F010000 		.long	0x18f
+ 1418 0bd5 00       		.byte	0
+ 1419 0bd6 1A       		.uleb128 0x1a
+ 1420 0bd7 73676C5F 		.ascii "sgl_label_create\0"
+ 1420      6C616265 
+ 1420      6C5F6372 
+ 1420      65617465 
+ 1420      00
+ 1421 0be8 63       		.byte	0x63
+ 1422 0be9 6B080000 		.long	0x86b
+ 1423 0bed 00000000 		.quad	.LFB96
+ 1423      00000000 
+ 1424 0bf5 85000000 		.quad	.LFE96-.LFB96
+ 1424      00000000 
+ 1425 0bfd 01       		.uleb128 0x1
+ 1426 0bfe 9C       		.byte	0x9c
+ 1427 0bff C00C0000 		.long	0xcc0
+ 1428 0c03 1B       		.uleb128 0x1b
+ 1429 0c04 00000000 		.secrel32	.LASF2
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 35
+
+
+ 1430 0c08 63       		.byte	0x63
+ 1431 0c09 28       		.byte	0x28
+ 1432 0c0a 6B080000 		.long	0x86b
+ 1433 0c0e 14000000 		.secrel32	.LLST12
+ 1434 0c12 0C000000 		.secrel32	.LVUS12
+ 1435 0c16 0D       		.uleb128 0xd
+ 1436 0c17 6C616265 		.ascii "label\0"
+ 1436      6C00
+ 1437 0c1d 65       		.byte	0x65
+ 1438 0c1e 12       		.byte	0x12
+ 1439 0c1f C00C0000 		.long	0xcc0
+ 1440 0c23 3E000000 		.secrel32	.LLST13
+ 1441 0c27 36000000 		.secrel32	.LVUS13
+ 1442 0c2b 0D       		.uleb128 0xd
+ 1443 0c2c 6F626A00 		.ascii "obj\0"
+ 1444 0c30 6E       		.byte	0x6e
+ 1445 0c31 10       		.byte	0x10
+ 1446 0c32 6B080000 		.long	0x86b
+ 1447 0c36 5E000000 		.secrel32	.LLST14
+ 1448 0c3a 5C000000 		.secrel32	.LVUS14
+ 1449 0c3e 0A       		.uleb128 0xa
+ 1450 0c3f 13000000 		.quad	.LVL35
+ 1450      00000000 
+ 1451 0c47 B90B0000 		.long	0xbb9
+ 1452 0c4b 560C0000 		.long	0xc56
+ 1453 0c4f 03       		.uleb128 0x3
+ 1454 0c50 01       		.uleb128 0x1
+ 1455 0c51 52       		.byte	0x52
+ 1456 0c52 02       		.uleb128 0x2
+ 1457 0c53 08       		.byte	0x8
+ 1458 0c54 48       		.byte	0x48
+ 1459 0c55 00       		.byte	0
+ 1460 0c56 0A       		.uleb128 0xa
+ 1461 0c57 2B000000 		.quad	.LVL37
+ 1461      00000000 
+ 1462 0c5f 7A0B0000 		.long	0xb7a
+ 1463 0c63 790C0000 		.long	0xc79
+ 1464 0c67 03       		.uleb128 0x3
+ 1465 0c68 01       		.uleb128 0x1
+ 1466 0c69 52       		.byte	0x52
+ 1467 0c6a 02       		.uleb128 0x2
+ 1468 0c6b 73       		.byte	0x73
+ 1469 0c6c 00       		.sleb128 0
+ 1470 0c6d 03       		.uleb128 0x3
+ 1471 0c6e 01       		.uleb128 0x1
+ 1472 0c6f 51       		.byte	0x51
+ 1473 0c70 01       		.uleb128 0x1
+ 1474 0c71 30       		.byte	0x30
+ 1475 0c72 03       		.uleb128 0x3
+ 1476 0c73 01       		.uleb128 0x1
+ 1477 0c74 58       		.byte	0x58
+ 1478 0c75 02       		.uleb128 0x2
+ 1479 0c76 08       		.byte	0x8
+ 1480 0c77 48       		.byte	0x48
+ 1481 0c78 00       		.byte	0
+ 1482 0c79 0A       		.uleb128 0xa
+ 1483 0c7a 36000000 		.quad	.LVL38
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 36
+
+
+ 1483      00000000 
+ 1484 0c82 560B0000 		.long	0xb56
+ 1485 0c86 970C0000 		.long	0xc97
+ 1486 0c8a 03       		.uleb128 0x3
+ 1487 0c8b 01       		.uleb128 0x1
+ 1488 0c8c 52       		.byte	0x52
+ 1489 0c8d 02       		.uleb128 0x2
+ 1490 0c8e 73       		.byte	0x73
+ 1491 0c8f 00       		.sleb128 0
+ 1492 0c90 03       		.uleb128 0x3
+ 1493 0c91 01       		.uleb128 0x1
+ 1494 0c92 51       		.byte	0x51
+ 1495 0c93 02       		.uleb128 0x2
+ 1496 0c94 74       		.byte	0x74
+ 1497 0c95 00       		.sleb128 0
+ 1498 0c96 00       		.byte	0
+ 1499 0c97 13       		.uleb128 0x13
+ 1500 0c98 83000000 		.quad	.LVL43
+ 1500      00000000 
+ 1501 0ca0 9D0B0000 		.long	0xb9d
+ 1502 0ca4 03       		.uleb128 0x3
+ 1503 0ca5 01       		.uleb128 0x1
+ 1504 0ca6 52       		.byte	0x52
+ 1505 0ca7 09       		.uleb128 0x9
+ 1506 0ca8 03       		.byte	0x3
+ 1507 0ca9 37000000 		.quad	.LC3
+ 1507      00000000 
+ 1508 0cb1 03       		.uleb128 0x3
+ 1509 0cb2 01       		.uleb128 0x1
+ 1510 0cb3 51       		.byte	0x51
+ 1511 0cb4 09       		.uleb128 0x9
+ 1512 0cb5 03       		.byte	0x3
+ 1513 0cb6 40000000 		.quad	.LC4
+ 1513      00000000 
+ 1514 0cbe 00       		.byte	0
+ 1515 0cbf 00       		.byte	0
+ 1516 0cc0 05       		.uleb128 0x5
+ 1517 0cc1 030A0000 		.long	0xa03
+ 1518 0cc5 28       		.uleb128 0x28
+ 1519 0cc6 73676C5F 		.ascii "sgl_label_construct_cb\0"
+ 1519      6C616265 
+ 1519      6C5F636F 
+ 1519      6E737472 
+ 1519      7563745F 
+ 1520 0cdd 01       		.byte	0x1
+ 1521 0cde 48       		.byte	0x48
+ 1522 0cdf 0D       		.byte	0xd
+ 1523 0ce0 00000000 		.quad	.LFB95
+ 1523      00000000 
+ 1524 0ce8 0E010000 		.quad	.LFE95-.LFB95
+ 1524      00000000 
+ 1525 0cf0 01       		.uleb128 0x1
+ 1526 0cf1 9C       		.byte	0x9c
+ 1527 0cf2 2D0E0000 		.long	0xe2d
+ 1528 0cf6 0F       		.uleb128 0xf
+ 1529 0cf7 73757266 		.ascii "surf\0"
+ 1529      00
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 37
+
+
+ 1530 0cfc 48       		.byte	0x48
+ 1531 0cfd 30       		.byte	0x30
+ 1532 0cfe 4B080000 		.long	0x84b
+ 1533 0d02 77000000 		.secrel32	.LLST4
+ 1534 0d06 6B000000 		.secrel32	.LVUS4
+ 1535 0d0a 0F       		.uleb128 0xf
+ 1536 0d0b 6F626A00 		.ascii "obj\0"
+ 1537 0d0f 48       		.byte	0x48
+ 1538 0d10 41       		.byte	0x41
+ 1539 0d11 6B080000 		.long	0x86b
+ 1540 0d15 B7000000 		.secrel32	.LLST5
+ 1541 0d19 AB000000 		.secrel32	.LVUS5
+ 1542 0d1d 0F       		.uleb128 0xf
+ 1543 0d1e 61726561 		.ascii "area\0"
+ 1543      00
+ 1544 0d23 48       		.byte	0x48
+ 1545 0d24 52       		.byte	0x52
+ 1546 0d25 B3040000 		.long	0x4b3
+ 1547 0d29 F3000000 		.secrel32	.LLST6
+ 1548 0d2d EB000000 		.secrel32	.LVUS6
+ 1549 0d31 0D       		.uleb128 0xd
+ 1550 0d32 6C616265 		.ascii "label\0"
+ 1550      6C00
+ 1551 0d38 4A       		.byte	0x4a
+ 1552 0d39 12       		.byte	0x12
+ 1553 0d3a C00C0000 		.long	0xcc0
+ 1554 0d3e 25010000 		.secrel32	.LLST7
+ 1555 0d42 19010000 		.secrel32	.LVUS7
+ 1556 0d46 0D       		.uleb128 0xd
+ 1557 0d47 616C6967 		.ascii "align_pos\0"
+ 1557      6E5F706F 
+ 1557      7300
+ 1558 0d51 4B       		.byte	0x4b
+ 1559 0d52 0F       		.byte	0xf
+ 1560 0d53 C4030000 		.long	0x3c4
+ 1561 0d57 5B010000 		.secrel32	.LLST8
+ 1562 0d5b 59010000 		.secrel32	.LVUS8
+ 1563 0d5f 29       		.uleb128 0x29
+ 1564 0d60 5F5F4655 		.ascii "__FUNCTION__\0"
+ 1564      4E435449 
+ 1564      4F4E5F5F 
+ 1564      00
+ 1565 0d6d 3D0E0000 		.long	0xe3d
+ 1566 0d71 09       		.uleb128 0x9
+ 1567 0d72 03       		.byte	0x3
+ 1568 0d73 00000000 		.quad	__FUNCTION__.0
+ 1568      00000000 
+ 1569 0d7b 0A       		.uleb128 0xa
+ 1570 0d7c 50000000 		.quad	.LVL8
+ 1570      00000000 
+ 1571 0d84 C40A0000 		.long	0xac4
+ 1572 0d88 9F0D0000 		.long	0xd9f
+ 1573 0d8c 03       		.uleb128 0x3
+ 1574 0d8d 01       		.uleb128 0x1
+ 1575 0d8e 52       		.byte	0x52
+ 1576 0d8f 02       		.uleb128 0x2
+ 1577 0d90 74       		.byte	0x74
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 38
+
+
+ 1578 0d91 00       		.sleb128 0
+ 1579 0d92 03       		.uleb128 0x3
+ 1580 0d93 01       		.uleb128 0x1
+ 1581 0d94 51       		.byte	0x51
+ 1582 0d95 02       		.uleb128 0x2
+ 1583 0d96 75       		.byte	0x75
+ 1584 0d97 00       		.sleb128 0
+ 1585 0d98 03       		.uleb128 0x3
+ 1586 0d99 01       		.uleb128 0x1
+ 1587 0d9a 58       		.byte	0x58
+ 1588 0d9b 02       		.uleb128 0x2
+ 1589 0d9c 73       		.byte	0x73
+ 1590 0d9d 00       		.sleb128 0
+ 1591 0d9e 00       		.byte	0
+ 1592 0d9f 0A       		.uleb128 0xa
+ 1593 0da0 6E000000 		.quad	.LVL9
+ 1593      00000000 
+ 1594 0da8 580A0000 		.long	0xa58
+ 1595 0dac BC0D0000 		.long	0xdbc
+ 1596 0db0 03       		.uleb128 0x3
+ 1597 0db1 01       		.uleb128 0x1
+ 1598 0db2 52       		.byte	0x52
+ 1599 0db3 02       		.uleb128 0x2
+ 1600 0db4 73       		.byte	0x73
+ 1601 0db5 00       		.sleb128 0
+ 1602 0db6 03       		.uleb128 0x3
+ 1603 0db7 01       		.uleb128 0x1
+ 1604 0db8 59       		.byte	0x59
+ 1605 0db9 01       		.uleb128 0x1
+ 1606 0dba 30       		.byte	0x30
+ 1607 0dbb 00       		.byte	0
+ 1608 0dbc 0A       		.uleb128 0xa
+ 1609 0dbd BC000000 		.quad	.LVL12
+ 1609      00000000 
+ 1610 0dc5 170A0000 		.long	0xa17
+ 1611 0dc9 DA0D0000 		.long	0xdda
+ 1612 0dcd 03       		.uleb128 0x3
+ 1613 0dce 01       		.uleb128 0x1
+ 1614 0dcf 52       		.byte	0x52
+ 1615 0dd0 02       		.uleb128 0x2
+ 1616 0dd1 74       		.byte	0x74
+ 1617 0dd2 00       		.sleb128 0
+ 1618 0dd3 03       		.uleb128 0x3
+ 1619 0dd4 01       		.uleb128 0x1
+ 1620 0dd5 51       		.byte	0x51
+ 1621 0dd6 02       		.uleb128 0x2
+ 1622 0dd7 75       		.byte	0x75
+ 1623 0dd8 00       		.sleb128 0
+ 1624 0dd9 00       		.byte	0
+ 1625 0dda 0A       		.uleb128 0xa
+ 1626 0ddb DF000000 		.quad	.LVL17
+ 1626      00000000 
+ 1627 0de3 8F0A0000 		.long	0xa8f
+ 1628 0de7 FE0D0000 		.long	0xdfe
+ 1629 0deb 03       		.uleb128 0x3
+ 1630 0dec 01       		.uleb128 0x1
+ 1631 0ded 52       		.byte	0x52
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 39
+
+
+ 1632 0dee 02       		.uleb128 0x2
+ 1633 0def 74       		.byte	0x74
+ 1634 0df0 00       		.sleb128 0
+ 1635 0df1 03       		.uleb128 0x3
+ 1636 0df2 01       		.uleb128 0x1
+ 1637 0df3 51       		.byte	0x51
+ 1638 0df4 02       		.uleb128 0x2
+ 1639 0df5 75       		.byte	0x75
+ 1640 0df6 00       		.sleb128 0
+ 1641 0df7 03       		.uleb128 0x3
+ 1642 0df8 01       		.uleb128 0x1
+ 1643 0df9 58       		.byte	0x58
+ 1644 0dfa 02       		.uleb128 0x2
+ 1645 0dfb 73       		.byte	0x73
+ 1646 0dfc 00       		.sleb128 0
+ 1647 0dfd 00       		.byte	0
+ 1648 0dfe 13       		.uleb128 0x13
+ 1649 0dff 09010000 		.quad	.LVL21
+ 1649      00000000 
+ 1650 0e07 040B0000 		.long	0xb04
+ 1651 0e0b 03       		.uleb128 0x3
+ 1652 0e0c 01       		.uleb128 0x1
+ 1653 0e0d 52       		.byte	0x52
+ 1654 0e0e 09       		.uleb128 0x9
+ 1655 0e0f 03       		.byte	0x3
+ 1656 0e10 00000000 		.quad	.LC1
+ 1656      00000000 
+ 1657 0e18 03       		.uleb128 0x3
+ 1658 0e19 01       		.uleb128 0x1
+ 1659 0e1a 51       		.byte	0x51
+ 1660 0e1b 09       		.uleb128 0x9
+ 1661 0e1c 03       		.byte	0x3
+ 1662 0e1d 00000000 		.quad	__FUNCTION__.0
+ 1662      00000000 
+ 1663 0e25 03       		.uleb128 0x3
+ 1664 0e26 01       		.uleb128 0x1
+ 1665 0e27 58       		.byte	0x58
+ 1666 0e28 02       		.uleb128 0x2
+ 1667 0e29 08       		.byte	0x8
+ 1668 0e2a 4D       		.byte	0x4d
+ 1669 0e2b 00       		.byte	0
+ 1670 0e2c 00       		.byte	0
+ 1671 0e2d 2A       		.uleb128 0x2a
+ 1672 0e2e 8A010000 		.long	0x18a
+ 1673 0e32 3D0E0000 		.long	0xe3d
+ 1674 0e36 2B       		.uleb128 0x2b
+ 1675 0e37 68010000 		.long	0x168
+ 1676 0e3b 16       		.byte	0x16
+ 1677 0e3c 00       		.byte	0
+ 1678 0e3d 07       		.uleb128 0x7
+ 1679 0e3e 2D0E0000 		.long	0xe2d
+ 1680 0e42 1A       		.uleb128 0x1a
+ 1681 0e43 73676C5F 		.ascii "sgl_rect_create\0"
+ 1681      72656374 
+ 1681      5F637265 
+ 1681      61746500 
+ 1682 0e53 27       		.byte	0x27
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 40
+
+
+ 1683 0e54 6B080000 		.long	0x86b
+ 1684 0e58 00000000 		.quad	.LFB94
+ 1684      00000000 
+ 1685 0e60 7D000000 		.quad	.LFE94-.LFB94
+ 1685      00000000 
+ 1686 0e68 01       		.uleb128 0x1
+ 1687 0e69 9C       		.byte	0x9c
+ 1688 0e6a 2A0F0000 		.long	0xf2a
+ 1689 0e6e 1B       		.uleb128 0x1b
+ 1690 0e6f 00000000 		.secrel32	.LASF2
+ 1691 0e73 27       		.byte	0x27
+ 1692 0e74 27       		.byte	0x27
+ 1693 0e75 6B080000 		.long	0x86b
+ 1694 0e79 71010000 		.secrel32	.LLST9
+ 1695 0e7d 69010000 		.secrel32	.LVUS9
+ 1696 0e81 0D       		.uleb128 0xd
+ 1697 0e82 72656374 		.ascii "rect\0"
+ 1697      00
+ 1698 0e87 29       		.byte	0x29
+ 1699 0e88 16       		.byte	0x16
+ 1700 0e89 2A0F0000 		.long	0xf2a
+ 1701 0e8d 9A010000 		.secrel32	.LLST10
+ 1702 0e91 92010000 		.secrel32	.LVUS10
+ 1703 0e95 0D       		.uleb128 0xd
+ 1704 0e96 6F626A00 		.ascii "obj\0"
+ 1705 0e9a 32       		.byte	0x32
+ 1706 0e9b 10       		.byte	0x10
+ 1707 0e9c 6B080000 		.long	0x86b
+ 1708 0ea0 BA010000 		.secrel32	.LLST11
+ 1709 0ea4 B8010000 		.secrel32	.LVUS11
+ 1710 0ea8 0A       		.uleb128 0xa
+ 1711 0ea9 13000000 		.quad	.LVL24
+ 1711      00000000 
+ 1712 0eb1 B90B0000 		.long	0xbb9
+ 1713 0eb5 C00E0000 		.long	0xec0
+ 1714 0eb9 03       		.uleb128 0x3
+ 1715 0eba 01       		.uleb128 0x1
+ 1716 0ebb 52       		.byte	0x52
+ 1717 0ebc 02       		.uleb128 0x2
+ 1718 0ebd 08       		.byte	0x8
+ 1719 0ebe 40       		.byte	0x40
+ 1720 0ebf 00       		.byte	0
+ 1721 0ec0 0A       		.uleb128 0xa
+ 1722 0ec1 2B000000 		.quad	.LVL26
+ 1722      00000000 
+ 1723 0ec9 7A0B0000 		.long	0xb7a
+ 1724 0ecd E30E0000 		.long	0xee3
+ 1725 0ed1 03       		.uleb128 0x3
+ 1726 0ed2 01       		.uleb128 0x1
+ 1727 0ed3 52       		.byte	0x52
+ 1728 0ed4 02       		.uleb128 0x2
+ 1729 0ed5 73       		.byte	0x73
+ 1730 0ed6 00       		.sleb128 0
+ 1731 0ed7 03       		.uleb128 0x3
+ 1732 0ed8 01       		.uleb128 0x1
+ 1733 0ed9 51       		.byte	0x51
+ 1734 0eda 01       		.uleb128 0x1
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 41
+
+
+ 1735 0edb 30       		.byte	0x30
+ 1736 0edc 03       		.uleb128 0x3
+ 1737 0edd 01       		.uleb128 0x1
+ 1738 0ede 58       		.byte	0x58
+ 1739 0edf 02       		.uleb128 0x2
+ 1740 0ee0 08       		.byte	0x8
+ 1741 0ee1 40       		.byte	0x40
+ 1742 0ee2 00       		.byte	0
+ 1743 0ee3 0A       		.uleb128 0xa
+ 1744 0ee4 36000000 		.quad	.LVL27
+ 1744      00000000 
+ 1745 0eec 560B0000 		.long	0xb56
+ 1746 0ef0 010F0000 		.long	0xf01
+ 1747 0ef4 03       		.uleb128 0x3
+ 1748 0ef5 01       		.uleb128 0x1
+ 1749 0ef6 52       		.byte	0x52
+ 1750 0ef7 02       		.uleb128 0x2
+ 1751 0ef8 73       		.byte	0x73
+ 1752 0ef9 00       		.sleb128 0
+ 1753 0efa 03       		.uleb128 0x3
+ 1754 0efb 01       		.uleb128 0x1
+ 1755 0efc 51       		.byte	0x51
+ 1756 0efd 02       		.uleb128 0x2
+ 1757 0efe 74       		.byte	0x74
+ 1758 0eff 00       		.sleb128 0
+ 1759 0f00 00       		.byte	0
+ 1760 0f01 13       		.uleb128 0x13
+ 1761 0f02 7B000000 		.quad	.LVL32
+ 1761      00000000 
+ 1762 0f0a 9D0B0000 		.long	0xb9d
+ 1763 0f0e 03       		.uleb128 0x3
+ 1764 0f0f 01       		.uleb128 0x1
+ 1765 0f10 52       		.byte	0x52
+ 1766 0f11 09       		.uleb128 0x9
+ 1767 0f12 03       		.byte	0x3
+ 1768 0f13 37000000 		.quad	.LC3
+ 1768      00000000 
+ 1769 0f1b 03       		.uleb128 0x3
+ 1770 0f1c 01       		.uleb128 0x1
+ 1771 0f1d 51       		.byte	0x51
+ 1772 0f1e 09       		.uleb128 0x9
+ 1773 0f1f 03       		.byte	0x3
+ 1774 0f20 18000000 		.quad	.LC2
+ 1774      00000000 
+ 1775 0f28 00       		.byte	0
+ 1776 0f29 00       		.byte	0
+ 1777 0f2a 05       		.uleb128 0x5
+ 1778 0f2b 37090000 		.long	0x937
+ 1779 0f2f 2C       		.uleb128 0x2c
+ 1780 0f30 73676C5F 		.ascii "sgl_rectangle_construct_cb\0"
+ 1780      72656374 
+ 1780      616E676C 
+ 1780      655F636F 
+ 1780      6E737472 
+ 1781 0f4b 01       		.byte	0x1
+ 1782 0f4c 1B       		.byte	0x1b
+ 1783 0f4d 0D       		.byte	0xd
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 42
+
+
+ 1784 0f4e 00000000 		.quad	.LFB93
+ 1784      00000000 
+ 1785 0f56 12000000 		.quad	.LFE93-.LFB93
+ 1785      00000000 
+ 1786 0f5e 01       		.uleb128 0x1
+ 1787 0f5f 9C       		.byte	0x9c
+ 1788 0f60 0F       		.uleb128 0xf
+ 1789 0f61 73757266 		.ascii "surf\0"
+ 1789      00
+ 1790 0f66 1B       		.byte	0x1b
+ 1791 0f67 34       		.byte	0x34
+ 1792 0f68 4B080000 		.long	0x84b
+ 1793 0f6c CB010000 		.secrel32	.LLST0
+ 1794 0f70 C7010000 		.secrel32	.LVUS0
+ 1795 0f74 0F       		.uleb128 0xf
+ 1796 0f75 6F626A00 		.ascii "obj\0"
+ 1797 0f79 1B       		.byte	0x1b
+ 1798 0f7a 45       		.byte	0x45
+ 1799 0f7b 6B080000 		.long	0x86b
+ 1800 0f7f E8010000 		.secrel32	.LLST1
+ 1801 0f83 E2010000 		.secrel32	.LVUS1
+ 1802 0f87 0F       		.uleb128 0xf
+ 1803 0f88 61726561 		.ascii "area\0"
+ 1803      00
+ 1804 0f8d 1B       		.byte	0x1b
+ 1805 0f8e 56       		.byte	0x56
+ 1806 0f8f B3040000 		.long	0x4b3
+ 1807 0f93 0A020000 		.secrel32	.LLST2
+ 1808 0f97 04020000 		.secrel32	.LVUS2
+ 1809 0f9b 0D       		.uleb128 0xd
+ 1810 0f9c 72656374 		.ascii "rect\0"
+ 1810      00
+ 1811 0fa1 1D       		.byte	0x1d
+ 1812 0fa2 16       		.byte	0x16
+ 1813 0fa3 2A0F0000 		.long	0xf2a
+ 1814 0fa7 2C020000 		.secrel32	.LLST3
+ 1815 0fab 26020000 		.secrel32	.LVUS3
+ 1816 0faf 2D       		.uleb128 0x2d
+ 1817 0fb0 12000000 		.quad	.LVL4
+ 1817      00000000 
+ 1818 0fb8 2F0B0000 		.long	0xb2f
+ 1819 0fbc 03       		.uleb128 0x3
+ 1820 0fbd 01       		.uleb128 0x1
+ 1821 0fbe 52       		.byte	0x52
+ 1822 0fbf 03       		.uleb128 0x3
+ 1823 0fc0 A3       		.byte	0xa3
+ 1824 0fc1 01       		.uleb128 0x1
+ 1825 0fc2 52       		.byte	0x52
+ 1826 0fc3 03       		.uleb128 0x3
+ 1827 0fc4 01       		.uleb128 0x1
+ 1828 0fc5 51       		.byte	0x51
+ 1829 0fc6 03       		.uleb128 0x3
+ 1830 0fc7 A3       		.byte	0xa3
+ 1831 0fc8 01       		.uleb128 0x1
+ 1832 0fc9 58       		.byte	0x58
+ 1833 0fca 03       		.uleb128 0x3
+ 1834 0fcb 01       		.uleb128 0x1
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 43
+
+
+ 1835 0fcc 58       		.byte	0x58
+ 1836 0fcd 03       		.uleb128 0x3
+ 1837 0fce A3       		.byte	0xa3
+ 1838 0fcf 01       		.uleb128 0x1
+ 1839 0fd0 51       		.byte	0x51
+ 1840 0fd1 03       		.uleb128 0x3
+ 1841 0fd2 01       		.uleb128 0x1
+ 1842 0fd3 59       		.byte	0x59
+ 1843 0fd4 05       		.uleb128 0x5
+ 1844 0fd5 A3       		.byte	0xa3
+ 1845 0fd6 01       		.uleb128 0x1
+ 1846 0fd7 51       		.byte	0x51
+ 1847 0fd8 23       		.byte	0x23
+ 1848 0fd9 30       		.uleb128 0x30
+ 1849 0fda 00       		.byte	0
+ 1850 0fdb 00       		.byte	0
+ 1851 0fdc 00       		.byte	0
+ 1852              		.section	.debug_abbrev,"dr"
+ 1853              	.Ldebug_abbrev0:
+ 1854 0000 01       		.uleb128 0x1
+ 1855 0001 05       		.uleb128 0x5
+ 1856 0002 00       		.byte	0
+ 1857 0003 49       		.uleb128 0x49
+ 1858 0004 13       		.uleb128 0x13
+ 1859 0005 00       		.byte	0
+ 1860 0006 00       		.byte	0
+ 1861 0007 02       		.uleb128 0x2
+ 1862 0008 0D       		.uleb128 0xd
+ 1863 0009 00       		.byte	0
+ 1864 000a 03       		.uleb128 0x3
+ 1865 000b 08       		.uleb128 0x8
+ 1866 000c 3A       		.uleb128 0x3a
+ 1867 000d 21       		.uleb128 0x21
+ 1868 000e 04       		.sleb128 4
+ 1869 000f 3B       		.uleb128 0x3b
+ 1870 0010 05       		.uleb128 0x5
+ 1871 0011 39       		.uleb128 0x39
+ 1872 0012 0B       		.uleb128 0xb
+ 1873 0013 49       		.uleb128 0x49
+ 1874 0014 13       		.uleb128 0x13
+ 1875 0015 38       		.uleb128 0x38
+ 1876 0016 0B       		.uleb128 0xb
+ 1877 0017 00       		.byte	0
+ 1878 0018 00       		.byte	0
+ 1879 0019 03       		.uleb128 0x3
+ 1880 001a 49       		.uleb128 0x49
+ 1881 001b 00       		.byte	0
+ 1882 001c 02       		.uleb128 0x2
+ 1883 001d 18       		.uleb128 0x18
+ 1884 001e 7E       		.uleb128 0x7e
+ 1885 001f 18       		.uleb128 0x18
+ 1886 0020 00       		.byte	0
+ 1887 0021 00       		.byte	0
+ 1888 0022 04       		.uleb128 0x4
+ 1889 0023 28       		.uleb128 0x28
+ 1890 0024 00       		.byte	0
+ 1891 0025 03       		.uleb128 0x3
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 44
+
+
+ 1892 0026 08       		.uleb128 0x8
+ 1893 0027 1C       		.uleb128 0x1c
+ 1894 0028 0B       		.uleb128 0xb
+ 1895 0029 00       		.byte	0
+ 1896 002a 00       		.byte	0
+ 1897 002b 05       		.uleb128 0x5
+ 1898 002c 0F       		.uleb128 0xf
+ 1899 002d 00       		.byte	0
+ 1900 002e 0B       		.uleb128 0xb
+ 1901 002f 21       		.uleb128 0x21
+ 1902 0030 08       		.sleb128 8
+ 1903 0031 49       		.uleb128 0x49
+ 1904 0032 13       		.uleb128 0x13
+ 1905 0033 00       		.byte	0
+ 1906 0034 00       		.byte	0
+ 1907 0035 06       		.uleb128 0x6
+ 1908 0036 0D       		.uleb128 0xd
+ 1909 0037 00       		.byte	0
+ 1910 0038 03       		.uleb128 0x3
+ 1911 0039 08       		.uleb128 0x8
+ 1912 003a 3A       		.uleb128 0x3a
+ 1913 003b 0B       		.uleb128 0xb
+ 1914 003c 3B       		.uleb128 0x3b
+ 1915 003d 0B       		.uleb128 0xb
+ 1916 003e 39       		.uleb128 0x39
+ 1917 003f 0B       		.uleb128 0xb
+ 1918 0040 49       		.uleb128 0x49
+ 1919 0041 13       		.uleb128 0x13
+ 1920 0042 38       		.uleb128 0x38
+ 1921 0043 0B       		.uleb128 0xb
+ 1922 0044 00       		.byte	0
+ 1923 0045 00       		.byte	0
+ 1924 0046 07       		.uleb128 0x7
+ 1925 0047 26       		.uleb128 0x26
+ 1926 0048 00       		.byte	0
+ 1927 0049 49       		.uleb128 0x49
+ 1928 004a 13       		.uleb128 0x13
+ 1929 004b 00       		.byte	0
+ 1930 004c 00       		.byte	0
+ 1931 004d 08       		.uleb128 0x8
+ 1932 004e 16       		.uleb128 0x16
+ 1933 004f 00       		.byte	0
+ 1934 0050 03       		.uleb128 0x3
+ 1935 0051 08       		.uleb128 0x8
+ 1936 0052 3A       		.uleb128 0x3a
+ 1937 0053 0B       		.uleb128 0xb
+ 1938 0054 3B       		.uleb128 0x3b
+ 1939 0055 0B       		.uleb128 0xb
+ 1940 0056 39       		.uleb128 0x39
+ 1941 0057 0B       		.uleb128 0xb
+ 1942 0058 49       		.uleb128 0x49
+ 1943 0059 13       		.uleb128 0x13
+ 1944 005a 00       		.byte	0
+ 1945 005b 00       		.byte	0
+ 1946 005c 09       		.uleb128 0x9
+ 1947 005d 24       		.uleb128 0x24
+ 1948 005e 00       		.byte	0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 45
+
+
+ 1949 005f 0B       		.uleb128 0xb
+ 1950 0060 0B       		.uleb128 0xb
+ 1951 0061 3E       		.uleb128 0x3e
+ 1952 0062 0B       		.uleb128 0xb
+ 1953 0063 03       		.uleb128 0x3
+ 1954 0064 08       		.uleb128 0x8
+ 1955 0065 00       		.byte	0
+ 1956 0066 00       		.byte	0
+ 1957 0067 0A       		.uleb128 0xa
+ 1958 0068 48       		.uleb128 0x48
+ 1959 0069 01       		.byte	0x1
+ 1960 006a 7D       		.uleb128 0x7d
+ 1961 006b 01       		.uleb128 0x1
+ 1962 006c 7F       		.uleb128 0x7f
+ 1963 006d 13       		.uleb128 0x13
+ 1964 006e 01       		.uleb128 0x1
+ 1965 006f 13       		.uleb128 0x13
+ 1966 0070 00       		.byte	0
+ 1967 0071 00       		.byte	0
+ 1968 0072 0B       		.uleb128 0xb
+ 1969 0073 16       		.uleb128 0x16
+ 1970 0074 00       		.byte	0
+ 1971 0075 03       		.uleb128 0x3
+ 1972 0076 08       		.uleb128 0x8
+ 1973 0077 3A       		.uleb128 0x3a
+ 1974 0078 21       		.uleb128 0x21
+ 1975 0079 04       		.sleb128 4
+ 1976 007a 3B       		.uleb128 0x3b
+ 1977 007b 05       		.uleb128 0x5
+ 1978 007c 39       		.uleb128 0x39
+ 1979 007d 21       		.uleb128 0x21
+ 1980 007e 03       		.sleb128 3
+ 1981 007f 49       		.uleb128 0x49
+ 1982 0080 13       		.uleb128 0x13
+ 1983 0081 00       		.byte	0
+ 1984 0082 00       		.byte	0
+ 1985 0083 0C       		.uleb128 0xc
+ 1986 0084 13       		.uleb128 0x13
+ 1987 0085 01       		.byte	0x1
+ 1988 0086 03       		.uleb128 0x3
+ 1989 0087 08       		.uleb128 0x8
+ 1990 0088 0B       		.uleb128 0xb
+ 1991 0089 0B       		.uleb128 0xb
+ 1992 008a 3A       		.uleb128 0x3a
+ 1993 008b 21       		.uleb128 0x21
+ 1994 008c 04       		.sleb128 4
+ 1995 008d 3B       		.uleb128 0x3b
+ 1996 008e 05       		.uleb128 0x5
+ 1997 008f 39       		.uleb128 0x39
+ 1998 0090 21       		.uleb128 0x21
+ 1999 0091 10       		.sleb128 16
+ 2000 0092 01       		.uleb128 0x1
+ 2001 0093 13       		.uleb128 0x13
+ 2002 0094 00       		.byte	0
+ 2003 0095 00       		.byte	0
+ 2004 0096 0D       		.uleb128 0xd
+ 2005 0097 34       		.uleb128 0x34
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 46
+
+
+ 2006 0098 00       		.byte	0
+ 2007 0099 03       		.uleb128 0x3
+ 2008 009a 08       		.uleb128 0x8
+ 2009 009b 3A       		.uleb128 0x3a
+ 2010 009c 21       		.uleb128 0x21
+ 2011 009d 01       		.sleb128 1
+ 2012 009e 3B       		.uleb128 0x3b
+ 2013 009f 0B       		.uleb128 0xb
+ 2014 00a0 39       		.uleb128 0x39
+ 2015 00a1 0B       		.uleb128 0xb
+ 2016 00a2 49       		.uleb128 0x49
+ 2017 00a3 13       		.uleb128 0x13
+ 2018 00a4 02       		.uleb128 0x2
+ 2019 00a5 17       		.uleb128 0x17
+ 2020 00a6 B742     		.uleb128 0x2137
+ 2021 00a8 17       		.uleb128 0x17
+ 2022 00a9 00       		.byte	0
+ 2023 00aa 00       		.byte	0
+ 2024 00ab 0E       		.uleb128 0xe
+ 2025 00ac 0D       		.uleb128 0xd
+ 2026 00ad 00       		.byte	0
+ 2027 00ae 03       		.uleb128 0x3
+ 2028 00af 08       		.uleb128 0x8
+ 2029 00b0 3A       		.uleb128 0x3a
+ 2030 00b1 21       		.uleb128 0x21
+ 2031 00b2 04       		.sleb128 4
+ 2032 00b3 3B       		.uleb128 0x3b
+ 2033 00b4 05       		.uleb128 0x5
+ 2034 00b5 39       		.uleb128 0x39
+ 2035 00b6 21       		.uleb128 0x21
+ 2036 00b7 15       		.sleb128 21
+ 2037 00b8 49       		.uleb128 0x49
+ 2038 00b9 13       		.uleb128 0x13
+ 2039 00ba 0D       		.uleb128 0xd
+ 2040 00bb 0B       		.uleb128 0xb
+ 2041 00bc 6B       		.uleb128 0x6b
+ 2042 00bd 05       		.uleb128 0x5
+ 2043 00be 00       		.byte	0
+ 2044 00bf 00       		.byte	0
+ 2045 00c0 0F       		.uleb128 0xf
+ 2046 00c1 05       		.uleb128 0x5
+ 2047 00c2 00       		.byte	0
+ 2048 00c3 03       		.uleb128 0x3
+ 2049 00c4 08       		.uleb128 0x8
+ 2050 00c5 3A       		.uleb128 0x3a
+ 2051 00c6 21       		.uleb128 0x21
+ 2052 00c7 01       		.sleb128 1
+ 2053 00c8 3B       		.uleb128 0x3b
+ 2054 00c9 0B       		.uleb128 0xb
+ 2055 00ca 39       		.uleb128 0x39
+ 2056 00cb 0B       		.uleb128 0xb
+ 2057 00cc 49       		.uleb128 0x49
+ 2058 00cd 13       		.uleb128 0x13
+ 2059 00ce 02       		.uleb128 0x2
+ 2060 00cf 17       		.uleb128 0x17
+ 2061 00d0 B742     		.uleb128 0x2137
+ 2062 00d2 17       		.uleb128 0x17
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 47
+
+
+ 2063 00d3 00       		.byte	0
+ 2064 00d4 00       		.byte	0
+ 2065 00d5 10       		.uleb128 0x10
+ 2066 00d6 2E       		.uleb128 0x2e
+ 2067 00d7 01       		.byte	0x1
+ 2068 00d8 3F       		.uleb128 0x3f
+ 2069 00d9 19       		.uleb128 0x19
+ 2070 00da 03       		.uleb128 0x3
+ 2071 00db 08       		.uleb128 0x8
+ 2072 00dc 3A       		.uleb128 0x3a
+ 2073 00dd 0B       		.uleb128 0xb
+ 2074 00de 3B       		.uleb128 0x3b
+ 2075 00df 05       		.uleb128 0x5
+ 2076 00e0 39       		.uleb128 0x39
+ 2077 00e1 21       		.uleb128 0x21
+ 2078 00e2 06       		.sleb128 6
+ 2079 00e3 27       		.uleb128 0x27
+ 2080 00e4 19       		.uleb128 0x19
+ 2081 00e5 3C       		.uleb128 0x3c
+ 2082 00e6 19       		.uleb128 0x19
+ 2083 00e7 01       		.uleb128 0x1
+ 2084 00e8 13       		.uleb128 0x13
+ 2085 00e9 00       		.byte	0
+ 2086 00ea 00       		.byte	0
+ 2087 00eb 11       		.uleb128 0x11
+ 2088 00ec 0D       		.uleb128 0xd
+ 2089 00ed 00       		.byte	0
+ 2090 00ee 03       		.uleb128 0x3
+ 2091 00ef 08       		.uleb128 0x8
+ 2092 00f0 3A       		.uleb128 0x3a
+ 2093 00f1 21       		.uleb128 0x21
+ 2094 00f2 04       		.sleb128 4
+ 2095 00f3 3B       		.uleb128 0x3b
+ 2096 00f4 0B       		.uleb128 0xb
+ 2097 00f5 39       		.uleb128 0x39
+ 2098 00f6 21       		.uleb128 0x21
+ 2099 00f7 12       		.sleb128 18
+ 2100 00f8 49       		.uleb128 0x49
+ 2101 00f9 13       		.uleb128 0x13
+ 2102 00fa 0D       		.uleb128 0xd
+ 2103 00fb 0B       		.uleb128 0xb
+ 2104 00fc 6B       		.uleb128 0x6b
+ 2105 00fd 0B       		.uleb128 0xb
+ 2106 00fe 00       		.byte	0
+ 2107 00ff 00       		.byte	0
+ 2108 0100 12       		.uleb128 0x12
+ 2109 0101 0D       		.uleb128 0xd
+ 2110 0102 00       		.byte	0
+ 2111 0103 03       		.uleb128 0x3
+ 2112 0104 08       		.uleb128 0x8
+ 2113 0105 3A       		.uleb128 0x3a
+ 2114 0106 21       		.uleb128 0x21
+ 2115 0107 04       		.sleb128 4
+ 2116 0108 3B       		.uleb128 0x3b
+ 2117 0109 05       		.uleb128 0x5
+ 2118 010a 39       		.uleb128 0x39
+ 2119 010b 21       		.uleb128 0x21
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 48
+
+
+ 2120 010c 0E       		.sleb128 14
+ 2121 010d 49       		.uleb128 0x49
+ 2122 010e 13       		.uleb128 0x13
+ 2123 010f 0D       		.uleb128 0xd
+ 2124 0110 0B       		.uleb128 0xb
+ 2125 0111 6B       		.uleb128 0x6b
+ 2126 0112 0B       		.uleb128 0xb
+ 2127 0113 00       		.byte	0
+ 2128 0114 00       		.byte	0
+ 2129 0115 13       		.uleb128 0x13
+ 2130 0116 48       		.uleb128 0x48
+ 2131 0117 01       		.byte	0x1
+ 2132 0118 7D       		.uleb128 0x7d
+ 2133 0119 01       		.uleb128 0x1
+ 2134 011a 7F       		.uleb128 0x7f
+ 2135 011b 13       		.uleb128 0x13
+ 2136 011c 00       		.byte	0
+ 2137 011d 00       		.byte	0
+ 2138 011e 14       		.uleb128 0x14
+ 2139 011f 0D       		.uleb128 0xd
+ 2140 0120 00       		.byte	0
+ 2141 0121 03       		.uleb128 0x3
+ 2142 0122 08       		.uleb128 0x8
+ 2143 0123 3A       		.uleb128 0x3a
+ 2144 0124 21       		.uleb128 0x21
+ 2145 0125 04       		.sleb128 4
+ 2146 0126 3B       		.uleb128 0x3b
+ 2147 0127 0B       		.uleb128 0xb
+ 2148 0128 39       		.uleb128 0x39
+ 2149 0129 0B       		.uleb128 0xb
+ 2150 012a 49       		.uleb128 0x49
+ 2151 012b 13       		.uleb128 0x13
+ 2152 012c 00       		.byte	0
+ 2153 012d 00       		.byte	0
+ 2154 012e 15       		.uleb128 0x15
+ 2155 012f 0D       		.uleb128 0xd
+ 2156 0130 00       		.byte	0
+ 2157 0131 03       		.uleb128 0x3
+ 2158 0132 08       		.uleb128 0x8
+ 2159 0133 3A       		.uleb128 0x3a
+ 2160 0134 21       		.uleb128 0x21
+ 2161 0135 04       		.sleb128 4
+ 2162 0136 3B       		.uleb128 0x3b
+ 2163 0137 05       		.uleb128 0x5
+ 2164 0138 39       		.uleb128 0x39
+ 2165 0139 0B       		.uleb128 0xb
+ 2166 013a 49       		.uleb128 0x49
+ 2167 013b 13       		.uleb128 0x13
+ 2168 013c 00       		.byte	0
+ 2169 013d 00       		.byte	0
+ 2170 013e 16       		.uleb128 0x16
+ 2171 013f 13       		.uleb128 0x13
+ 2172 0140 01       		.byte	0x1
+ 2173 0141 03       		.uleb128 0x3
+ 2174 0142 08       		.uleb128 0x8
+ 2175 0143 0B       		.uleb128 0xb
+ 2176 0144 0B       		.uleb128 0xb
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 49
+
+
+ 2177 0145 3A       		.uleb128 0x3a
+ 2178 0146 21       		.uleb128 0x21
+ 2179 0147 06       		.sleb128 6
+ 2180 0148 3B       		.uleb128 0x3b
+ 2181 0149 0B       		.uleb128 0xb
+ 2182 014a 39       		.uleb128 0x39
+ 2183 014b 21       		.uleb128 0x21
+ 2184 014c 10       		.sleb128 16
+ 2185 014d 01       		.uleb128 0x1
+ 2186 014e 13       		.uleb128 0x13
+ 2187 014f 00       		.byte	0
+ 2188 0150 00       		.byte	0
+ 2189 0151 17       		.uleb128 0x17
+ 2190 0152 0D       		.uleb128 0xd
+ 2191 0153 00       		.byte	0
+ 2192 0154 03       		.uleb128 0x3
+ 2193 0155 08       		.uleb128 0x8
+ 2194 0156 3A       		.uleb128 0x3a
+ 2195 0157 21       		.uleb128 0x21
+ 2196 0158 06       		.sleb128 6
+ 2197 0159 3B       		.uleb128 0x3b
+ 2198 015a 0B       		.uleb128 0xb
+ 2199 015b 39       		.uleb128 0x39
+ 2200 015c 21       		.uleb128 0x21
+ 2201 015d 16       		.sleb128 22
+ 2202 015e 49       		.uleb128 0x49
+ 2203 015f 13       		.uleb128 0x13
+ 2204 0160 0D       		.uleb128 0xd
+ 2205 0161 0B       		.uleb128 0xb
+ 2206 0162 6B       		.uleb128 0x6b
+ 2207 0163 05       		.uleb128 0x5
+ 2208 0164 00       		.byte	0
+ 2209 0165 00       		.byte	0
+ 2210 0166 18       		.uleb128 0x18
+ 2211 0167 2E       		.uleb128 0x2e
+ 2212 0168 01       		.byte	0x1
+ 2213 0169 3F       		.uleb128 0x3f
+ 2214 016a 19       		.uleb128 0x19
+ 2215 016b 03       		.uleb128 0x3
+ 2216 016c 08       		.uleb128 0x8
+ 2217 016d 3A       		.uleb128 0x3a
+ 2218 016e 21       		.uleb128 0x21
+ 2219 016f 04       		.sleb128 4
+ 2220 0170 3B       		.uleb128 0x3b
+ 2221 0171 05       		.uleb128 0x5
+ 2222 0172 39       		.uleb128 0x39
+ 2223 0173 0B       		.uleb128 0xb
+ 2224 0174 27       		.uleb128 0x27
+ 2225 0175 19       		.uleb128 0x19
+ 2226 0176 49       		.uleb128 0x49
+ 2227 0177 13       		.uleb128 0x13
+ 2228 0178 3C       		.uleb128 0x3c
+ 2229 0179 19       		.uleb128 0x19
+ 2230 017a 01       		.uleb128 0x1
+ 2231 017b 13       		.uleb128 0x13
+ 2232 017c 00       		.byte	0
+ 2233 017d 00       		.byte	0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 50
+
+
+ 2234 017e 19       		.uleb128 0x19
+ 2235 017f 2E       		.uleb128 0x2e
+ 2236 0180 01       		.byte	0x1
+ 2237 0181 3F       		.uleb128 0x3f
+ 2238 0182 19       		.uleb128 0x19
+ 2239 0183 03       		.uleb128 0x3
+ 2240 0184 08       		.uleb128 0x8
+ 2241 0185 3A       		.uleb128 0x3a
+ 2242 0186 0B       		.uleb128 0xb
+ 2243 0187 3B       		.uleb128 0x3b
+ 2244 0188 0B       		.uleb128 0xb
+ 2245 0189 39       		.uleb128 0x39
+ 2246 018a 0B       		.uleb128 0xb
+ 2247 018b 27       		.uleb128 0x27
+ 2248 018c 19       		.uleb128 0x19
+ 2249 018d 49       		.uleb128 0x49
+ 2250 018e 13       		.uleb128 0x13
+ 2251 018f 3C       		.uleb128 0x3c
+ 2252 0190 19       		.uleb128 0x19
+ 2253 0191 01       		.uleb128 0x1
+ 2254 0192 13       		.uleb128 0x13
+ 2255 0193 00       		.byte	0
+ 2256 0194 00       		.byte	0
+ 2257 0195 1A       		.uleb128 0x1a
+ 2258 0196 2E       		.uleb128 0x2e
+ 2259 0197 01       		.byte	0x1
+ 2260 0198 3F       		.uleb128 0x3f
+ 2261 0199 19       		.uleb128 0x19
+ 2262 019a 03       		.uleb128 0x3
+ 2263 019b 08       		.uleb128 0x8
+ 2264 019c 3A       		.uleb128 0x3a
+ 2265 019d 21       		.uleb128 0x21
+ 2266 019e 01       		.sleb128 1
+ 2267 019f 3B       		.uleb128 0x3b
+ 2268 01a0 0B       		.uleb128 0xb
+ 2269 01a1 39       		.uleb128 0x39
+ 2270 01a2 21       		.uleb128 0x21
+ 2271 01a3 0C       		.sleb128 12
+ 2272 01a4 27       		.uleb128 0x27
+ 2273 01a5 19       		.uleb128 0x19
+ 2274 01a6 49       		.uleb128 0x49
+ 2275 01a7 13       		.uleb128 0x13
+ 2276 01a8 11       		.uleb128 0x11
+ 2277 01a9 01       		.uleb128 0x1
+ 2278 01aa 12       		.uleb128 0x12
+ 2279 01ab 07       		.uleb128 0x7
+ 2280 01ac 40       		.uleb128 0x40
+ 2281 01ad 18       		.uleb128 0x18
+ 2282 01ae 7A       		.uleb128 0x7a
+ 2283 01af 19       		.uleb128 0x19
+ 2284 01b0 01       		.uleb128 0x1
+ 2285 01b1 13       		.uleb128 0x13
+ 2286 01b2 00       		.byte	0
+ 2287 01b3 00       		.byte	0
+ 2288 01b4 1B       		.uleb128 0x1b
+ 2289 01b5 05       		.uleb128 0x5
+ 2290 01b6 00       		.byte	0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 51
+
+
+ 2291 01b7 03       		.uleb128 0x3
+ 2292 01b8 0E       		.uleb128 0xe
+ 2293 01b9 3A       		.uleb128 0x3a
+ 2294 01ba 21       		.uleb128 0x21
+ 2295 01bb 01       		.sleb128 1
+ 2296 01bc 3B       		.uleb128 0x3b
+ 2297 01bd 0B       		.uleb128 0xb
+ 2298 01be 39       		.uleb128 0x39
+ 2299 01bf 0B       		.uleb128 0xb
+ 2300 01c0 49       		.uleb128 0x49
+ 2301 01c1 13       		.uleb128 0x13
+ 2302 01c2 02       		.uleb128 0x2
+ 2303 01c3 17       		.uleb128 0x17
+ 2304 01c4 B742     		.uleb128 0x2137
+ 2305 01c6 17       		.uleb128 0x17
+ 2306 01c7 00       		.byte	0
+ 2307 01c8 00       		.byte	0
+ 2308 01c9 1C       		.uleb128 0x1c
+ 2309 01ca 11       		.uleb128 0x11
+ 2310 01cb 01       		.byte	0x1
+ 2311 01cc 25       		.uleb128 0x25
+ 2312 01cd 08       		.uleb128 0x8
+ 2313 01ce 13       		.uleb128 0x13
+ 2314 01cf 0B       		.uleb128 0xb
+ 2315 01d0 03       		.uleb128 0x3
+ 2316 01d1 1F       		.uleb128 0x1f
+ 2317 01d2 1B       		.uleb128 0x1b
+ 2318 01d3 1F       		.uleb128 0x1f
+ 2319 01d4 55       		.uleb128 0x55
+ 2320 01d5 17       		.uleb128 0x17
+ 2321 01d6 11       		.uleb128 0x11
+ 2322 01d7 01       		.uleb128 0x1
+ 2323 01d8 10       		.uleb128 0x10
+ 2324 01d9 17       		.uleb128 0x17
+ 2325 01da 00       		.byte	0
+ 2326 01db 00       		.byte	0
+ 2327 01dc 1D       		.uleb128 0x1d
+ 2328 01dd 13       		.uleb128 0x13
+ 2329 01de 01       		.byte	0x1
+ 2330 01df 0B       		.uleb128 0xb
+ 2331 01e0 0B       		.uleb128 0xb
+ 2332 01e1 3A       		.uleb128 0x3a
+ 2333 01e2 0B       		.uleb128 0xb
+ 2334 01e3 3B       		.uleb128 0x3b
+ 2335 01e4 0B       		.uleb128 0xb
+ 2336 01e5 39       		.uleb128 0x39
+ 2337 01e6 0B       		.uleb128 0xb
+ 2338 01e7 01       		.uleb128 0x1
+ 2339 01e8 13       		.uleb128 0x13
+ 2340 01e9 00       		.byte	0
+ 2341 01ea 00       		.byte	0
+ 2342 01eb 1E       		.uleb128 0x1e
+ 2343 01ec 17       		.uleb128 0x17
+ 2344 01ed 01       		.byte	0x1
+ 2345 01ee 0B       		.uleb128 0xb
+ 2346 01ef 0B       		.uleb128 0xb
+ 2347 01f0 3A       		.uleb128 0x3a
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 52
+
+
+ 2348 01f1 0B       		.uleb128 0xb
+ 2349 01f2 3B       		.uleb128 0x3b
+ 2350 01f3 0B       		.uleb128 0xb
+ 2351 01f4 39       		.uleb128 0x39
+ 2352 01f5 0B       		.uleb128 0xb
+ 2353 01f6 01       		.uleb128 0x1
+ 2354 01f7 13       		.uleb128 0x13
+ 2355 01f8 00       		.byte	0
+ 2356 01f9 00       		.byte	0
+ 2357 01fa 1F       		.uleb128 0x1f
+ 2358 01fb 04       		.uleb128 0x4
+ 2359 01fc 01       		.byte	0x1
+ 2360 01fd 03       		.uleb128 0x3
+ 2361 01fe 08       		.uleb128 0x8
+ 2362 01ff 3E       		.uleb128 0x3e
+ 2363 0200 0B       		.uleb128 0xb
+ 2364 0201 0B       		.uleb128 0xb
+ 2365 0202 0B       		.uleb128 0xb
+ 2366 0203 49       		.uleb128 0x49
+ 2367 0204 13       		.uleb128 0x13
+ 2368 0205 3A       		.uleb128 0x3a
+ 2369 0206 0B       		.uleb128 0xb
+ 2370 0207 3B       		.uleb128 0x3b
+ 2371 0208 05       		.uleb128 0x5
+ 2372 0209 39       		.uleb128 0x39
+ 2373 020a 0B       		.uleb128 0xb
+ 2374 020b 01       		.uleb128 0x1
+ 2375 020c 13       		.uleb128 0x13
+ 2376 020d 00       		.byte	0
+ 2377 020e 00       		.byte	0
+ 2378 020f 20       		.uleb128 0x20
+ 2379 0210 17       		.uleb128 0x17
+ 2380 0211 01       		.byte	0x1
+ 2381 0212 0B       		.uleb128 0xb
+ 2382 0213 0B       		.uleb128 0xb
+ 2383 0214 3A       		.uleb128 0x3a
+ 2384 0215 0B       		.uleb128 0xb
+ 2385 0216 3B       		.uleb128 0x3b
+ 2386 0217 05       		.uleb128 0x5
+ 2387 0218 39       		.uleb128 0x39
+ 2388 0219 0B       		.uleb128 0xb
+ 2389 021a 01       		.uleb128 0x1
+ 2390 021b 13       		.uleb128 0x13
+ 2391 021c 00       		.byte	0
+ 2392 021d 00       		.byte	0
+ 2393 021e 21       		.uleb128 0x21
+ 2394 021f 0D       		.uleb128 0xd
+ 2395 0220 00       		.byte	0
+ 2396 0221 03       		.uleb128 0x3
+ 2397 0222 0E       		.uleb128 0xe
+ 2398 0223 3A       		.uleb128 0x3a
+ 2399 0224 0B       		.uleb128 0xb
+ 2400 0225 3B       		.uleb128 0x3b
+ 2401 0226 05       		.uleb128 0x5
+ 2402 0227 39       		.uleb128 0x39
+ 2403 0228 0B       		.uleb128 0xb
+ 2404 0229 49       		.uleb128 0x49
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 53
+
+
+ 2405 022a 13       		.uleb128 0x13
+ 2406 022b 38       		.uleb128 0x38
+ 2407 022c 0B       		.uleb128 0xb
+ 2408 022d 00       		.byte	0
+ 2409 022e 00       		.byte	0
+ 2410 022f 22       		.uleb128 0x22
+ 2411 0230 15       		.uleb128 0x15
+ 2412 0231 01       		.byte	0x1
+ 2413 0232 27       		.uleb128 0x27
+ 2414 0233 19       		.uleb128 0x19
+ 2415 0234 01       		.uleb128 0x1
+ 2416 0235 13       		.uleb128 0x13
+ 2417 0236 00       		.byte	0
+ 2418 0237 00       		.byte	0
+ 2419 0238 23       		.uleb128 0x23
+ 2420 0239 0F       		.uleb128 0xf
+ 2421 023a 00       		.byte	0
+ 2422 023b 0B       		.uleb128 0xb
+ 2423 023c 0B       		.uleb128 0xb
+ 2424 023d 00       		.byte	0
+ 2425 023e 00       		.byte	0
+ 2426 023f 24       		.uleb128 0x24
+ 2427 0240 13       		.uleb128 0x13
+ 2428 0241 01       		.byte	0x1
+ 2429 0242 03       		.uleb128 0x3
+ 2430 0243 0E       		.uleb128 0xe
+ 2431 0244 0B       		.uleb128 0xb
+ 2432 0245 0B       		.uleb128 0xb
+ 2433 0246 3A       		.uleb128 0x3a
+ 2434 0247 0B       		.uleb128 0xb
+ 2435 0248 3B       		.uleb128 0x3b
+ 2436 0249 0B       		.uleb128 0xb
+ 2437 024a 39       		.uleb128 0x39
+ 2438 024b 0B       		.uleb128 0xb
+ 2439 024c 01       		.uleb128 0x1
+ 2440 024d 13       		.uleb128 0x13
+ 2441 024e 00       		.byte	0
+ 2442 024f 00       		.byte	0
+ 2443 0250 25       		.uleb128 0x25
+ 2444 0251 2E       		.uleb128 0x2e
+ 2445 0252 01       		.byte	0x1
+ 2446 0253 3F       		.uleb128 0x3f
+ 2447 0254 19       		.uleb128 0x19
+ 2448 0255 03       		.uleb128 0x3
+ 2449 0256 08       		.uleb128 0x8
+ 2450 0257 3A       		.uleb128 0x3a
+ 2451 0258 0B       		.uleb128 0xb
+ 2452 0259 3B       		.uleb128 0x3b
+ 2453 025a 0B       		.uleb128 0xb
+ 2454 025b 39       		.uleb128 0x39
+ 2455 025c 0B       		.uleb128 0xb
+ 2456 025d 27       		.uleb128 0x27
+ 2457 025e 19       		.uleb128 0x19
+ 2458 025f 3C       		.uleb128 0x3c
+ 2459 0260 19       		.uleb128 0x19
+ 2460 0261 01       		.uleb128 0x1
+ 2461 0262 13       		.uleb128 0x13
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 54
+
+
+ 2462 0263 00       		.byte	0
+ 2463 0264 00       		.byte	0
+ 2464 0265 26       		.uleb128 0x26
+ 2465 0266 2E       		.uleb128 0x2e
+ 2466 0267 01       		.byte	0x1
+ 2467 0268 3F       		.uleb128 0x3f
+ 2468 0269 19       		.uleb128 0x19
+ 2469 026a 03       		.uleb128 0x3
+ 2470 026b 0E       		.uleb128 0xe
+ 2471 026c 3A       		.uleb128 0x3a
+ 2472 026d 0B       		.uleb128 0xb
+ 2473 026e 3B       		.uleb128 0x3b
+ 2474 026f 05       		.uleb128 0x5
+ 2475 0270 39       		.uleb128 0x39
+ 2476 0271 0B       		.uleb128 0xb
+ 2477 0272 27       		.uleb128 0x27
+ 2478 0273 19       		.uleb128 0x19
+ 2479 0274 3C       		.uleb128 0x3c
+ 2480 0275 19       		.uleb128 0x19
+ 2481 0276 01       		.uleb128 0x1
+ 2482 0277 13       		.uleb128 0x13
+ 2483 0278 00       		.byte	0
+ 2484 0279 00       		.byte	0
+ 2485 027a 27       		.uleb128 0x27
+ 2486 027b 18       		.uleb128 0x18
+ 2487 027c 00       		.byte	0
+ 2488 027d 00       		.byte	0
+ 2489 027e 00       		.byte	0
+ 2490 027f 28       		.uleb128 0x28
+ 2491 0280 2E       		.uleb128 0x2e
+ 2492 0281 01       		.byte	0x1
+ 2493 0282 03       		.uleb128 0x3
+ 2494 0283 08       		.uleb128 0x8
+ 2495 0284 3A       		.uleb128 0x3a
+ 2496 0285 0B       		.uleb128 0xb
+ 2497 0286 3B       		.uleb128 0x3b
+ 2498 0287 0B       		.uleb128 0xb
+ 2499 0288 39       		.uleb128 0x39
+ 2500 0289 0B       		.uleb128 0xb
+ 2501 028a 27       		.uleb128 0x27
+ 2502 028b 19       		.uleb128 0x19
+ 2503 028c 11       		.uleb128 0x11
+ 2504 028d 01       		.uleb128 0x1
+ 2505 028e 12       		.uleb128 0x12
+ 2506 028f 07       		.uleb128 0x7
+ 2507 0290 40       		.uleb128 0x40
+ 2508 0291 18       		.uleb128 0x18
+ 2509 0292 7A       		.uleb128 0x7a
+ 2510 0293 19       		.uleb128 0x19
+ 2511 0294 01       		.uleb128 0x1
+ 2512 0295 13       		.uleb128 0x13
+ 2513 0296 00       		.byte	0
+ 2514 0297 00       		.byte	0
+ 2515 0298 29       		.uleb128 0x29
+ 2516 0299 34       		.uleb128 0x34
+ 2517 029a 00       		.byte	0
+ 2518 029b 03       		.uleb128 0x3
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 55
+
+
+ 2519 029c 08       		.uleb128 0x8
+ 2520 029d 49       		.uleb128 0x49
+ 2521 029e 13       		.uleb128 0x13
+ 2522 029f 34       		.uleb128 0x34
+ 2523 02a0 19       		.uleb128 0x19
+ 2524 02a1 02       		.uleb128 0x2
+ 2525 02a2 18       		.uleb128 0x18
+ 2526 02a3 00       		.byte	0
+ 2527 02a4 00       		.byte	0
+ 2528 02a5 2A       		.uleb128 0x2a
+ 2529 02a6 01       		.uleb128 0x1
+ 2530 02a7 01       		.byte	0x1
+ 2531 02a8 49       		.uleb128 0x49
+ 2532 02a9 13       		.uleb128 0x13
+ 2533 02aa 01       		.uleb128 0x1
+ 2534 02ab 13       		.uleb128 0x13
+ 2535 02ac 00       		.byte	0
+ 2536 02ad 00       		.byte	0
+ 2537 02ae 2B       		.uleb128 0x2b
+ 2538 02af 21       		.uleb128 0x21
+ 2539 02b0 00       		.byte	0
+ 2540 02b1 49       		.uleb128 0x49
+ 2541 02b2 13       		.uleb128 0x13
+ 2542 02b3 2F       		.uleb128 0x2f
+ 2543 02b4 0B       		.uleb128 0xb
+ 2544 02b5 00       		.byte	0
+ 2545 02b6 00       		.byte	0
+ 2546 02b7 2C       		.uleb128 0x2c
+ 2547 02b8 2E       		.uleb128 0x2e
+ 2548 02b9 01       		.byte	0x1
+ 2549 02ba 03       		.uleb128 0x3
+ 2550 02bb 08       		.uleb128 0x8
+ 2551 02bc 3A       		.uleb128 0x3a
+ 2552 02bd 0B       		.uleb128 0xb
+ 2553 02be 3B       		.uleb128 0x3b
+ 2554 02bf 0B       		.uleb128 0xb
+ 2555 02c0 39       		.uleb128 0x39
+ 2556 02c1 0B       		.uleb128 0xb
+ 2557 02c2 27       		.uleb128 0x27
+ 2558 02c3 19       		.uleb128 0x19
+ 2559 02c4 11       		.uleb128 0x11
+ 2560 02c5 01       		.uleb128 0x1
+ 2561 02c6 12       		.uleb128 0x12
+ 2562 02c7 07       		.uleb128 0x7
+ 2563 02c8 40       		.uleb128 0x40
+ 2564 02c9 18       		.uleb128 0x18
+ 2565 02ca 7A       		.uleb128 0x7a
+ 2566 02cb 19       		.uleb128 0x19
+ 2567 02cc 00       		.byte	0
+ 2568 02cd 00       		.byte	0
+ 2569 02ce 2D       		.uleb128 0x2d
+ 2570 02cf 48       		.uleb128 0x48
+ 2571 02d0 01       		.byte	0x1
+ 2572 02d1 7D       		.uleb128 0x7d
+ 2573 02d2 01       		.uleb128 0x1
+ 2574 02d3 8201     		.uleb128 0x82
+ 2575 02d5 19       		.uleb128 0x19
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 56
+
+
+ 2576 02d6 7F       		.uleb128 0x7f
+ 2577 02d7 13       		.uleb128 0x13
+ 2578 02d8 00       		.byte	0
+ 2579 02d9 00       		.byte	0
+ 2580 02da 00       		.byte	0
+ 2581              		.section	.debug_loclists,"dr"
+ 2582 0000 44020000 		.long	.Ldebug_loc3-.Ldebug_loc2
+ 2583              	.Ldebug_loc2:
+ 2584 0004 0500     		.word	0x5
+ 2585 0006 08       		.byte	0x8
+ 2586 0007 00       		.byte	0
+ 2587 0008 00000000 		.long	0
+ 2588              	.Ldebug_loc0:
+ 2589              	.LVUS12:
+ 2590 000c 00       		.uleb128 0
+ 2591 000d 00       		.uleb128 .LVU84
+ 2592 000e 00       		.uleb128 .LVU84
+ 2593 000f 00       		.uleb128 .LVU104
+ 2594 0010 00       		.uleb128 .LVU104
+ 2595 0011 00       		.uleb128 .LVU105
+ 2596 0012 00       		.uleb128 .LVU105
+ 2597 0013 00       		.uleb128 0
+ 2598              	.LLST12:
+ 2599 0014 06       		.byte	0x6
+ 2600 0015 00000000 		.quad	.LVL33
+ 2600      00000000 
+ 2601 001d 04       		.byte	0x4
+ 2602 001e 00       		.uleb128 .LVL33-.LVL33
+ 2603 001f 0E       		.uleb128 .LVL34-.LVL33
+ 2604 0020 01       		.uleb128 0x1
+ 2605 0021 52       		.byte	0x52
+ 2606 0022 04       		.byte	0x4
+ 2607 0023 0E       		.uleb128 .LVL34-.LVL33
+ 2608 0024 69       		.uleb128 .LVL41-.LVL33
+ 2609 0025 01       		.uleb128 0x1
+ 2610 0026 54       		.byte	0x54
+ 2611 0027 04       		.byte	0x4
+ 2612 0028 69       		.uleb128 .LVL41-.LVL33
+ 2613 0029 6A       		.uleb128 .LVL42-.LVL33
+ 2614 002a 04       		.uleb128 0x4
+ 2615 002b A3       		.byte	0xa3
+ 2616 002c 01       		.uleb128 0x1
+ 2617 002d 52       		.byte	0x52
+ 2618 002e 9F       		.byte	0x9f
+ 2619 002f 04       		.byte	0x4
+ 2620 0030 6A       		.uleb128 .LVL42-.LVL33
+ 2621 0031 8501     		.uleb128 .LFE96-.LVL33
+ 2622 0033 01       		.uleb128 0x1
+ 2623 0034 54       		.byte	0x54
+ 2624 0035 00       		.byte	0
+ 2625              	.LVUS13:
+ 2626 0036 00       		.uleb128 .LVU87
+ 2627 0037 00       		.uleb128 .LVU90
+ 2628 0038 00       		.uleb128 .LVU90
+ 2629 0039 00       		.uleb128 .LVU103
+ 2630 003a 00       		.uleb128 .LVU103
+ 2631 003b 00       		.uleb128 .LVU106
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 57
+
+
+ 2632 003c 00       		.uleb128 .LVU106
+ 2633 003d 00       		.uleb128 0
+ 2634              	.LLST13:
+ 2635 003e 06       		.byte	0x6
+ 2636 003f 19000000 		.quad	.LVL36
+ 2636      00000000 
+ 2637 0047 04       		.byte	0x4
+ 2638 0048 00       		.uleb128 .LVL36-.LVL36
+ 2639 0049 11       		.uleb128 .LVL37-1-.LVL36
+ 2640 004a 01       		.uleb128 0x1
+ 2641 004b 50       		.byte	0x50
+ 2642 004c 04       		.byte	0x4
+ 2643 004d 11       		.uleb128 .LVL37-1-.LVL36
+ 2644 004e 4F       		.uleb128 .LVL40-.LVL36
+ 2645 004f 01       		.uleb128 0x1
+ 2646 0050 53       		.byte	0x53
+ 2647 0051 04       		.byte	0x4
+ 2648 0052 4F       		.uleb128 .LVL40-.LVL36
+ 2649 0053 69       		.uleb128 .LVL43-1-.LVL36
+ 2650 0054 01       		.uleb128 0x1
+ 2651 0055 50       		.byte	0x50
+ 2652 0056 04       		.byte	0x4
+ 2653 0057 69       		.uleb128 .LVL43-1-.LVL36
+ 2654 0058 6C       		.uleb128 .LFE96-.LVL36
+ 2655 0059 01       		.uleb128 0x1
+ 2656 005a 53       		.byte	0x53
+ 2657 005b 00       		.byte	0
+ 2658              	.LVUS14:
+ 2659 005c 01       		.uleb128 .LVU91
+ 2660 005d 01       		.uleb128 .LVU102
+ 2661              	.LLST14:
+ 2662 005e 08       		.byte	0x8
+ 2663 005f 2B000000 		.quad	.LVL37
+ 2663      00000000 
+ 2664 0067 35       		.uleb128 .LVL39-.LVL37
+ 2665 0068 01       		.uleb128 0x1
+ 2666 0069 53       		.byte	0x53
+ 2667 006a 00       		.byte	0
+ 2668              	.LVUS4:
+ 2669 006b 00       		.uleb128 0
+ 2670 006c 00       		.uleb128 .LVU18
+ 2671 006d 00       		.uleb128 .LVU18
+ 2672 006e 00       		.uleb128 .LVU41
+ 2673 006f 00       		.uleb128 .LVU41
+ 2674 0070 00       		.uleb128 .LVU43
+ 2675 0071 00       		.uleb128 .LVU43
+ 2676 0072 00       		.uleb128 .LVU44
+ 2677 0073 00       		.uleb128 .LVU44
+ 2678 0074 00       		.uleb128 .LVU46
+ 2679 0075 00       		.uleb128 .LVU46
+ 2680 0076 00       		.uleb128 0
+ 2681              	.LLST4:
+ 2682 0077 06       		.byte	0x6
+ 2683 0078 00000000 		.quad	.LVL5
+ 2683      00000000 
+ 2684 0080 04       		.byte	0x4
+ 2685 0081 00       		.uleb128 .LVL5-.LVL5
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 58
+
+
+ 2686 0082 1B       		.uleb128 .LVL7-.LVL5
+ 2687 0083 01       		.uleb128 0x1
+ 2688 0084 52       		.byte	0x52
+ 2689 0085 04       		.byte	0x4
+ 2690 0086 1B       		.uleb128 .LVL7-.LVL5
+ 2691 0087 C201     		.uleb128 .LVL14-.LVL5
+ 2692 0089 01       		.uleb128 0x1
+ 2693 008a 54       		.byte	0x54
+ 2694 008b 04       		.byte	0x4
+ 2695 008c C201     		.uleb128 .LVL14-.LVL5
+ 2696 008e C401     		.uleb128 .LVL16-.LVL5
+ 2697 0090 04       		.uleb128 0x4
+ 2698 0091 A3       		.byte	0xa3
+ 2699 0092 01       		.uleb128 0x1
+ 2700 0093 52       		.byte	0x52
+ 2701 0094 9F       		.byte	0x9f
+ 2702 0095 04       		.byte	0x4
+ 2703 0096 C401     		.uleb128 .LVL16-.LVL5
+ 2704 0098 E801     		.uleb128 .LVL18-.LVL5
+ 2705 009a 01       		.uleb128 0x1
+ 2706 009b 54       		.byte	0x54
+ 2707 009c 04       		.byte	0x4
+ 2708 009d E801     		.uleb128 .LVL18-.LVL5
+ 2709 009f 8402     		.uleb128 .LVL20-.LVL5
+ 2710 00a1 01       		.uleb128 0x1
+ 2711 00a2 52       		.byte	0x52
+ 2712 00a3 04       		.byte	0x4
+ 2713 00a4 8402     		.uleb128 .LVL20-.LVL5
+ 2714 00a6 8E02     		.uleb128 .LFE95-.LVL5
+ 2715 00a8 01       		.uleb128 0x1
+ 2716 00a9 54       		.byte	0x54
+ 2717 00aa 00       		.byte	0
+ 2718              	.LVUS5:
+ 2719 00ab 00       		.uleb128 0
+ 2720 00ac 00       		.uleb128 .LVU18
+ 2721 00ad 00       		.uleb128 .LVU18
+ 2722 00ae 00       		.uleb128 .LVU40
+ 2723 00af 00       		.uleb128 .LVU40
+ 2724 00b0 00       		.uleb128 .LVU43
+ 2725 00b1 00       		.uleb128 .LVU43
+ 2726 00b2 00       		.uleb128 .LVU44
+ 2727 00b3 00       		.uleb128 .LVU44
+ 2728 00b4 00       		.uleb128 .LVU45
+ 2729 00b5 00       		.uleb128 .LVU45
+ 2730 00b6 00       		.uleb128 0
+ 2731              	.LLST5:
+ 2732 00b7 06       		.byte	0x6
+ 2733 00b8 00000000 		.quad	.LVL5
+ 2733      00000000 
+ 2734 00c0 04       		.byte	0x4
+ 2735 00c1 00       		.uleb128 .LVL5-.LVL5
+ 2736 00c2 1B       		.uleb128 .LVL7-.LVL5
+ 2737 00c3 01       		.uleb128 0x1
+ 2738 00c4 51       		.byte	0x51
+ 2739 00c5 04       		.byte	0x4
+ 2740 00c6 1B       		.uleb128 .LVL7-.LVL5
+ 2741 00c7 C101     		.uleb128 .LVL13-.LVL5
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 59
+
+
+ 2742 00c9 01       		.uleb128 0x1
+ 2743 00ca 53       		.byte	0x53
+ 2744 00cb 04       		.byte	0x4
+ 2745 00cc C101     		.uleb128 .LVL13-.LVL5
+ 2746 00ce C401     		.uleb128 .LVL16-.LVL5
+ 2747 00d0 04       		.uleb128 0x4
+ 2748 00d1 A3       		.byte	0xa3
+ 2749 00d2 01       		.uleb128 0x1
+ 2750 00d3 51       		.byte	0x51
+ 2751 00d4 9F       		.byte	0x9f
+ 2752 00d5 04       		.byte	0x4
+ 2753 00d6 C401     		.uleb128 .LVL16-.LVL5
+ 2754 00d8 E801     		.uleb128 .LVL18-.LVL5
+ 2755 00da 01       		.uleb128 0x1
+ 2756 00db 53       		.byte	0x53
+ 2757 00dc 04       		.byte	0x4
+ 2758 00dd E801     		.uleb128 .LVL18-.LVL5
+ 2759 00df F701     		.uleb128 .LVL19-.LVL5
+ 2760 00e1 01       		.uleb128 0x1
+ 2761 00e2 51       		.byte	0x51
+ 2762 00e3 04       		.byte	0x4
+ 2763 00e4 F701     		.uleb128 .LVL19-.LVL5
+ 2764 00e6 8E02     		.uleb128 .LFE95-.LVL5
+ 2765 00e8 01       		.uleb128 0x1
+ 2766 00e9 53       		.byte	0x53
+ 2767 00ea 00       		.byte	0
+ 2768              	.LVUS6:
+ 2769 00eb 00       		.uleb128 0
+ 2770 00ec 00       		.uleb128 .LVU18
+ 2771 00ed 00       		.uleb128 .LVU18
+ 2772 00ee 00       		.uleb128 .LVU42
+ 2773 00ef 00       		.uleb128 .LVU42
+ 2774 00f0 00       		.uleb128 .LVU43
+ 2775 00f1 00       		.uleb128 .LVU43
+ 2776 00f2 00       		.uleb128 0
+ 2777              	.LLST6:
+ 2778 00f3 06       		.byte	0x6
+ 2779 00f4 00000000 		.quad	.LVL5
+ 2779      00000000 
+ 2780 00fc 04       		.byte	0x4
+ 2781 00fd 00       		.uleb128 .LVL5-.LVL5
+ 2782 00fe 1B       		.uleb128 .LVL7-.LVL5
+ 2783 00ff 01       		.uleb128 0x1
+ 2784 0100 58       		.byte	0x58
+ 2785 0101 04       		.byte	0x4
+ 2786 0102 1B       		.uleb128 .LVL7-.LVL5
+ 2787 0103 C301     		.uleb128 .LVL15-.LVL5
+ 2788 0105 01       		.uleb128 0x1
+ 2789 0106 55       		.byte	0x55
+ 2790 0107 04       		.byte	0x4
+ 2791 0108 C301     		.uleb128 .LVL15-.LVL5
+ 2792 010a C401     		.uleb128 .LVL16-.LVL5
+ 2793 010c 04       		.uleb128 0x4
+ 2794 010d A3       		.byte	0xa3
+ 2795 010e 01       		.uleb128 0x1
+ 2796 010f 58       		.byte	0x58
+ 2797 0110 9F       		.byte	0x9f
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 60
+
+
+ 2798 0111 04       		.byte	0x4
+ 2799 0112 C401     		.uleb128 .LVL16-.LVL5
+ 2800 0114 8E02     		.uleb128 .LFE95-.LVL5
+ 2801 0116 01       		.uleb128 0x1
+ 2802 0117 55       		.byte	0x55
+ 2803 0118 00       		.byte	0
+ 2804              	.LVUS7:
+ 2805 0119 01       		.uleb128 .LVU13
+ 2806 011a 00       		.uleb128 .LVU18
+ 2807 011b 00       		.uleb128 .LVU18
+ 2808 011c 00       		.uleb128 .LVU40
+ 2809 011d 00       		.uleb128 .LVU40
+ 2810 011e 00       		.uleb128 .LVU43
+ 2811 011f 00       		.uleb128 .LVU43
+ 2812 0120 00       		.uleb128 .LVU44
+ 2813 0121 00       		.uleb128 .LVU44
+ 2814 0122 00       		.uleb128 .LVU45
+ 2815 0123 00       		.uleb128 .LVU45
+ 2816 0124 00       		.uleb128 0
+ 2817              	.LLST7:
+ 2818 0125 06       		.byte	0x6
+ 2819 0126 07000000 		.quad	.LVL6
+ 2819      00000000 
+ 2820 012e 04       		.byte	0x4
+ 2821 012f 00       		.uleb128 .LVL6-.LVL6
+ 2822 0130 14       		.uleb128 .LVL7-.LVL6
+ 2823 0131 01       		.uleb128 0x1
+ 2824 0132 51       		.byte	0x51
+ 2825 0133 04       		.byte	0x4
+ 2826 0134 14       		.uleb128 .LVL7-.LVL6
+ 2827 0135 BA01     		.uleb128 .LVL13-.LVL6
+ 2828 0137 01       		.uleb128 0x1
+ 2829 0138 53       		.byte	0x53
+ 2830 0139 04       		.byte	0x4
+ 2831 013a BA01     		.uleb128 .LVL13-.LVL6
+ 2832 013c BD01     		.uleb128 .LVL16-.LVL6
+ 2833 013e 04       		.uleb128 0x4
+ 2834 013f A3       		.byte	0xa3
+ 2835 0140 01       		.uleb128 0x1
+ 2836 0141 51       		.byte	0x51
+ 2837 0142 9F       		.byte	0x9f
+ 2838 0143 04       		.byte	0x4
+ 2839 0144 BD01     		.uleb128 .LVL16-.LVL6
+ 2840 0146 E101     		.uleb128 .LVL18-.LVL6
+ 2841 0148 01       		.uleb128 0x1
+ 2842 0149 53       		.byte	0x53
+ 2843 014a 04       		.byte	0x4
+ 2844 014b E101     		.uleb128 .LVL18-.LVL6
+ 2845 014d F001     		.uleb128 .LVL19-.LVL6
+ 2846 014f 01       		.uleb128 0x1
+ 2847 0150 51       		.byte	0x51
+ 2848 0151 04       		.byte	0x4
+ 2849 0152 F001     		.uleb128 .LVL19-.LVL6
+ 2850 0154 8702     		.uleb128 .LFE95-.LVL6
+ 2851 0156 01       		.uleb128 0x1
+ 2852 0157 53       		.byte	0x53
+ 2853 0158 00       		.byte	0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 61
+
+
+ 2854              	.LVUS8:
+ 2855 0159 00       		.uleb128 .LVU32
+ 2856 015a 00       		.uleb128 .LVU37
+ 2857              	.LLST8:
+ 2858 015b 08       		.byte	0x8
+ 2859 015c 77000000 		.quad	.LVL10
+ 2859      00000000 
+ 2860 0164 12       		.uleb128 .LVL11-.LVL10
+ 2861 0165 02       		.uleb128 0x2
+ 2862 0166 50       		.byte	0x50
+ 2863 0167 F0       		.byte	0xf0
+ 2864 0168 00       		.byte	0
+ 2865              	.LVUS9:
+ 2866 0169 00       		.uleb128 0
+ 2867 016a 00       		.uleb128 .LVU52
+ 2868 016b 00       		.uleb128 .LVU52
+ 2869 016c 00       		.uleb128 .LVU75
+ 2870 016d 00       		.uleb128 .LVU75
+ 2871 016e 00       		.uleb128 .LVU76
+ 2872 016f 00       		.uleb128 .LVU76
+ 2873 0170 00       		.uleb128 0
+ 2874              	.LLST9:
+ 2875 0171 06       		.byte	0x6
+ 2876 0172 00000000 		.quad	.LVL22
+ 2876      00000000 
+ 2877 017a 04       		.byte	0x4
+ 2878 017b 00       		.uleb128 .LVL22-.LVL22
+ 2879 017c 0E       		.uleb128 .LVL23-.LVL22
+ 2880 017d 01       		.uleb128 0x1
+ 2881 017e 52       		.byte	0x52
+ 2882 017f 04       		.byte	0x4
+ 2883 0180 0E       		.uleb128 .LVL23-.LVL22
+ 2884 0181 64       		.uleb128 .LVL30-.LVL22
+ 2885 0182 01       		.uleb128 0x1
+ 2886 0183 54       		.byte	0x54
+ 2887 0184 04       		.byte	0x4
+ 2888 0185 64       		.uleb128 .LVL30-.LVL22
+ 2889 0186 65       		.uleb128 .LVL31-.LVL22
+ 2890 0187 04       		.uleb128 0x4
+ 2891 0188 A3       		.byte	0xa3
+ 2892 0189 01       		.uleb128 0x1
+ 2893 018a 52       		.byte	0x52
+ 2894 018b 9F       		.byte	0x9f
+ 2895 018c 04       		.byte	0x4
+ 2896 018d 65       		.uleb128 .LVL31-.LVL22
+ 2897 018e 7D       		.uleb128 .LFE94-.LVL22
+ 2898 018f 01       		.uleb128 0x1
+ 2899 0190 54       		.byte	0x54
+ 2900 0191 00       		.byte	0
+ 2901              	.LVUS10:
+ 2902 0192 00       		.uleb128 .LVU55
+ 2903 0193 00       		.uleb128 .LVU58
+ 2904 0194 00       		.uleb128 .LVU58
+ 2905 0195 00       		.uleb128 .LVU74
+ 2906 0196 00       		.uleb128 .LVU74
+ 2907 0197 00       		.uleb128 .LVU77
+ 2908 0198 00       		.uleb128 .LVU77
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 62
+
+
+ 2909 0199 00       		.uleb128 0
+ 2910              	.LLST10:
+ 2911 019a 06       		.byte	0x6
+ 2912 019b 19000000 		.quad	.LVL25
+ 2912      00000000 
+ 2913 01a3 04       		.byte	0x4
+ 2914 01a4 00       		.uleb128 .LVL25-.LVL25
+ 2915 01a5 11       		.uleb128 .LVL26-1-.LVL25
+ 2916 01a6 01       		.uleb128 0x1
+ 2917 01a7 50       		.byte	0x50
+ 2918 01a8 04       		.byte	0x4
+ 2919 01a9 11       		.uleb128 .LVL26-1-.LVL25
+ 2920 01aa 4A       		.uleb128 .LVL29-.LVL25
+ 2921 01ab 01       		.uleb128 0x1
+ 2922 01ac 53       		.byte	0x53
+ 2923 01ad 04       		.byte	0x4
+ 2924 01ae 4A       		.uleb128 .LVL29-.LVL25
+ 2925 01af 61       		.uleb128 .LVL32-1-.LVL25
+ 2926 01b0 01       		.uleb128 0x1
+ 2927 01b1 50       		.byte	0x50
+ 2928 01b2 04       		.byte	0x4
+ 2929 01b3 61       		.uleb128 .LVL32-1-.LVL25
+ 2930 01b4 64       		.uleb128 .LFE94-.LVL25
+ 2931 01b5 01       		.uleb128 0x1
+ 2932 01b6 53       		.byte	0x53
+ 2933 01b7 00       		.byte	0
+ 2934              	.LVUS11:
+ 2935 01b8 01       		.uleb128 .LVU59
+ 2936 01b9 04       		.uleb128 .LVU73
+ 2937              	.LLST11:
+ 2938 01ba 08       		.byte	0x8
+ 2939 01bb 2B000000 		.quad	.LVL26
+ 2939      00000000 
+ 2940 01c3 30       		.uleb128 .LVL28-.LVL26
+ 2941 01c4 01       		.uleb128 0x1
+ 2942 01c5 53       		.byte	0x53
+ 2943 01c6 00       		.byte	0
+ 2944              	.LVUS0:
+ 2945 01c7 00       		.uleb128 0
+ 2946 01c8 00       		.uleb128 .LVU9
+ 2947 01c9 00       		.uleb128 .LVU9
+ 2948 01ca 00       		.uleb128 0
+ 2949              	.LLST0:
+ 2950 01cb 06       		.byte	0x6
+ 2951 01cc 00000000 		.quad	.LVL0
+ 2951      00000000 
+ 2952 01d4 04       		.byte	0x4
+ 2953 01d5 00       		.uleb128 .LVL0-.LVL0
+ 2954 01d6 11       		.uleb128 .LVL4-1-.LVL0
+ 2955 01d7 01       		.uleb128 0x1
+ 2956 01d8 52       		.byte	0x52
+ 2957 01d9 04       		.byte	0x4
+ 2958 01da 11       		.uleb128 .LVL4-1-.LVL0
+ 2959 01db 12       		.uleb128 .LFE93-.LVL0
+ 2960 01dc 04       		.uleb128 0x4
+ 2961 01dd A3       		.byte	0xa3
+ 2962 01de 01       		.uleb128 0x1
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 63
+
+
+ 2963 01df 52       		.byte	0x52
+ 2964 01e0 9F       		.byte	0x9f
+ 2965 01e1 00       		.byte	0
+ 2966              	.LVUS1:
+ 2967 01e2 00       		.uleb128 0
+ 2968 01e3 00       		.uleb128 .LVU6
+ 2969 01e4 00       		.uleb128 .LVU6
+ 2970 01e5 00       		.uleb128 .LVU9
+ 2971 01e6 00       		.uleb128 .LVU9
+ 2972 01e7 00       		.uleb128 0
+ 2973              	.LLST1:
+ 2974 01e8 06       		.byte	0x6
+ 2975 01e9 00000000 		.quad	.LVL0
+ 2975      00000000 
+ 2976 01f1 04       		.byte	0x4
+ 2977 01f2 00       		.uleb128 .LVL0-.LVL0
+ 2978 01f3 06       		.uleb128 .LVL2-.LVL0
+ 2979 01f4 01       		.uleb128 0x1
+ 2980 01f5 51       		.byte	0x51
+ 2981 01f6 04       		.byte	0x4
+ 2982 01f7 06       		.uleb128 .LVL2-.LVL0
+ 2983 01f8 11       		.uleb128 .LVL4-1-.LVL0
+ 2984 01f9 01       		.uleb128 0x1
+ 2985 01fa 50       		.byte	0x50
+ 2986 01fb 04       		.byte	0x4
+ 2987 01fc 11       		.uleb128 .LVL4-1-.LVL0
+ 2988 01fd 12       		.uleb128 .LFE93-.LVL0
+ 2989 01fe 04       		.uleb128 0x4
+ 2990 01ff A3       		.byte	0xa3
+ 2991 0200 01       		.uleb128 0x1
+ 2992 0201 51       		.byte	0x51
+ 2993 0202 9F       		.byte	0x9f
+ 2994 0203 00       		.byte	0
+ 2995              	.LVUS2:
+ 2996 0204 00       		.uleb128 0
+ 2997 0205 00       		.uleb128 .LVU7
+ 2998 0206 00       		.uleb128 .LVU7
+ 2999 0207 00       		.uleb128 .LVU9
+ 3000 0208 00       		.uleb128 .LVU9
+ 3001 0209 00       		.uleb128 0
+ 3002              	.LLST2:
+ 3003 020a 06       		.byte	0x6
+ 3004 020b 00000000 		.quad	.LVL0
+ 3004      00000000 
+ 3005 0213 04       		.byte	0x4
+ 3006 0214 00       		.uleb128 .LVL0-.LVL0
+ 3007 0215 0D       		.uleb128 .LVL3-.LVL0
+ 3008 0216 01       		.uleb128 0x1
+ 3009 0217 58       		.byte	0x58
+ 3010 0218 04       		.byte	0x4
+ 3011 0219 0D       		.uleb128 .LVL3-.LVL0
+ 3012 021a 11       		.uleb128 .LVL4-1-.LVL0
+ 3013 021b 01       		.uleb128 0x1
+ 3014 021c 51       		.byte	0x51
+ 3015 021d 04       		.byte	0x4
+ 3016 021e 11       		.uleb128 .LVL4-1-.LVL0
+ 3017 021f 12       		.uleb128 .LFE93-.LVL0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 64
+
+
+ 3018 0220 04       		.uleb128 0x4
+ 3019 0221 A3       		.byte	0xa3
+ 3020 0222 01       		.uleb128 0x1
+ 3021 0223 58       		.byte	0x58
+ 3022 0224 9F       		.byte	0x9f
+ 3023 0225 00       		.byte	0
+ 3024              	.LVUS3:
+ 3025 0226 00       		.uleb128 .LVU4
+ 3026 0227 00       		.uleb128 .LVU6
+ 3027 0228 00       		.uleb128 .LVU6
+ 3028 0229 00       		.uleb128 .LVU9
+ 3029 022a 00       		.uleb128 .LVU9
+ 3030 022b 00       		.uleb128 0
+ 3031              	.LLST3:
+ 3032 022c 06       		.byte	0x6
+ 3033 022d 03000000 		.quad	.LVL1
+ 3033      00000000 
+ 3034 0235 04       		.byte	0x4
+ 3035 0236 00       		.uleb128 .LVL1-.LVL1
+ 3036 0237 03       		.uleb128 .LVL2-.LVL1
+ 3037 0238 01       		.uleb128 0x1
+ 3038 0239 51       		.byte	0x51
+ 3039 023a 04       		.byte	0x4
+ 3040 023b 03       		.uleb128 .LVL2-.LVL1
+ 3041 023c 0E       		.uleb128 .LVL4-1-.LVL1
+ 3042 023d 01       		.uleb128 0x1
+ 3043 023e 50       		.byte	0x50
+ 3044 023f 04       		.byte	0x4
+ 3045 0240 0E       		.uleb128 .LVL4-1-.LVL1
+ 3046 0241 0F       		.uleb128 .LFE93-.LVL1
+ 3047 0242 04       		.uleb128 0x4
+ 3048 0243 A3       		.byte	0xa3
+ 3049 0244 01       		.uleb128 0x1
+ 3050 0245 51       		.byte	0x51
+ 3051 0246 9F       		.byte	0x9f
+ 3052 0247 00       		.byte	0
+ 3053              	.Ldebug_loc3:
+ 3054              		.section	.debug_aranges,"dr"
+ 3055 0000 5C000000 		.long	0x5c
+ 3056 0004 0200     		.word	0x2
+ 3057 0006 00000000 		.secrel32	.Ldebug_info0
+ 3058 000a 08       		.byte	0x8
+ 3059 000b 00       		.byte	0
+ 3060 000c 0000     		.word	0
+ 3061 000e 0000     		.word	0
+ 3062 0010 00000000 		.quad	.LFB93
+ 3062      00000000 
+ 3063 0018 12000000 		.quad	.LFE93-.LFB93
+ 3063      00000000 
+ 3064 0020 00000000 		.quad	.LFB95
+ 3064      00000000 
+ 3065 0028 0E010000 		.quad	.LFE95-.LFB95
+ 3065      00000000 
+ 3066 0030 00000000 		.quad	.LFB94
+ 3066      00000000 
+ 3067 0038 7D000000 		.quad	.LFE94-.LFB94
+ 3067      00000000 
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 65
+
+
+ 3068 0040 00000000 		.quad	.LFB96
+ 3068      00000000 
+ 3069 0048 85000000 		.quad	.LFE96-.LFB96
+ 3069      00000000 
+ 3070 0050 00000000 		.quad	0
+ 3070      00000000 
+ 3071 0058 00000000 		.quad	0
+ 3071      00000000 
+ 3072              		.section	.debug_rnglists,"dr"
+ 3073              	.Ldebug_ranges0:
+ 3074 0000 33000000 		.long	.Ldebug_ranges3-.Ldebug_ranges2
+ 3075              	.Ldebug_ranges2:
+ 3076 0004 0500     		.word	0x5
+ 3077 0006 08       		.byte	0x8
+ 3078 0007 00       		.byte	0
+ 3079 0008 00000000 		.long	0
+ 3080              	.LLRL15:
+ 3081 000c 07       		.byte	0x7
+ 3082 000d 00000000 		.quad	.LFB93
+ 3082      00000000 
+ 3083 0015 12       		.uleb128 .LFE93-.LFB93
+ 3084 0016 07       		.byte	0x7
+ 3085 0017 00000000 		.quad	.LFB95
+ 3085      00000000 
+ 3086 001f 8E02     		.uleb128 .LFE95-.LFB95
+ 3087 0021 07       		.byte	0x7
+ 3088 0022 00000000 		.quad	.LFB94
+ 3088      00000000 
+ 3089 002a 7D       		.uleb128 .LFE94-.LFB94
+ 3090 002b 07       		.byte	0x7
+ 3091 002c 00000000 		.quad	.LFB96
+ 3091      00000000 
+ 3092 0034 8501     		.uleb128 .LFE96-.LFB96
+ 3093 0036 00       		.byte	0
+ 3094              	.Ldebug_ranges3:
+ 3095              		.section	.debug_line,"dr"
+ 3096              	.Ldebug_line0:
+ 3097 0000 F9010000 		.section	.debug_str,"dr"
+ 3097      05000800 
+ 3097      59000000 
+ 3097      010101FB 
+ 3097      0E0D0001 
+ 3098              	.LASF2:
+ 3099 0000 70617265 		.ascii "parent\0"
+ 3099      6E7400
+ 3100              	.LASF3:
+ 3101 0007 73676C5F 		.ascii "sgl_draw_rect\0"
+ 3101      64726177 
+ 3101      5F726563 
+ 3101      7400
+ 3102              		.section	.debug_line_str,"dr"
+ 3103              	.LASF0:
+ 3104 0000 2E2E2F73 		.ascii "../source/sgl_widget.c\0"
+ 3104      6F757263 
+ 3104      652F7367 
+ 3104      6C5F7769 
+ 3104      64676574 
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 66
+
+
+ 3105              	.LASF1:
+ 3106 0017 433A5C55 		.ascii "C:\\Users\\lsw\\Desktop\\sgl-lite\\demo\0"
+ 3106      73657273 
+ 3106      5C6C7377 
+ 3106      5C446573 
+ 3106      6B746F70 
+ 3107              		.ident	"GCC: (x86_64-posix-seh-rev0, Built by MinGW-Builds project) 13.2.0"
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s 			page 67
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 sgl_widget.c
+C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s:10     .text$sgl_rectangle_construct_cb:0000000000000000 sgl_rectangle_construct_cb
+C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s:45     .text$sgl_label_construct_cb:0000000000000000 sgl_label_construct_cb
+C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s:433    .rdata$__FUNCTION__.0:0000000000000000 __FUNCTION__.0
+C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s:219    .text$sgl_rect_create:0000000000000000 sgl_rect_create
+C:\Users\lsw\AppData\Local\Temp\ccqiwYAv.s:330    .text$sgl_label_create:0000000000000000 sgl_label_create
+
+UNDEFINED SYMBOLS
+sgl_draw_rect
+sgl_draw_fill_round_rect
+sgl_get_text_pos
+sgl_draw_string
+sgl_draw_fill_rect
+sgl_assert_handler
+sgl_malloc
+memset
+sgl_obj_init
+sgl_log

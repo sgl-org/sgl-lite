@@ -1,0 +1,1668 @@
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 1
+
+
+   1              		.file	"sgl_mm.c"
+   2              		.text
+   3              	.Ltext0:
+   4              		.cfi_sections	.debug_frame
+   5              		.file 0 "C:/Users/lsw/Desktop/sgl-lite/demo" "../source/sgl_mm.c"
+   6              		.section	.text$sgl_mm_init,"x"
+   7              		.p2align 4
+   8              		.globl	sgl_mm_init
+  10              		.seh_proc	sgl_mm_init
+  11              	sgl_mm_init:
+  12              	.LVL0:
+  13              	.LFB81:
+  14              		.file 1 "../source/sgl_mm.c"
+   1:../source/sgl_mm.c **** /* source: sgl_mm.c
+   2:../source/sgl_mm.c ****  * Copyright (c) 2026-2028, Lishanwen
+   3:../source/sgl_mm.c ****  *
+   4:../source/sgl_mm.c ****  * Licensed under the Apache License, Version 2.0 (the "License");
+   5:../source/sgl_mm.c ****  * you may not use this file except in compliance with the License.
+   6:../source/sgl_mm.c ****  * You may obtain a copy of the License at
+   7:../source/sgl_mm.c ****  *
+   8:../source/sgl_mm.c ****  *     http://www.apache.org/licenses/LICENSE-2.0
+   9:../source/sgl_mm.c ****  *
+  10:../source/sgl_mm.c ****  * Unless required by applicable law or agreed to in writing, software
+  11:../source/sgl_mm.c ****  * distributed under the License is distributed on an "AS IS" BASIS,
+  12:../source/sgl_mm.c ****  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  13:../source/sgl_mm.c ****  * See the License for the specific language governing permissions and
+  14:../source/sgl_mm.c ****  * limitations under the License.
+  15:../source/sgl_mm.c ****  */
+  16:../source/sgl_mm.c **** 
+  17:../source/sgl_mm.c **** #include "sgl_mm.h"
+  18:../source/sgl_mm.c **** #include <stdint.h>
+  19:../source/sgl_mm.c **** #include <stdlib.h>
+  20:../source/sgl_mm.c **** #include <string.h>
+  21:../source/sgl_mm.c **** 
+  22:../source/sgl_mm.c **** static sgl_mm_monitor_t mem = {
+  23:../source/sgl_mm.c ****     .total_size = 0,
+  24:../source/sgl_mm.c ****     .free_size = 0,
+  25:../source/sgl_mm.c ****     .used_size = 0,
+  26:../source/sgl_mm.c **** };
+  27:../source/sgl_mm.c **** 
+  28:../source/sgl_mm.c **** /**
+  29:../source/sgl_mm.c ****  * @brief  initialize memory pool
+  30:../source/sgl_mm.c ****  * @param  mem_start  start address of memory pool
+  31:../source/sgl_mm.c ****  * @param  len  length of memory pool
+  32:../source/sgl_mm.c ****  */
+  33:../source/sgl_mm.c **** void sgl_mm_init(void *mem_start, size_t len)
+  34:../source/sgl_mm.c **** {
+  15              		.loc 1 34 1 view -0
+  16              		.cfi_startproc
+  17              		.loc 1 34 1 is_stmt 0 view .LVU1
+  18              		.seh_endprologue
+  35:../source/sgl_mm.c ****     SGL_UNUSED(mem_start);
+  19              		.loc 1 35 5 is_stmt 1 view .LVU2
+  36:../source/sgl_mm.c ****     mem.total_size += len;
+  20              		.loc 1 36 5 view .LVU3
+  21              		.loc 1 36 20 is_stmt 0 view .LVU4
+  22 0000 48011500 		addq	%rdx, mem(%rip)
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 2
+
+
+  22      000000
+  37:../source/sgl_mm.c **** }
+  23              		.loc 1 37 1 view .LVU5
+  24 0007 C3       		ret
+  25              		.cfi_endproc
+  26              	.LFE81:
+  27              		.seh_endproc
+  28 0008 90909090 		.section	.text$sgl_mm_add_pool,"x"
+  28      90909090 
+  29              		.p2align 4
+  30              		.globl	sgl_mm_add_pool
+  32              		.seh_proc	sgl_mm_add_pool
+  33              	sgl_mm_add_pool:
+  34              	.LFB88:
+  35              		.cfi_startproc
+  38:../source/sgl_mm.c **** 
+  39:../source/sgl_mm.c **** 
+  40:../source/sgl_mm.c **** /**
+  41:../source/sgl_mm.c ****  * @brief  add memory pool
+  42:../source/sgl_mm.c ****  * @param  mem_start  start address of memory pool
+  43:../source/sgl_mm.c ****  * @param  len  length of memory pool
+  44:../source/sgl_mm.c ****  */
+  45:../source/sgl_mm.c **** void sgl_mm_add_pool(void *mem_start, size_t len)
+  36              		.loc 1 45 6 is_stmt 1 view -0
+  37              		.seh_endprologue
+  38 0000 48011500 		addq	%rdx, mem(%rip)
+  38      000000
+  39 0007 C3       		ret
+  40              		.cfi_endproc
+  41              	.LFE88:
+  42              		.seh_endproc
+  43 0008 90909090 		.section	.text$sgl_malloc,"x"
+  43      90909090 
+  44              		.p2align 4
+  45              		.globl	sgl_malloc
+  47              		.seh_proc	sgl_malloc
+  48              	sgl_malloc:
+  49              	.LVL1:
+  50              	.LFB83:
+  46:../source/sgl_mm.c **** {
+  47:../source/sgl_mm.c ****     SGL_UNUSED(mem_start);
+  48:../source/sgl_mm.c ****     mem.total_size += len;
+  49:../source/sgl_mm.c **** }
+  50:../source/sgl_mm.c **** 
+  51:../source/sgl_mm.c **** 
+  52:../source/sgl_mm.c **** /**
+  53:../source/sgl_mm.c ****  * @brief  memory alloc, the function is unsafe, you should ensure that 
+  54:../source/sgl_mm.c ****  *         the requested size is smaller than the free size of memory
+  55:../source/sgl_mm.c ****  * 
+  56:../source/sgl_mm.c ****  * @param  size   request size of memory
+  57:../source/sgl_mm.c ****  * 
+  58:../source/sgl_mm.c ****  * @return point to request memory address
+  59:../source/sgl_mm.c **** */
+  60:../source/sgl_mm.c **** void* sgl_malloc(size_t size)
+  61:../source/sgl_mm.c **** {
+  51              		.loc 1 61 1 view -0
+  52              		.cfi_startproc
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 3
+
+
+  53              		.loc 1 61 1 is_stmt 0 view .LVU8
+  54 0000 56       		pushq	%rsi
+  55              		.seh_pushreg	%rsi
+  56              		.cfi_def_cfa_offset 16
+  57              		.cfi_offset 4, -16
+  58 0001 53       		pushq	%rbx
+  59              		.seh_pushreg	%rbx
+  60              		.cfi_def_cfa_offset 24
+  61              		.cfi_offset 3, -24
+  62 0002 4883EC28 		subq	$40, %rsp
+  63              		.seh_stackalloc	40
+  64              		.cfi_def_cfa_offset 64
+  65              		.seh_endprologue
+  62:../source/sgl_mm.c ****     void *p = malloc(size);
+  66              		.loc 1 62 5 is_stmt 1 view .LVU9
+  61:../source/sgl_mm.c ****     void *p = malloc(size);
+  67              		.loc 1 61 1 is_stmt 0 view .LVU10
+  68 0006 4889CE   		movq	%rcx, %rsi
+  69              		.loc 1 62 15 view .LVU11
+  70 0009 E8000000 		call	malloc
+  70      00
+  71              	.LVL2:
+  63:../source/sgl_mm.c ****     memset(p, 0, size);
+  72              		.loc 1 63 5 view .LVU12
+  73 000e 4989F0   		movq	%rsi, %r8
+  74 0011 31D2     		xorl	%edx, %edx
+  62:../source/sgl_mm.c ****     void *p = malloc(size);
+  75              		.loc 1 62 15 view .LVU13
+  76 0013 4889C3   		movq	%rax, %rbx
+  77              	.LVL3:
+  78              		.loc 1 63 5 is_stmt 1 view .LVU14
+  79 0016 4889C1   		movq	%rax, %rcx
+  80 0019 E8000000 		call	memset
+  80      00
+  81              	.LVL4:
+  64:../source/sgl_mm.c ****     return p;
+  82              		.loc 1 64 5 view .LVU15
+  65:../source/sgl_mm.c **** }
+  83              		.loc 1 65 1 is_stmt 0 view .LVU16
+  84 001e 4889D8   		movq	%rbx, %rax
+  85 0021 4883C428 		addq	$40, %rsp
+  86              		.cfi_def_cfa_offset 24
+  87 0025 5B       		popq	%rbx
+  88              		.cfi_restore 3
+  89              		.cfi_def_cfa_offset 16
+  90              	.LVL5:
+  91              		.loc 1 65 1 view .LVU17
+  92 0026 5E       		popq	%rsi
+  93              		.cfi_restore 4
+  94              		.cfi_def_cfa_offset 8
+  95              	.LVL6:
+  96              		.loc 1 65 1 view .LVU18
+  97 0027 C3       		ret
+  98              		.cfi_endproc
+  99              	.LFE83:
+ 100              		.seh_endproc
+ 101 0028 90909090 		.section	.text$sgl_realloc,"x"
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 4
+
+
+ 101      90909090 
+ 102              		.p2align 4
+ 103              		.globl	sgl_realloc
+ 105              		.seh_proc	sgl_realloc
+ 106              	sgl_realloc:
+ 107              	.LVL7:
+ 108              	.LFB84:
+  66:../source/sgl_mm.c **** 
+  67:../source/sgl_mm.c **** 
+  68:../source/sgl_mm.c **** /**
+  69:../source/sgl_mm.c ****  * @brief  memory realloc, the function is unsafe, you should ensure that 
+  70:../source/sgl_mm.c ****  *         the requested size is smaller than the free size of memory
+  71:../source/sgl_mm.c ****  * @param  p      the pointer of request size of memory
+  72:../source/sgl_mm.c ****  * @param  size   request size of memory
+  73:../source/sgl_mm.c ****  */
+  74:../source/sgl_mm.c **** void* sgl_realloc(void *p, size_t size)
+  75:../source/sgl_mm.c **** {
+ 109              		.loc 1 75 1 is_stmt 1 view -0
+ 110              		.cfi_startproc
+ 111              		.loc 1 75 1 is_stmt 0 view .LVU20
+ 112              		.seh_endprologue
+  76:../source/sgl_mm.c ****     return realloc(p, size);
+ 113              		.loc 1 76 5 is_stmt 1 view .LVU21
+  77:../source/sgl_mm.c **** }
+ 114              		.loc 1 77 1 is_stmt 0 view .LVU22
+  76:../source/sgl_mm.c ****     return realloc(p, size);
+ 115              		.loc 1 76 12 view .LVU23
+ 116 0000 E9000000 		jmp	realloc
+ 116      00
+ 117              	.LVL8:
+  76:../source/sgl_mm.c ****     return realloc(p, size);
+ 118              		.loc 1 76 12 view .LVU24
+ 119              		.cfi_endproc
+ 120              	.LFE84:
+ 121              		.seh_endproc
+ 122 0005 90909090 		.section	.text$sgl_free,"x"
+ 122      90909090 
+ 122      909090
+ 123              		.p2align 4
+ 124              		.globl	sgl_free
+ 126              		.seh_proc	sgl_free
+ 127              	sgl_free:
+ 128              	.LVL9:
+ 129              	.LFB85:
+  78:../source/sgl_mm.c **** 
+  79:../source/sgl_mm.c **** 
+  80:../source/sgl_mm.c **** /**
+  81:../source/sgl_mm.c ****  * @brief  memory free
+  82:../source/sgl_mm.c ****  * 
+  83:../source/sgl_mm.c ****  * @param  p  the pointer of request size of memory
+  84:../source/sgl_mm.c ****  * 
+  85:../source/sgl_mm.c ****  * @return none
+  86:../source/sgl_mm.c **** */
+  87:../source/sgl_mm.c **** void sgl_free(void *p)
+  88:../source/sgl_mm.c **** {
+ 130              		.loc 1 88 1 is_stmt 1 view -0
+ 131              		.cfi_startproc
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 5
+
+
+ 132              		.loc 1 88 1 is_stmt 0 view .LVU26
+ 133              		.seh_endprologue
+  89:../source/sgl_mm.c ****     //mem.used_size -= ;
+  90:../source/sgl_mm.c ****     free(p);
+ 134              		.loc 1 90 5 is_stmt 1 view .LVU27
+  91:../source/sgl_mm.c **** }
+ 135              		.loc 1 91 1 is_stmt 0 view .LVU28
+  90:../source/sgl_mm.c **** }
+ 136              		.loc 1 90 5 view .LVU29
+ 137 0000 E9000000 		jmp	free
+ 137      00
+ 138              	.LVL10:
+  90:../source/sgl_mm.c **** }
+ 139              		.loc 1 90 5 view .LVU30
+ 140              		.cfi_endproc
+ 141              	.LFE85:
+ 142              		.seh_endproc
+ 143 0005 90909090 		.section	.text$sgl_mm_get_monitor,"x"
+ 143      90909090 
+ 143      909090
+ 144              		.p2align 4
+ 145              		.globl	sgl_mm_get_monitor
+ 147              		.seh_proc	sgl_mm_get_monitor
+ 148              	sgl_mm_get_monitor:
+ 149              	.LVL11:
+ 150              	.LFB86:
+  92:../source/sgl_mm.c **** 
+  93:../source/sgl_mm.c **** 
+  94:../source/sgl_mm.c **** sgl_mm_monitor_t sgl_mm_get_monitor(void)
+  95:../source/sgl_mm.c **** {
+ 151              		.loc 1 95 1 is_stmt 1 view -0
+ 152              		.cfi_startproc
+ 153              		.loc 1 95 1 is_stmt 0 view .LVU32
+ 154              		.seh_endprologue
+  96:../source/sgl_mm.c ****     int integer = (mem.used_size * 100) / mem.total_size;
+ 155              		.loc 1 96 5 is_stmt 1 view .LVU33
+ 156              		.loc 1 96 23 is_stmt 0 view .LVU34
+ 157 0000 4C8B1510 		movq	16+mem(%rip), %r10
+ 157      000000
+ 158              		.loc 1 96 41 view .LVU35
+ 159 0007 31D2     		xorl	%edx, %edx
+ 160              		.loc 1 96 46 view .LVU36
+ 161 0009 4C8B0D00 		movq	mem(%rip), %r9
+ 161      000000
+ 162              		.loc 1 96 34 view .LVU37
+ 163 0010 496BC264 		imulq	$100, %r10, %rax
+  97:../source/sgl_mm.c ****     int decimal = (mem.used_size * 10000) / mem.total_size - (integer * 100);
+  98:../source/sgl_mm.c ****     mem.used_rate = integer << 8 | decimal;
+  99:../source/sgl_mm.c ****     mem.free_size = mem.total_size - mem.used_size;
+ 100:../source/sgl_mm.c **** 
+ 101:../source/sgl_mm.c ****     return mem;
+ 164              		.loc 1 101 12 view .LVU38
+ 165 0014 4C8909   		movq	%r9, (%rcx)
+ 166 0017 4C895110 		movq	%r10, 16(%rcx)
+  96:../source/sgl_mm.c ****     int integer = (mem.used_size * 100) / mem.total_size;
+ 167              		.loc 1 96 41 view .LVU39
+ 168 001b 49F7F1   		divq	%r9
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 6
+
+
+ 169 001e 4989C0   		movq	%rax, %r8
+ 170              	.LVL12:
+  97:../source/sgl_mm.c ****     int decimal = (mem.used_size * 10000) / mem.total_size - (integer * 100);
+ 171              		.loc 1 97 5 is_stmt 1 view .LVU40
+  98:../source/sgl_mm.c ****     mem.free_size = mem.total_size - mem.used_size;
+ 172              		.loc 1 98 5 view .LVU41
+  97:../source/sgl_mm.c ****     int decimal = (mem.used_size * 10000) / mem.total_size - (integer * 100);
+ 173              		.loc 1 97 43 is_stmt 0 view .LVU42
+ 174 0021 31D2     		xorl	%edx, %edx
+  97:../source/sgl_mm.c ****     int decimal = (mem.used_size * 10000) / mem.total_size - (integer * 100);
+ 175              		.loc 1 97 34 view .LVU43
+ 176 0023 4969C210 		imulq	$10000, %r10, %rax
+ 176      270000
+  97:../source/sgl_mm.c ****     int decimal = (mem.used_size * 10000) / mem.total_size - (integer * 100);
+ 177              		.loc 1 97 43 view .LVU44
+ 178 002a 49F7F1   		divq	%r9
+  97:../source/sgl_mm.c ****     int decimal = (mem.used_size * 10000) / mem.total_size - (integer * 100);
+ 179              		.loc 1 97 71 view .LVU45
+ 180 002d 416BD064 		imull	$100, %r8d, %edx
+  98:../source/sgl_mm.c ****     mem.free_size = mem.total_size - mem.used_size;
+ 181              		.loc 1 98 29 view .LVU46
+ 182 0031 41C1E008 		sall	$8, %r8d
+ 183              	.LVL13:
+  97:../source/sgl_mm.c ****     int decimal = (mem.used_size * 10000) / mem.total_size - (integer * 100);
+ 184              		.loc 1 97 60 view .LVU47
+ 185 0035 29D0     		subl	%edx, %eax
+  99:../source/sgl_mm.c **** 
+ 186              		.loc 1 99 36 view .LVU48
+ 187 0037 4C89CA   		movq	%r9, %rdx
+  98:../source/sgl_mm.c ****     mem.free_size = mem.total_size - mem.used_size;
+ 188              		.loc 1 98 34 view .LVU49
+ 189 003a 4409C0   		orl	%r8d, %eax
+  99:../source/sgl_mm.c **** 
+ 190              		.loc 1 99 36 view .LVU50
+ 191 003d 4C29D2   		subq	%r10, %rdx
+  98:../source/sgl_mm.c ****     mem.free_size = mem.total_size - mem.used_size;
+ 192              		.loc 1 98 34 view .LVU51
+ 193 0040 4898     		cltq
+  99:../source/sgl_mm.c **** 
+ 194              		.loc 1 99 36 view .LVU52
+ 195 0042 48891508 		movq	%rdx, 8+mem(%rip)
+ 195      000000
+  98:../source/sgl_mm.c ****     mem.free_size = mem.total_size - mem.used_size;
+ 196              		.loc 1 98 34 view .LVU53
+ 197 0049 48890518 		movq	%rax, 24+mem(%rip)
+ 197      000000
+  99:../source/sgl_mm.c **** 
+ 198              		.loc 1 99 5 is_stmt 1 view .LVU54
+ 199              		.loc 1 101 5 view .LVU55
+ 200              		.loc 1 101 12 is_stmt 0 view .LVU56
+ 201 0050 48894118 		movq	%rax, 24(%rcx)
+ 102:../source/sgl_mm.c **** }
+ 202              		.loc 1 102 1 view .LVU57
+ 203 0054 4889C8   		movq	%rcx, %rax
+ 101:../source/sgl_mm.c **** }
+ 204              		.loc 1 101 12 view .LVU58
+ 205 0057 48895108 		movq	%rdx, 8(%rcx)
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 7
+
+
+ 206              		.loc 1 102 1 view .LVU59
+ 207 005b C3       		ret
+ 208              		.cfi_endproc
+ 209              	.LFE86:
+ 210              		.seh_endproc
+ 211 005c 90909090 		.section	.data$mem,"w"
+ 212              		.align 32
+ 213              	mem:
+ 214 0000 00000000 		.space 32
+ 214      00000000 
+ 214      00000000 
+ 214      00000000 
+ 214      00000000 
+ 215              		.text
+ 216              	.Letext0:
+ 217              		.file 2 "../source/sgl_mm.h"
+ 218              		.file 3 "C:/mingw64/x86_64-w64-mingw32/include/corecrt.h"
+ 219              		.file 4 "C:/mingw64/x86_64-w64-mingw32/include/stdlib.h"
+ 220              		.file 5 "C:/mingw64/x86_64-w64-mingw32/include/string.h"
+ 221              		.section	.debug_info,"dr"
+ 222              	.Ldebug_info0:
+ 223 0000 70040000 		.long	0x470
+ 224 0004 0500     		.word	0x5
+ 225 0006 01       		.byte	0x1
+ 226 0007 08       		.byte	0x8
+ 227 0008 00000000 		.secrel32	.Ldebug_abbrev0
+ 228 000c 0E       		.uleb128 0xe
+ 229 000d 474E5520 		.ascii "GNU C99 13.2.0 -mtune=core2 -march=nocona -g -O2 -std=c99 -ffunction-sections -fdata-secti
+ 229      43393920 
+ 229      31332E32 
+ 229      2E30202D 
+ 229      6D74756E 
+ 230 007a 0C       		.byte	0xc
+ 231 007b 00000000 		.secrel32	.LASF0
+ 232 007f 13000000 		.secrel32	.LASF1
+ 233 0083 0C000000 		.secrel32	.LLRL7
+ 234 0087 00000000 		.quad	0
+ 234      00000000 
+ 235 008f 00000000 		.secrel32	.Ldebug_line0
+ 236 0093 01       		.uleb128 0x1
+ 237 0094 08       		.byte	0x8
+ 238 0095 07       		.byte	0x7
+ 239 0096 6C6F6E67 		.ascii "long long unsigned int\0"
+ 239      206C6F6E 
+ 239      6720756E 
+ 239      7369676E 
+ 239      65642069 
+ 240 00ad 01       		.uleb128 0x1
+ 241 00ae 01       		.byte	0x1
+ 242 00af 06       		.byte	0x6
+ 243 00b0 7369676E 		.ascii "signed char\0"
+ 243      65642063 
+ 243      68617200 
+ 244 00bc 01       		.uleb128 0x1
+ 245 00bd 02       		.byte	0x2
+ 246 00be 05       		.byte	0x5
+ 247 00bf 73686F72 		.ascii "short int\0"
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 8
+
+
+ 247      7420696E 
+ 247      7400
+ 248 00c9 01       		.uleb128 0x1
+ 249 00ca 04       		.byte	0x4
+ 250 00cb 05       		.byte	0x5
+ 251 00cc 696E7400 		.ascii "int\0"
+ 252 00d0 01       		.uleb128 0x1
+ 253 00d1 08       		.byte	0x8
+ 254 00d2 05       		.byte	0x5
+ 255 00d3 6C6F6E67 		.ascii "long long int\0"
+ 255      206C6F6E 
+ 255      6720696E 
+ 255      7400
+ 256 00e1 01       		.uleb128 0x1
+ 257 00e2 01       		.byte	0x1
+ 258 00e3 08       		.byte	0x8
+ 259 00e4 756E7369 		.ascii "unsigned char\0"
+ 259      676E6564 
+ 259      20636861 
+ 259      7200
+ 260 00f2 01       		.uleb128 0x1
+ 261 00f3 02       		.byte	0x2
+ 262 00f4 07       		.byte	0x7
+ 263 00f5 73686F72 		.ascii "short unsigned int\0"
+ 263      7420756E 
+ 263      7369676E 
+ 263      65642069 
+ 263      6E7400
+ 264 0108 01       		.uleb128 0x1
+ 265 0109 04       		.byte	0x4
+ 266 010a 07       		.byte	0x7
+ 267 010b 756E7369 		.ascii "unsigned int\0"
+ 267      676E6564 
+ 267      20696E74 
+ 267      00
+ 268 0118 01       		.uleb128 0x1
+ 269 0119 01       		.byte	0x1
+ 270 011a 06       		.byte	0x6
+ 271 011b 63686172 		.ascii "char\0"
+ 271      00
+ 272 0120 08       		.uleb128 0x8
+ 273 0121 73697A65 		.ascii "size_t\0"
+ 273      5F7400
+ 274 0128 03       		.byte	0x3
+ 275 0129 23       		.byte	0x23
+ 276 012a 2C       		.byte	0x2c
+ 277 012b 93000000 		.long	0x93
+ 278 012f 01       		.uleb128 0x1
+ 279 0130 04       		.byte	0x4
+ 280 0131 05       		.byte	0x5
+ 281 0132 6C6F6E67 		.ascii "long int\0"
+ 281      20696E74 
+ 281      00
+ 282 013b 0F       		.uleb128 0xf
+ 283 013c 08       		.byte	0x8
+ 284 013d 10       		.uleb128 0x10
+ 285 013e 73676C5F 		.ascii "sgl_mm_monitor\0"
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 9
+
+
+ 285      6D6D5F6D 
+ 285      6F6E6974 
+ 285      6F7200
+ 286 014d 20       		.byte	0x20
+ 287 014e 02       		.byte	0x2
+ 288 014f 23       		.byte	0x23
+ 289 0150 10       		.byte	0x10
+ 290 0151 9B010000 		.long	0x19b
+ 291 0155 04       		.uleb128 0x4
+ 292 0156 746F7461 		.ascii "total_size\0"
+ 292      6C5F7369 
+ 292      7A6500
+ 293 0161 24       		.byte	0x24
+ 294 0162 20010000 		.long	0x120
+ 295 0166 00       		.byte	0
+ 296 0167 04       		.uleb128 0x4
+ 297 0168 66726565 		.ascii "free_size\0"
+ 297      5F73697A 
+ 297      6500
+ 298 0172 25       		.byte	0x25
+ 299 0173 20010000 		.long	0x120
+ 300 0177 08       		.byte	0x8
+ 301 0178 04       		.uleb128 0x4
+ 302 0179 75736564 		.ascii "used_size\0"
+ 302      5F73697A 
+ 302      6500
+ 303 0183 26       		.byte	0x26
+ 304 0184 20010000 		.long	0x120
+ 305 0188 10       		.byte	0x10
+ 306 0189 04       		.uleb128 0x4
+ 307 018a 75736564 		.ascii "used_rate\0"
+ 307      5F726174 
+ 307      6500
+ 308 0194 27       		.byte	0x27
+ 309 0195 20010000 		.long	0x120
+ 310 0199 18       		.byte	0x18
+ 311 019a 00       		.byte	0
+ 312 019b 08       		.uleb128 0x8
+ 313 019c 73676C5F 		.ascii "sgl_mm_monitor_t\0"
+ 313      6D6D5F6D 
+ 313      6F6E6974 
+ 313      6F725F74 
+ 313      00
+ 314 01ad 02       		.byte	0x2
+ 315 01ae 29       		.byte	0x29
+ 316 01af 03       		.byte	0x3
+ 317 01b0 3D010000 		.long	0x13d
+ 318 01b4 01       		.uleb128 0x1
+ 319 01b5 08       		.byte	0x8
+ 320 01b6 04       		.byte	0x4
+ 321 01b7 646F7562 		.ascii "double\0"
+ 321      6C6500
+ 322 01be 01       		.uleb128 0x1
+ 323 01bf 04       		.byte	0x4
+ 324 01c0 04       		.byte	0x4
+ 325 01c1 666C6F61 		.ascii "float\0"
+ 325      7400
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 10
+
+
+ 326 01c7 01       		.uleb128 0x1
+ 327 01c8 10       		.byte	0x10
+ 328 01c9 04       		.byte	0x4
+ 329 01ca 6C6F6E67 		.ascii "long double\0"
+ 329      20646F75 
+ 329      626C6500 
+ 330 01d6 11       		.uleb128 0x11
+ 331 01d7 6D656D00 		.ascii "mem\0"
+ 332 01db 01       		.byte	0x1
+ 333 01dc 16       		.byte	0x16
+ 334 01dd 19       		.byte	0x19
+ 335 01de 9B010000 		.long	0x19b
+ 336 01e2 09       		.uleb128 0x9
+ 337 01e3 03       		.byte	0x3
+ 338 01e4 00000000 		.quad	mem
+ 338      00000000 
+ 339 01ec 12       		.uleb128 0x12
+ 340 01ed 66726565 		.ascii "free\0"
+ 340      00
+ 341 01f2 04       		.byte	0x4
+ 342 01f3 1902     		.word	0x219
+ 343 01f5 10       		.byte	0x10
+ 344 01f6 00020000 		.long	0x200
+ 345 01fa 02       		.uleb128 0x2
+ 346 01fb 3B010000 		.long	0x13b
+ 347 01ff 00       		.byte	0
+ 348 0200 09       		.uleb128 0x9
+ 349 0201 7265616C 		.ascii "realloc\0"
+ 349      6C6F6300 
+ 350 0209 1B02     		.word	0x21b
+ 351 020b 3B010000 		.long	0x13b
+ 352 020f 1E020000 		.long	0x21e
+ 353 0213 02       		.uleb128 0x2
+ 354 0214 3B010000 		.long	0x13b
+ 355 0218 02       		.uleb128 0x2
+ 356 0219 20010000 		.long	0x120
+ 357 021d 00       		.byte	0
+ 358 021e 13       		.uleb128 0x13
+ 359 021f 6D656D73 		.ascii "memset\0"
+ 359      657400
+ 360 0226 05       		.byte	0x5
+ 361 0227 35       		.byte	0x35
+ 362 0228 12       		.byte	0x12
+ 363 0229 3B010000 		.long	0x13b
+ 364 022d 41020000 		.long	0x241
+ 365 0231 02       		.uleb128 0x2
+ 366 0232 3B010000 		.long	0x13b
+ 367 0236 02       		.uleb128 0x2
+ 368 0237 C9000000 		.long	0xc9
+ 369 023b 02       		.uleb128 0x2
+ 370 023c 20010000 		.long	0x120
+ 371 0240 00       		.byte	0
+ 372 0241 09       		.uleb128 0x9
+ 373 0242 6D616C6C 		.ascii "malloc\0"
+ 373      6F6300
+ 374 0249 1A02     		.word	0x21a
+ 375 024b 3B010000 		.long	0x13b
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 11
+
+
+ 376 024f 59020000 		.long	0x259
+ 377 0253 02       		.uleb128 0x2
+ 378 0254 20010000 		.long	0x120
+ 379 0258 00       		.byte	0
+ 380 0259 06       		.uleb128 0x6
+ 381 025a 73676C5F 		.ascii "sgl_mm_get_monitor\0"
+ 381      6D6D5F67 
+ 381      65745F6D 
+ 381      6F6E6974 
+ 381      6F7200
+ 382 026d 5E       		.byte	0x5e
+ 383 026e 12       		.byte	0x12
+ 384 026f 9B010000 		.long	0x19b
+ 385 0273 00000000 		.quad	.LFB86
+ 385      00000000 
+ 386 027b 5C000000 		.quad	.LFE86-.LFB86
+ 386      00000000 
+ 387 0283 01       		.uleb128 0x1
+ 388 0284 9C       		.byte	0x9c
+ 389 0285 B8020000 		.long	0x2b8
+ 390 0289 07       		.uleb128 0x7
+ 391 028a 696E7465 		.ascii "integer\0"
+ 391      67657200 
+ 392 0292 60       		.byte	0x60
+ 393 0293 09       		.byte	0x9
+ 394 0294 C9000000 		.long	0xc9
+ 395 0298 10000000 		.secrel32	.LLST5
+ 396 029c 0C000000 		.secrel32	.LVUS5
+ 397 02a0 07       		.uleb128 0x7
+ 398 02a1 64656369 		.ascii "decimal\0"
+ 398      6D616C00 
+ 399 02a9 61       		.byte	0x61
+ 400 02aa 09       		.byte	0x9
+ 401 02ab C9000000 		.long	0xc9
+ 402 02af 38000000 		.secrel32	.LLST6
+ 403 02b3 34000000 		.secrel32	.LVUS6
+ 404 02b7 00       		.byte	0
+ 405 02b8 14       		.uleb128 0x14
+ 406 02b9 73676C5F 		.ascii "sgl_free\0"
+ 406      66726565 
+ 406      00
+ 407 02c2 01       		.byte	0x1
+ 408 02c3 57       		.byte	0x57
+ 409 02c4 06       		.byte	0x6
+ 410 02c5 00000000 		.quad	.LFB85
+ 410      00000000 
+ 411 02cd 05000000 		.quad	.LFE85-.LFB85
+ 411      00000000 
+ 412 02d5 01       		.uleb128 0x1
+ 413 02d6 9C       		.byte	0x9c
+ 414 02d7 02030000 		.long	0x302
+ 415 02db 05       		.uleb128 0x5
+ 416 02dc 7000     		.ascii "p\0"
+ 417 02de 57       		.byte	0x57
+ 418 02df 15       		.byte	0x15
+ 419 02e0 3B010000 		.long	0x13b
+ 420 02e4 8C000000 		.secrel32	.LLST4
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 12
+
+
+ 421 02e8 88000000 		.secrel32	.LVUS4
+ 422 02ec 0A       		.uleb128 0xa
+ 423 02ed 05000000 		.quad	.LVL10
+ 423      00000000 
+ 424 02f5 EC010000 		.long	0x1ec
+ 425 02f9 03       		.uleb128 0x3
+ 426 02fa 01       		.uleb128 0x1
+ 427 02fb 52       		.byte	0x52
+ 428 02fc 03       		.uleb128 0x3
+ 429 02fd A3       		.byte	0xa3
+ 430 02fe 01       		.uleb128 0x1
+ 431 02ff 52       		.byte	0x52
+ 432 0300 00       		.byte	0
+ 433 0301 00       		.byte	0
+ 434 0302 06       		.uleb128 0x6
+ 435 0303 73676C5F 		.ascii "sgl_realloc\0"
+ 435      7265616C 
+ 435      6C6F6300 
+ 436 030f 4A       		.byte	0x4a
+ 437 0310 07       		.byte	0x7
+ 438 0311 3B010000 		.long	0x13b
+ 439 0315 00000000 		.quad	.LFB84
+ 439      00000000 
+ 440 031d 05000000 		.quad	.LFE84-.LFB84
+ 440      00000000 
+ 441 0325 01       		.uleb128 0x1
+ 442 0326 9C       		.byte	0x9c
+ 443 0327 6D030000 		.long	0x36d
+ 444 032b 05       		.uleb128 0x5
+ 445 032c 7000     		.ascii "p\0"
+ 446 032e 4A       		.byte	0x4a
+ 447 032f 19       		.byte	0x19
+ 448 0330 3B010000 		.long	0x13b
+ 449 0334 A7000000 		.secrel32	.LLST2
+ 450 0338 A3000000 		.secrel32	.LVUS2
+ 451 033c 05       		.uleb128 0x5
+ 452 033d 73697A65 		.ascii "size\0"
+ 452      00
+ 453 0342 4A       		.byte	0x4a
+ 454 0343 23       		.byte	0x23
+ 455 0344 20010000 		.long	0x120
+ 456 0348 C2000000 		.secrel32	.LLST3
+ 457 034c BE000000 		.secrel32	.LVUS3
+ 458 0350 0A       		.uleb128 0xa
+ 459 0351 05000000 		.quad	.LVL8
+ 459      00000000 
+ 460 0359 00020000 		.long	0x200
+ 461 035d 03       		.uleb128 0x3
+ 462 035e 01       		.uleb128 0x1
+ 463 035f 52       		.byte	0x52
+ 464 0360 03       		.uleb128 0x3
+ 465 0361 A3       		.byte	0xa3
+ 466 0362 01       		.uleb128 0x1
+ 467 0363 52       		.byte	0x52
+ 468 0364 03       		.uleb128 0x3
+ 469 0365 01       		.uleb128 0x1
+ 470 0366 51       		.byte	0x51
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 13
+
+
+ 471 0367 03       		.uleb128 0x3
+ 472 0368 A3       		.byte	0xa3
+ 473 0369 01       		.uleb128 0x1
+ 474 036a 51       		.byte	0x51
+ 475 036b 00       		.byte	0
+ 476 036c 00       		.byte	0
+ 477 036d 06       		.uleb128 0x6
+ 478 036e 73676C5F 		.ascii "sgl_malloc\0"
+ 478      6D616C6C 
+ 478      6F6300
+ 479 0379 3C       		.byte	0x3c
+ 480 037a 07       		.byte	0x7
+ 481 037b 3B010000 		.long	0x13b
+ 482 037f 00000000 		.quad	.LFB83
+ 482      00000000 
+ 483 0387 28000000 		.quad	.LFE83-.LFB83
+ 483      00000000 
+ 484 038f 01       		.uleb128 0x1
+ 485 0390 9C       		.byte	0x9c
+ 486 0391 F2030000 		.long	0x3f2
+ 487 0395 05       		.uleb128 0x5
+ 488 0396 73697A65 		.ascii "size\0"
+ 488      00
+ 489 039b 3C       		.byte	0x3c
+ 490 039c 19       		.byte	0x19
+ 491 039d 20010000 		.long	0x120
+ 492 03a1 DF000000 		.secrel32	.LLST0
+ 493 03a5 D9000000 		.secrel32	.LVUS0
+ 494 03a9 07       		.uleb128 0x7
+ 495 03aa 7000     		.ascii "p\0"
+ 496 03ac 3E       		.byte	0x3e
+ 497 03ad 0B       		.byte	0xb
+ 498 03ae 3B010000 		.long	0x13b
+ 499 03b2 01010000 		.secrel32	.LLST1
+ 500 03b6 FB000000 		.secrel32	.LVUS1
+ 501 03ba 15       		.uleb128 0x15
+ 502 03bb 0E000000 		.quad	.LVL2
+ 502      00000000 
+ 503 03c3 41020000 		.long	0x241
+ 504 03c7 D2030000 		.long	0x3d2
+ 505 03cb 03       		.uleb128 0x3
+ 506 03cc 01       		.uleb128 0x1
+ 507 03cd 52       		.byte	0x52
+ 508 03ce 02       		.uleb128 0x2
+ 509 03cf 74       		.byte	0x74
+ 510 03d0 00       		.sleb128 0
+ 511 03d1 00       		.byte	0
+ 512 03d2 16       		.uleb128 0x16
+ 513 03d3 1E000000 		.quad	.LVL4
+ 513      00000000 
+ 514 03db 1E020000 		.long	0x21e
+ 515 03df 03       		.uleb128 0x3
+ 516 03e0 01       		.uleb128 0x1
+ 517 03e1 52       		.byte	0x52
+ 518 03e2 02       		.uleb128 0x2
+ 519 03e3 73       		.byte	0x73
+ 520 03e4 00       		.sleb128 0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 14
+
+
+ 521 03e5 03       		.uleb128 0x3
+ 522 03e6 01       		.uleb128 0x1
+ 523 03e7 51       		.byte	0x51
+ 524 03e8 01       		.uleb128 0x1
+ 525 03e9 30       		.byte	0x30
+ 526 03ea 03       		.uleb128 0x3
+ 527 03eb 01       		.uleb128 0x1
+ 528 03ec 58       		.byte	0x58
+ 529 03ed 02       		.uleb128 0x2
+ 530 03ee 74       		.byte	0x74
+ 531 03ef 00       		.sleb128 0
+ 532 03f0 00       		.byte	0
+ 533 03f1 00       		.byte	0
+ 534 03f2 17       		.uleb128 0x17
+ 535 03f3 73676C5F 		.ascii "sgl_mm_add_pool\0"
+ 535      6D6D5F61 
+ 535      64645F70 
+ 535      6F6F6C00 
+ 536 0403 01       		.byte	0x1
+ 537 0404 2D       		.byte	0x2d
+ 538 0405 06       		.byte	0x6
+ 539 0406 21040000 		.long	0x421
+ 540 040a 0B       		.uleb128 0xb
+ 541 040b 00000000 		.secrel32	.LASF2
+ 542 040f 2D       		.byte	0x2d
+ 543 0410 1C       		.byte	0x1c
+ 544 0411 3B010000 		.long	0x13b
+ 545 0415 0C       		.uleb128 0xc
+ 546 0416 6C656E00 		.ascii "len\0"
+ 547 041a 2D       		.byte	0x2d
+ 548 041b 2E       		.byte	0x2e
+ 549 041c 20010000 		.long	0x120
+ 550 0420 00       		.byte	0
+ 551 0421 18       		.uleb128 0x18
+ 552 0422 73676C5F 		.ascii "sgl_mm_init\0"
+ 552      6D6D5F69 
+ 552      6E697400 
+ 553 042e 01       		.byte	0x1
+ 554 042f 21       		.byte	0x21
+ 555 0430 06       		.byte	0x6
+ 556 0431 01       		.byte	0x1
+ 557 0432 4D040000 		.long	0x44d
+ 558 0436 0B       		.uleb128 0xb
+ 559 0437 00000000 		.secrel32	.LASF2
+ 560 043b 21       		.byte	0x21
+ 561 043c 18       		.byte	0x18
+ 562 043d 3B010000 		.long	0x13b
+ 563 0441 0C       		.uleb128 0xc
+ 564 0442 6C656E00 		.ascii "len\0"
+ 565 0446 21       		.byte	0x21
+ 566 0447 2A       		.byte	0x2a
+ 567 0448 20010000 		.long	0x120
+ 568 044c 00       		.byte	0
+ 569 044d 19       		.uleb128 0x19
+ 570 044e 21040000 		.long	0x421
+ 571 0452 00000000 		.quad	.LFB81
+ 571      00000000 
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 15
+
+
+ 572 045a 08000000 		.quad	.LFE81-.LFB81
+ 572      00000000 
+ 573 0462 01       		.uleb128 0x1
+ 574 0463 9C       		.byte	0x9c
+ 575 0464 0D       		.uleb128 0xd
+ 576 0465 36040000 		.long	0x436
+ 577 0469 01       		.uleb128 0x1
+ 578 046a 52       		.byte	0x52
+ 579 046b 0D       		.uleb128 0xd
+ 580 046c 41040000 		.long	0x441
+ 581 0470 01       		.uleb128 0x1
+ 582 0471 51       		.byte	0x51
+ 583 0472 00       		.byte	0
+ 584 0473 00       		.byte	0
+ 585              		.section	.debug_abbrev,"dr"
+ 586              	.Ldebug_abbrev0:
+ 587 0000 01       		.uleb128 0x1
+ 588 0001 24       		.uleb128 0x24
+ 589 0002 00       		.byte	0
+ 590 0003 0B       		.uleb128 0xb
+ 591 0004 0B       		.uleb128 0xb
+ 592 0005 3E       		.uleb128 0x3e
+ 593 0006 0B       		.uleb128 0xb
+ 594 0007 03       		.uleb128 0x3
+ 595 0008 08       		.uleb128 0x8
+ 596 0009 00       		.byte	0
+ 597 000a 00       		.byte	0
+ 598 000b 02       		.uleb128 0x2
+ 599 000c 05       		.uleb128 0x5
+ 600 000d 00       		.byte	0
+ 601 000e 49       		.uleb128 0x49
+ 602 000f 13       		.uleb128 0x13
+ 603 0010 00       		.byte	0
+ 604 0011 00       		.byte	0
+ 605 0012 03       		.uleb128 0x3
+ 606 0013 49       		.uleb128 0x49
+ 607 0014 00       		.byte	0
+ 608 0015 02       		.uleb128 0x2
+ 609 0016 18       		.uleb128 0x18
+ 610 0017 7E       		.uleb128 0x7e
+ 611 0018 18       		.uleb128 0x18
+ 612 0019 00       		.byte	0
+ 613 001a 00       		.byte	0
+ 614 001b 04       		.uleb128 0x4
+ 615 001c 0D       		.uleb128 0xd
+ 616 001d 00       		.byte	0
+ 617 001e 03       		.uleb128 0x3
+ 618 001f 08       		.uleb128 0x8
+ 619 0020 3A       		.uleb128 0x3a
+ 620 0021 21       		.uleb128 0x21
+ 621 0022 02       		.sleb128 2
+ 622 0023 3B       		.uleb128 0x3b
+ 623 0024 0B       		.uleb128 0xb
+ 624 0025 39       		.uleb128 0x39
+ 625 0026 21       		.uleb128 0x21
+ 626 0027 0D       		.sleb128 13
+ 627 0028 49       		.uleb128 0x49
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 16
+
+
+ 628 0029 13       		.uleb128 0x13
+ 629 002a 38       		.uleb128 0x38
+ 630 002b 0B       		.uleb128 0xb
+ 631 002c 00       		.byte	0
+ 632 002d 00       		.byte	0
+ 633 002e 05       		.uleb128 0x5
+ 634 002f 05       		.uleb128 0x5
+ 635 0030 00       		.byte	0
+ 636 0031 03       		.uleb128 0x3
+ 637 0032 08       		.uleb128 0x8
+ 638 0033 3A       		.uleb128 0x3a
+ 639 0034 21       		.uleb128 0x21
+ 640 0035 01       		.sleb128 1
+ 641 0036 3B       		.uleb128 0x3b
+ 642 0037 0B       		.uleb128 0xb
+ 643 0038 39       		.uleb128 0x39
+ 644 0039 0B       		.uleb128 0xb
+ 645 003a 49       		.uleb128 0x49
+ 646 003b 13       		.uleb128 0x13
+ 647 003c 02       		.uleb128 0x2
+ 648 003d 17       		.uleb128 0x17
+ 649 003e B742     		.uleb128 0x2137
+ 650 0040 17       		.uleb128 0x17
+ 651 0041 00       		.byte	0
+ 652 0042 00       		.byte	0
+ 653 0043 06       		.uleb128 0x6
+ 654 0044 2E       		.uleb128 0x2e
+ 655 0045 01       		.byte	0x1
+ 656 0046 3F       		.uleb128 0x3f
+ 657 0047 19       		.uleb128 0x19
+ 658 0048 03       		.uleb128 0x3
+ 659 0049 08       		.uleb128 0x8
+ 660 004a 3A       		.uleb128 0x3a
+ 661 004b 21       		.uleb128 0x21
+ 662 004c 01       		.sleb128 1
+ 663 004d 3B       		.uleb128 0x3b
+ 664 004e 0B       		.uleb128 0xb
+ 665 004f 39       		.uleb128 0x39
+ 666 0050 0B       		.uleb128 0xb
+ 667 0051 27       		.uleb128 0x27
+ 668 0052 19       		.uleb128 0x19
+ 669 0053 49       		.uleb128 0x49
+ 670 0054 13       		.uleb128 0x13
+ 671 0055 11       		.uleb128 0x11
+ 672 0056 01       		.uleb128 0x1
+ 673 0057 12       		.uleb128 0x12
+ 674 0058 07       		.uleb128 0x7
+ 675 0059 40       		.uleb128 0x40
+ 676 005a 18       		.uleb128 0x18
+ 677 005b 7A       		.uleb128 0x7a
+ 678 005c 19       		.uleb128 0x19
+ 679 005d 01       		.uleb128 0x1
+ 680 005e 13       		.uleb128 0x13
+ 681 005f 00       		.byte	0
+ 682 0060 00       		.byte	0
+ 683 0061 07       		.uleb128 0x7
+ 684 0062 34       		.uleb128 0x34
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 17
+
+
+ 685 0063 00       		.byte	0
+ 686 0064 03       		.uleb128 0x3
+ 687 0065 08       		.uleb128 0x8
+ 688 0066 3A       		.uleb128 0x3a
+ 689 0067 21       		.uleb128 0x21
+ 690 0068 01       		.sleb128 1
+ 691 0069 3B       		.uleb128 0x3b
+ 692 006a 0B       		.uleb128 0xb
+ 693 006b 39       		.uleb128 0x39
+ 694 006c 0B       		.uleb128 0xb
+ 695 006d 49       		.uleb128 0x49
+ 696 006e 13       		.uleb128 0x13
+ 697 006f 02       		.uleb128 0x2
+ 698 0070 17       		.uleb128 0x17
+ 699 0071 B742     		.uleb128 0x2137
+ 700 0073 17       		.uleb128 0x17
+ 701 0074 00       		.byte	0
+ 702 0075 00       		.byte	0
+ 703 0076 08       		.uleb128 0x8
+ 704 0077 16       		.uleb128 0x16
+ 705 0078 00       		.byte	0
+ 706 0079 03       		.uleb128 0x3
+ 707 007a 08       		.uleb128 0x8
+ 708 007b 3A       		.uleb128 0x3a
+ 709 007c 0B       		.uleb128 0xb
+ 710 007d 3B       		.uleb128 0x3b
+ 711 007e 0B       		.uleb128 0xb
+ 712 007f 39       		.uleb128 0x39
+ 713 0080 0B       		.uleb128 0xb
+ 714 0081 49       		.uleb128 0x49
+ 715 0082 13       		.uleb128 0x13
+ 716 0083 00       		.byte	0
+ 717 0084 00       		.byte	0
+ 718 0085 09       		.uleb128 0x9
+ 719 0086 2E       		.uleb128 0x2e
+ 720 0087 01       		.byte	0x1
+ 721 0088 3F       		.uleb128 0x3f
+ 722 0089 19       		.uleb128 0x19
+ 723 008a 03       		.uleb128 0x3
+ 724 008b 08       		.uleb128 0x8
+ 725 008c 3A       		.uleb128 0x3a
+ 726 008d 21       		.uleb128 0x21
+ 727 008e 04       		.sleb128 4
+ 728 008f 3B       		.uleb128 0x3b
+ 729 0090 05       		.uleb128 0x5
+ 730 0091 39       		.uleb128 0x39
+ 731 0092 21       		.uleb128 0x21
+ 732 0093 11       		.sleb128 17
+ 733 0094 27       		.uleb128 0x27
+ 734 0095 19       		.uleb128 0x19
+ 735 0096 49       		.uleb128 0x49
+ 736 0097 13       		.uleb128 0x13
+ 737 0098 3C       		.uleb128 0x3c
+ 738 0099 19       		.uleb128 0x19
+ 739 009a 01       		.uleb128 0x1
+ 740 009b 13       		.uleb128 0x13
+ 741 009c 00       		.byte	0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 18
+
+
+ 742 009d 00       		.byte	0
+ 743 009e 0A       		.uleb128 0xa
+ 744 009f 48       		.uleb128 0x48
+ 745 00a0 01       		.byte	0x1
+ 746 00a1 7D       		.uleb128 0x7d
+ 747 00a2 01       		.uleb128 0x1
+ 748 00a3 8201     		.uleb128 0x82
+ 749 00a5 19       		.uleb128 0x19
+ 750 00a6 7F       		.uleb128 0x7f
+ 751 00a7 13       		.uleb128 0x13
+ 752 00a8 00       		.byte	0
+ 753 00a9 00       		.byte	0
+ 754 00aa 0B       		.uleb128 0xb
+ 755 00ab 05       		.uleb128 0x5
+ 756 00ac 00       		.byte	0
+ 757 00ad 03       		.uleb128 0x3
+ 758 00ae 0E       		.uleb128 0xe
+ 759 00af 3A       		.uleb128 0x3a
+ 760 00b0 21       		.uleb128 0x21
+ 761 00b1 01       		.sleb128 1
+ 762 00b2 3B       		.uleb128 0x3b
+ 763 00b3 0B       		.uleb128 0xb
+ 764 00b4 39       		.uleb128 0x39
+ 765 00b5 0B       		.uleb128 0xb
+ 766 00b6 49       		.uleb128 0x49
+ 767 00b7 13       		.uleb128 0x13
+ 768 00b8 00       		.byte	0
+ 769 00b9 00       		.byte	0
+ 770 00ba 0C       		.uleb128 0xc
+ 771 00bb 05       		.uleb128 0x5
+ 772 00bc 00       		.byte	0
+ 773 00bd 03       		.uleb128 0x3
+ 774 00be 08       		.uleb128 0x8
+ 775 00bf 3A       		.uleb128 0x3a
+ 776 00c0 21       		.uleb128 0x21
+ 777 00c1 01       		.sleb128 1
+ 778 00c2 3B       		.uleb128 0x3b
+ 779 00c3 0B       		.uleb128 0xb
+ 780 00c4 39       		.uleb128 0x39
+ 781 00c5 0B       		.uleb128 0xb
+ 782 00c6 49       		.uleb128 0x49
+ 783 00c7 13       		.uleb128 0x13
+ 784 00c8 00       		.byte	0
+ 785 00c9 00       		.byte	0
+ 786 00ca 0D       		.uleb128 0xd
+ 787 00cb 05       		.uleb128 0x5
+ 788 00cc 00       		.byte	0
+ 789 00cd 31       		.uleb128 0x31
+ 790 00ce 13       		.uleb128 0x13
+ 791 00cf 02       		.uleb128 0x2
+ 792 00d0 18       		.uleb128 0x18
+ 793 00d1 00       		.byte	0
+ 794 00d2 00       		.byte	0
+ 795 00d3 0E       		.uleb128 0xe
+ 796 00d4 11       		.uleb128 0x11
+ 797 00d5 01       		.byte	0x1
+ 798 00d6 25       		.uleb128 0x25
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 19
+
+
+ 799 00d7 08       		.uleb128 0x8
+ 800 00d8 13       		.uleb128 0x13
+ 801 00d9 0B       		.uleb128 0xb
+ 802 00da 03       		.uleb128 0x3
+ 803 00db 1F       		.uleb128 0x1f
+ 804 00dc 1B       		.uleb128 0x1b
+ 805 00dd 1F       		.uleb128 0x1f
+ 806 00de 55       		.uleb128 0x55
+ 807 00df 17       		.uleb128 0x17
+ 808 00e0 11       		.uleb128 0x11
+ 809 00e1 01       		.uleb128 0x1
+ 810 00e2 10       		.uleb128 0x10
+ 811 00e3 17       		.uleb128 0x17
+ 812 00e4 00       		.byte	0
+ 813 00e5 00       		.byte	0
+ 814 00e6 0F       		.uleb128 0xf
+ 815 00e7 0F       		.uleb128 0xf
+ 816 00e8 00       		.byte	0
+ 817 00e9 0B       		.uleb128 0xb
+ 818 00ea 0B       		.uleb128 0xb
+ 819 00eb 00       		.byte	0
+ 820 00ec 00       		.byte	0
+ 821 00ed 10       		.uleb128 0x10
+ 822 00ee 13       		.uleb128 0x13
+ 823 00ef 01       		.byte	0x1
+ 824 00f0 03       		.uleb128 0x3
+ 825 00f1 08       		.uleb128 0x8
+ 826 00f2 0B       		.uleb128 0xb
+ 827 00f3 0B       		.uleb128 0xb
+ 828 00f4 3A       		.uleb128 0x3a
+ 829 00f5 0B       		.uleb128 0xb
+ 830 00f6 3B       		.uleb128 0x3b
+ 831 00f7 0B       		.uleb128 0xb
+ 832 00f8 39       		.uleb128 0x39
+ 833 00f9 0B       		.uleb128 0xb
+ 834 00fa 01       		.uleb128 0x1
+ 835 00fb 13       		.uleb128 0x13
+ 836 00fc 00       		.byte	0
+ 837 00fd 00       		.byte	0
+ 838 00fe 11       		.uleb128 0x11
+ 839 00ff 34       		.uleb128 0x34
+ 840 0100 00       		.byte	0
+ 841 0101 03       		.uleb128 0x3
+ 842 0102 08       		.uleb128 0x8
+ 843 0103 3A       		.uleb128 0x3a
+ 844 0104 0B       		.uleb128 0xb
+ 845 0105 3B       		.uleb128 0x3b
+ 846 0106 0B       		.uleb128 0xb
+ 847 0107 39       		.uleb128 0x39
+ 848 0108 0B       		.uleb128 0xb
+ 849 0109 49       		.uleb128 0x49
+ 850 010a 13       		.uleb128 0x13
+ 851 010b 02       		.uleb128 0x2
+ 852 010c 18       		.uleb128 0x18
+ 853 010d 00       		.byte	0
+ 854 010e 00       		.byte	0
+ 855 010f 12       		.uleb128 0x12
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 20
+
+
+ 856 0110 2E       		.uleb128 0x2e
+ 857 0111 01       		.byte	0x1
+ 858 0112 3F       		.uleb128 0x3f
+ 859 0113 19       		.uleb128 0x19
+ 860 0114 03       		.uleb128 0x3
+ 861 0115 08       		.uleb128 0x8
+ 862 0116 3A       		.uleb128 0x3a
+ 863 0117 0B       		.uleb128 0xb
+ 864 0118 3B       		.uleb128 0x3b
+ 865 0119 05       		.uleb128 0x5
+ 866 011a 39       		.uleb128 0x39
+ 867 011b 0B       		.uleb128 0xb
+ 868 011c 27       		.uleb128 0x27
+ 869 011d 19       		.uleb128 0x19
+ 870 011e 3C       		.uleb128 0x3c
+ 871 011f 19       		.uleb128 0x19
+ 872 0120 01       		.uleb128 0x1
+ 873 0121 13       		.uleb128 0x13
+ 874 0122 00       		.byte	0
+ 875 0123 00       		.byte	0
+ 876 0124 13       		.uleb128 0x13
+ 877 0125 2E       		.uleb128 0x2e
+ 878 0126 01       		.byte	0x1
+ 879 0127 3F       		.uleb128 0x3f
+ 880 0128 19       		.uleb128 0x19
+ 881 0129 03       		.uleb128 0x3
+ 882 012a 08       		.uleb128 0x8
+ 883 012b 3A       		.uleb128 0x3a
+ 884 012c 0B       		.uleb128 0xb
+ 885 012d 3B       		.uleb128 0x3b
+ 886 012e 0B       		.uleb128 0xb
+ 887 012f 39       		.uleb128 0x39
+ 888 0130 0B       		.uleb128 0xb
+ 889 0131 27       		.uleb128 0x27
+ 890 0132 19       		.uleb128 0x19
+ 891 0133 49       		.uleb128 0x49
+ 892 0134 13       		.uleb128 0x13
+ 893 0135 3C       		.uleb128 0x3c
+ 894 0136 19       		.uleb128 0x19
+ 895 0137 01       		.uleb128 0x1
+ 896 0138 13       		.uleb128 0x13
+ 897 0139 00       		.byte	0
+ 898 013a 00       		.byte	0
+ 899 013b 14       		.uleb128 0x14
+ 900 013c 2E       		.uleb128 0x2e
+ 901 013d 01       		.byte	0x1
+ 902 013e 3F       		.uleb128 0x3f
+ 903 013f 19       		.uleb128 0x19
+ 904 0140 03       		.uleb128 0x3
+ 905 0141 08       		.uleb128 0x8
+ 906 0142 3A       		.uleb128 0x3a
+ 907 0143 0B       		.uleb128 0xb
+ 908 0144 3B       		.uleb128 0x3b
+ 909 0145 0B       		.uleb128 0xb
+ 910 0146 39       		.uleb128 0x39
+ 911 0147 0B       		.uleb128 0xb
+ 912 0148 27       		.uleb128 0x27
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 21
+
+
+ 913 0149 19       		.uleb128 0x19
+ 914 014a 11       		.uleb128 0x11
+ 915 014b 01       		.uleb128 0x1
+ 916 014c 12       		.uleb128 0x12
+ 917 014d 07       		.uleb128 0x7
+ 918 014e 40       		.uleb128 0x40
+ 919 014f 18       		.uleb128 0x18
+ 920 0150 7A       		.uleb128 0x7a
+ 921 0151 19       		.uleb128 0x19
+ 922 0152 01       		.uleb128 0x1
+ 923 0153 13       		.uleb128 0x13
+ 924 0154 00       		.byte	0
+ 925 0155 00       		.byte	0
+ 926 0156 15       		.uleb128 0x15
+ 927 0157 48       		.uleb128 0x48
+ 928 0158 01       		.byte	0x1
+ 929 0159 7D       		.uleb128 0x7d
+ 930 015a 01       		.uleb128 0x1
+ 931 015b 7F       		.uleb128 0x7f
+ 932 015c 13       		.uleb128 0x13
+ 933 015d 01       		.uleb128 0x1
+ 934 015e 13       		.uleb128 0x13
+ 935 015f 00       		.byte	0
+ 936 0160 00       		.byte	0
+ 937 0161 16       		.uleb128 0x16
+ 938 0162 48       		.uleb128 0x48
+ 939 0163 01       		.byte	0x1
+ 940 0164 7D       		.uleb128 0x7d
+ 941 0165 01       		.uleb128 0x1
+ 942 0166 7F       		.uleb128 0x7f
+ 943 0167 13       		.uleb128 0x13
+ 944 0168 00       		.byte	0
+ 945 0169 00       		.byte	0
+ 946 016a 17       		.uleb128 0x17
+ 947 016b 2E       		.uleb128 0x2e
+ 948 016c 01       		.byte	0x1
+ 949 016d 3F       		.uleb128 0x3f
+ 950 016e 19       		.uleb128 0x19
+ 951 016f 03       		.uleb128 0x3
+ 952 0170 08       		.uleb128 0x8
+ 953 0171 3A       		.uleb128 0x3a
+ 954 0172 0B       		.uleb128 0xb
+ 955 0173 3B       		.uleb128 0x3b
+ 956 0174 0B       		.uleb128 0xb
+ 957 0175 39       		.uleb128 0x39
+ 958 0176 0B       		.uleb128 0xb
+ 959 0177 27       		.uleb128 0x27
+ 960 0178 19       		.uleb128 0x19
+ 961 0179 01       		.uleb128 0x1
+ 962 017a 13       		.uleb128 0x13
+ 963 017b 00       		.byte	0
+ 964 017c 00       		.byte	0
+ 965 017d 18       		.uleb128 0x18
+ 966 017e 2E       		.uleb128 0x2e
+ 967 017f 01       		.byte	0x1
+ 968 0180 3F       		.uleb128 0x3f
+ 969 0181 19       		.uleb128 0x19
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 22
+
+
+ 970 0182 03       		.uleb128 0x3
+ 971 0183 08       		.uleb128 0x8
+ 972 0184 3A       		.uleb128 0x3a
+ 973 0185 0B       		.uleb128 0xb
+ 974 0186 3B       		.uleb128 0x3b
+ 975 0187 0B       		.uleb128 0xb
+ 976 0188 39       		.uleb128 0x39
+ 977 0189 0B       		.uleb128 0xb
+ 978 018a 27       		.uleb128 0x27
+ 979 018b 19       		.uleb128 0x19
+ 980 018c 20       		.uleb128 0x20
+ 981 018d 0B       		.uleb128 0xb
+ 982 018e 01       		.uleb128 0x1
+ 983 018f 13       		.uleb128 0x13
+ 984 0190 00       		.byte	0
+ 985 0191 00       		.byte	0
+ 986 0192 19       		.uleb128 0x19
+ 987 0193 2E       		.uleb128 0x2e
+ 988 0194 01       		.byte	0x1
+ 989 0195 31       		.uleb128 0x31
+ 990 0196 13       		.uleb128 0x13
+ 991 0197 11       		.uleb128 0x11
+ 992 0198 01       		.uleb128 0x1
+ 993 0199 12       		.uleb128 0x12
+ 994 019a 07       		.uleb128 0x7
+ 995 019b 40       		.uleb128 0x40
+ 996 019c 18       		.uleb128 0x18
+ 997 019d 7A       		.uleb128 0x7a
+ 998 019e 19       		.uleb128 0x19
+ 999 019f 00       		.byte	0
+ 1000 01a0 00       		.byte	0
+ 1001 01a1 00       		.byte	0
+ 1002              		.section	.debug_loclists,"dr"
+ 1003 0000 16010000 		.long	.Ldebug_loc3-.Ldebug_loc2
+ 1004              	.Ldebug_loc2:
+ 1005 0004 0500     		.word	0x5
+ 1006 0006 08       		.byte	0x8
+ 1007 0007 00       		.byte	0
+ 1008 0008 00000000 		.long	0
+ 1009              	.Ldebug_loc0:
+ 1010              	.LVUS5:
+ 1011 000c 00       		.uleb128 .LVU40
+ 1012 000d 00       		.uleb128 .LVU47
+ 1013 000e 00       		.uleb128 .LVU47
+ 1014 000f 00       		.uleb128 0
+ 1015              	.LLST5:
+ 1016 0010 06       		.byte	0x6
+ 1017 0011 21000000 		.quad	.LVL12
+ 1017      00000000 
+ 1018 0019 04       		.byte	0x4
+ 1019 001a 00       		.uleb128 .LVL12-.LVL12
+ 1020 001b 14       		.uleb128 .LVL13-.LVL12
+ 1021 001c 01       		.uleb128 0x1
+ 1022 001d 58       		.byte	0x58
+ 1023 001e 04       		.byte	0x4
+ 1024 001f 14       		.uleb128 .LVL13-.LVL12
+ 1025 0020 3B       		.uleb128 .LFE86-.LVL12
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 23
+
+
+ 1026 0021 11       		.uleb128 0x11
+ 1027 0022 7A       		.byte	0x7a
+ 1028 0023 00       		.sleb128 0
+ 1029 0024 08       		.byte	0x8
+ 1030 0025 64       		.byte	0x64
+ 1031 0026 1E       		.byte	0x1e
+ 1032 0027 A8       		.byte	0xa8
+ 1033 0028 9301     		.uleb128 0x93
+ 1034 002a 79       		.byte	0x79
+ 1035 002b 00       		.sleb128 0
+ 1036 002c A8       		.byte	0xa8
+ 1037 002d 9301     		.uleb128 0x93
+ 1038 002f 1B       		.byte	0x1b
+ 1039 0030 A8       		.byte	0xa8
+ 1040 0031 00       		.uleb128 0
+ 1041 0032 9F       		.byte	0x9f
+ 1042 0033 00       		.byte	0
+ 1043              	.LVUS6:
+ 1044 0034 01       		.uleb128 .LVU41
+ 1045 0035 00       		.uleb128 .LVU47
+ 1046 0036 00       		.uleb128 .LVU47
+ 1047 0037 00       		.uleb128 0
+ 1048              	.LLST6:
+ 1049 0038 06       		.byte	0x6
+ 1050 0039 21000000 		.quad	.LVL12
+ 1050      00000000 
+ 1051 0041 04       		.byte	0x4
+ 1052 0042 00       		.uleb128 .LVL12-.LVL12
+ 1053 0043 14       		.uleb128 .LVL13-.LVL12
+ 1054 0044 18       		.uleb128 0x18
+ 1055 0045 7A       		.byte	0x7a
+ 1056 0046 00       		.sleb128 0
+ 1057 0047 0A       		.byte	0xa
+ 1058 0048 1027     		.word	0x2710
+ 1059 004a 1E       		.byte	0x1e
+ 1060 004b A8       		.byte	0xa8
+ 1061 004c 9301     		.uleb128 0x93
+ 1062 004e 79       		.byte	0x79
+ 1063 004f 00       		.sleb128 0
+ 1064 0050 A8       		.byte	0xa8
+ 1065 0051 9301     		.uleb128 0x93
+ 1066 0053 1B       		.byte	0x1b
+ 1067 0054 A8       		.byte	0xa8
+ 1068 0055 00       		.uleb128 0
+ 1069 0056 78       		.byte	0x78
+ 1070 0057 00       		.sleb128 0
+ 1071 0058 08       		.byte	0x8
+ 1072 0059 64       		.byte	0x64
+ 1073 005a 1E       		.byte	0x1e
+ 1074 005b 1C       		.byte	0x1c
+ 1075 005c 9F       		.byte	0x9f
+ 1076 005d 04       		.byte	0x4
+ 1077 005e 14       		.uleb128 .LVL13-.LVL12
+ 1078 005f 3B       		.uleb128 .LFE86-.LVL12
+ 1079 0060 26       		.uleb128 0x26
+ 1080 0061 7A       		.byte	0x7a
+ 1081 0062 00       		.sleb128 0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 24
+
+
+ 1082 0063 0A       		.byte	0xa
+ 1083 0064 1027     		.word	0x2710
+ 1084 0066 1E       		.byte	0x1e
+ 1085 0067 A8       		.byte	0xa8
+ 1086 0068 9301     		.uleb128 0x93
+ 1087 006a 79       		.byte	0x79
+ 1088 006b 00       		.sleb128 0
+ 1089 006c A8       		.byte	0xa8
+ 1090 006d 9301     		.uleb128 0x93
+ 1091 006f 1B       		.byte	0x1b
+ 1092 0070 A8       		.byte	0xa8
+ 1093 0071 00       		.uleb128 0
+ 1094 0072 7A       		.byte	0x7a
+ 1095 0073 00       		.sleb128 0
+ 1096 0074 08       		.byte	0x8
+ 1097 0075 64       		.byte	0x64
+ 1098 0076 1E       		.byte	0x1e
+ 1099 0077 A8       		.byte	0xa8
+ 1100 0078 9301     		.uleb128 0x93
+ 1101 007a 79       		.byte	0x79
+ 1102 007b 00       		.sleb128 0
+ 1103 007c A8       		.byte	0xa8
+ 1104 007d 9301     		.uleb128 0x93
+ 1105 007f 1B       		.byte	0x1b
+ 1106 0080 A8       		.byte	0xa8
+ 1107 0081 00       		.uleb128 0
+ 1108 0082 08       		.byte	0x8
+ 1109 0083 64       		.byte	0x64
+ 1110 0084 1E       		.byte	0x1e
+ 1111 0085 1C       		.byte	0x1c
+ 1112 0086 9F       		.byte	0x9f
+ 1113 0087 00       		.byte	0
+ 1114              	.LVUS4:
+ 1115 0088 00       		.uleb128 0
+ 1116 0089 00       		.uleb128 .LVU30
+ 1117 008a 00       		.uleb128 .LVU30
+ 1118 008b 00       		.uleb128 0
+ 1119              	.LLST4:
+ 1120 008c 06       		.byte	0x6
+ 1121 008d 00000000 		.quad	.LVL9
+ 1121      00000000 
+ 1122 0095 04       		.byte	0x4
+ 1123 0096 00       		.uleb128 .LVL9-.LVL9
+ 1124 0097 04       		.uleb128 .LVL10-1-.LVL9
+ 1125 0098 01       		.uleb128 0x1
+ 1126 0099 52       		.byte	0x52
+ 1127 009a 04       		.byte	0x4
+ 1128 009b 04       		.uleb128 .LVL10-1-.LVL9
+ 1129 009c 05       		.uleb128 .LFE85-.LVL9
+ 1130 009d 04       		.uleb128 0x4
+ 1131 009e A3       		.byte	0xa3
+ 1132 009f 01       		.uleb128 0x1
+ 1133 00a0 52       		.byte	0x52
+ 1134 00a1 9F       		.byte	0x9f
+ 1135 00a2 00       		.byte	0
+ 1136              	.LVUS2:
+ 1137 00a3 00       		.uleb128 0
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 25
+
+
+ 1138 00a4 00       		.uleb128 .LVU24
+ 1139 00a5 00       		.uleb128 .LVU24
+ 1140 00a6 00       		.uleb128 0
+ 1141              	.LLST2:
+ 1142 00a7 06       		.byte	0x6
+ 1143 00a8 00000000 		.quad	.LVL7
+ 1143      00000000 
+ 1144 00b0 04       		.byte	0x4
+ 1145 00b1 00       		.uleb128 .LVL7-.LVL7
+ 1146 00b2 04       		.uleb128 .LVL8-1-.LVL7
+ 1147 00b3 01       		.uleb128 0x1
+ 1148 00b4 52       		.byte	0x52
+ 1149 00b5 04       		.byte	0x4
+ 1150 00b6 04       		.uleb128 .LVL8-1-.LVL7
+ 1151 00b7 05       		.uleb128 .LFE84-.LVL7
+ 1152 00b8 04       		.uleb128 0x4
+ 1153 00b9 A3       		.byte	0xa3
+ 1154 00ba 01       		.uleb128 0x1
+ 1155 00bb 52       		.byte	0x52
+ 1156 00bc 9F       		.byte	0x9f
+ 1157 00bd 00       		.byte	0
+ 1158              	.LVUS3:
+ 1159 00be 00       		.uleb128 0
+ 1160 00bf 00       		.uleb128 .LVU24
+ 1161 00c0 00       		.uleb128 .LVU24
+ 1162 00c1 00       		.uleb128 0
+ 1163              	.LLST3:
+ 1164 00c2 06       		.byte	0x6
+ 1165 00c3 00000000 		.quad	.LVL7
+ 1165      00000000 
+ 1166 00cb 04       		.byte	0x4
+ 1167 00cc 00       		.uleb128 .LVL7-.LVL7
+ 1168 00cd 04       		.uleb128 .LVL8-1-.LVL7
+ 1169 00ce 01       		.uleb128 0x1
+ 1170 00cf 51       		.byte	0x51
+ 1171 00d0 04       		.byte	0x4
+ 1172 00d1 04       		.uleb128 .LVL8-1-.LVL7
+ 1173 00d2 05       		.uleb128 .LFE84-.LVL7
+ 1174 00d3 04       		.uleb128 0x4
+ 1175 00d4 A3       		.byte	0xa3
+ 1176 00d5 01       		.uleb128 0x1
+ 1177 00d6 51       		.byte	0x51
+ 1178 00d7 9F       		.byte	0x9f
+ 1179 00d8 00       		.byte	0
+ 1180              	.LVUS0:
+ 1181 00d9 00       		.uleb128 0
+ 1182 00da 00       		.uleb128 .LVU12
+ 1183 00db 00       		.uleb128 .LVU12
+ 1184 00dc 00       		.uleb128 .LVU18
+ 1185 00dd 00       		.uleb128 .LVU18
+ 1186 00de 00       		.uleb128 0
+ 1187              	.LLST0:
+ 1188 00df 06       		.byte	0x6
+ 1189 00e0 00000000 		.quad	.LVL1
+ 1189      00000000 
+ 1190 00e8 04       		.byte	0x4
+ 1191 00e9 00       		.uleb128 .LVL1-.LVL1
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 26
+
+
+ 1192 00ea 0D       		.uleb128 .LVL2-1-.LVL1
+ 1193 00eb 01       		.uleb128 0x1
+ 1194 00ec 52       		.byte	0x52
+ 1195 00ed 04       		.byte	0x4
+ 1196 00ee 0D       		.uleb128 .LVL2-1-.LVL1
+ 1197 00ef 27       		.uleb128 .LVL6-.LVL1
+ 1198 00f0 01       		.uleb128 0x1
+ 1199 00f1 54       		.byte	0x54
+ 1200 00f2 04       		.byte	0x4
+ 1201 00f3 27       		.uleb128 .LVL6-.LVL1
+ 1202 00f4 28       		.uleb128 .LFE83-.LVL1
+ 1203 00f5 04       		.uleb128 0x4
+ 1204 00f6 A3       		.byte	0xa3
+ 1205 00f7 01       		.uleb128 0x1
+ 1206 00f8 52       		.byte	0x52
+ 1207 00f9 9F       		.byte	0x9f
+ 1208 00fa 00       		.byte	0
+ 1209              	.LVUS1:
+ 1210 00fb 00       		.uleb128 .LVU14
+ 1211 00fc 00       		.uleb128 .LVU15
+ 1212 00fd 00       		.uleb128 .LVU15
+ 1213 00fe 00       		.uleb128 .LVU17
+ 1214 00ff 00       		.uleb128 .LVU17
+ 1215 0100 00       		.uleb128 0
+ 1216              	.LLST1:
+ 1217 0101 06       		.byte	0x6
+ 1218 0102 16000000 		.quad	.LVL3
+ 1218      00000000 
+ 1219 010a 04       		.byte	0x4
+ 1220 010b 00       		.uleb128 .LVL3-.LVL3
+ 1221 010c 07       		.uleb128 .LVL4-1-.LVL3
+ 1222 010d 01       		.uleb128 0x1
+ 1223 010e 50       		.byte	0x50
+ 1224 010f 04       		.byte	0x4
+ 1225 0110 07       		.uleb128 .LVL4-1-.LVL3
+ 1226 0111 10       		.uleb128 .LVL5-.LVL3
+ 1227 0112 01       		.uleb128 0x1
+ 1228 0113 53       		.byte	0x53
+ 1229 0114 04       		.byte	0x4
+ 1230 0115 10       		.uleb128 .LVL5-.LVL3
+ 1231 0116 12       		.uleb128 .LFE83-.LVL3
+ 1232 0117 01       		.uleb128 0x1
+ 1233 0118 50       		.byte	0x50
+ 1234 0119 00       		.byte	0
+ 1235              	.Ldebug_loc3:
+ 1236              		.section	.debug_aranges,"dr"
+ 1237 0000 7C000000 		.long	0x7c
+ 1238 0004 0200     		.word	0x2
+ 1239 0006 00000000 		.secrel32	.Ldebug_info0
+ 1240 000a 08       		.byte	0x8
+ 1241 000b 00       		.byte	0
+ 1242 000c 0000     		.word	0
+ 1243 000e 0000     		.word	0
+ 1244 0010 00000000 		.quad	.LFB81
+ 1244      00000000 
+ 1245 0018 08000000 		.quad	.LFE81-.LFB81
+ 1245      00000000 
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 27
+
+
+ 1246 0020 00000000 		.quad	.LFB88
+ 1246      00000000 
+ 1247 0028 08000000 		.quad	.LFE88-.LFB88
+ 1247      00000000 
+ 1248 0030 00000000 		.quad	.LFB83
+ 1248      00000000 
+ 1249 0038 28000000 		.quad	.LFE83-.LFB83
+ 1249      00000000 
+ 1250 0040 00000000 		.quad	.LFB84
+ 1250      00000000 
+ 1251 0048 05000000 		.quad	.LFE84-.LFB84
+ 1251      00000000 
+ 1252 0050 00000000 		.quad	.LFB85
+ 1252      00000000 
+ 1253 0058 05000000 		.quad	.LFE85-.LFB85
+ 1253      00000000 
+ 1254 0060 00000000 		.quad	.LFB86
+ 1254      00000000 
+ 1255 0068 5C000000 		.quad	.LFE86-.LFB86
+ 1255      00000000 
+ 1256 0070 00000000 		.quad	0
+ 1256      00000000 
+ 1257 0078 00000000 		.quad	0
+ 1257      00000000 
+ 1258              		.section	.debug_rnglists,"dr"
+ 1259              	.Ldebug_ranges0:
+ 1260 0000 45000000 		.long	.Ldebug_ranges3-.Ldebug_ranges2
+ 1261              	.Ldebug_ranges2:
+ 1262 0004 0500     		.word	0x5
+ 1263 0006 08       		.byte	0x8
+ 1264 0007 00       		.byte	0
+ 1265 0008 00000000 		.long	0
+ 1266              	.LLRL7:
+ 1267 000c 07       		.byte	0x7
+ 1268 000d 00000000 		.quad	.LFB81
+ 1268      00000000 
+ 1269 0015 08       		.uleb128 .LFE81-.LFB81
+ 1270 0016 07       		.byte	0x7
+ 1271 0017 00000000 		.quad	.LFB88
+ 1271      00000000 
+ 1272 001f 08       		.uleb128 .LFE88-.LFB88
+ 1273 0020 07       		.byte	0x7
+ 1274 0021 00000000 		.quad	.LFB83
+ 1274      00000000 
+ 1275 0029 28       		.uleb128 .LFE83-.LFB83
+ 1276 002a 07       		.byte	0x7
+ 1277 002b 00000000 		.quad	.LFB84
+ 1277      00000000 
+ 1278 0033 05       		.uleb128 .LFE84-.LFB84
+ 1279 0034 07       		.byte	0x7
+ 1280 0035 00000000 		.quad	.LFB85
+ 1280      00000000 
+ 1281 003d 05       		.uleb128 .LFE85-.LFB85
+ 1282 003e 07       		.byte	0x7
+ 1283 003f 00000000 		.quad	.LFB86
+ 1283      00000000 
+ 1284 0047 5C       		.uleb128 .LFE86-.LFB86
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 28
+
+
+ 1285 0048 00       		.byte	0
+ 1286              	.Ldebug_ranges3:
+ 1287              		.section	.debug_line,"dr"
+ 1288              	.Ldebug_line0:
+ 1289 0000 68010000 		.section	.debug_str,"dr"
+ 1289      05000800 
+ 1289      46000000 
+ 1289      010101FB 
+ 1289      0E0D0001 
+ 1290              	.LASF2:
+ 1291 0000 6D656D5F 		.ascii "mem_start\0"
+ 1291      73746172 
+ 1291      7400
+ 1292              		.section	.debug_line_str,"dr"
+ 1293              	.LASF0:
+ 1294 0000 2E2E2F73 		.ascii "../source/sgl_mm.c\0"
+ 1294      6F757263 
+ 1294      652F7367 
+ 1294      6C5F6D6D 
+ 1294      2E6300
+ 1295              	.LASF1:
+ 1296 0013 433A5C55 		.ascii "C:\\Users\\lsw\\Desktop\\sgl-lite\\demo\0"
+ 1296      73657273 
+ 1296      5C6C7377 
+ 1296      5C446573 
+ 1296      6B746F70 
+ 1297              		.ident	"GCC: (x86_64-posix-seh-rev0, Built by MinGW-Builds project) 13.2.0"
+GAS LISTING C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s 			page 29
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 sgl_mm.c
+C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s:11     .text$sgl_mm_init:0000000000000000 sgl_mm_init
+C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s:213    .data$mem:0000000000000000 mem
+C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s:33     .text$sgl_mm_add_pool:0000000000000000 sgl_mm_add_pool
+C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s:48     .text$sgl_malloc:0000000000000000 sgl_malloc
+C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s:106    .text$sgl_realloc:0000000000000000 sgl_realloc
+C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s:127    .text$sgl_free:0000000000000000 sgl_free
+C:\Users\lsw\AppData\Local\Temp\ccKoRtKs.s:148    .text$sgl_mm_get_monitor:0000000000000000 sgl_mm_get_monitor
+
+UNDEFINED SYMBOLS
+malloc
+memset
+realloc
+free
